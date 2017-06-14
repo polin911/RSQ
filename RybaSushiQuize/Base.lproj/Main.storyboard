@@ -223,14 +223,24 @@
                                     <action selector="continueBTNPressed:" destination="wxd-Er-D6x" eventType="touchUpInside" id="4HQ-Z0-YzU"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Игра на роллы!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="trG-hE-nA1">
+                                <rect key="frame" x="16" y="20" width="343" height="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="trG-hE-nA1" firstAttribute="top" secondItem="kCD-aO-4FI" secondAttribute="bottom" id="0oQ-di-Lhj"/>
                             <constraint firstItem="eKf-Mp-JKi" firstAttribute="top" secondItem="tHh-Ni-FIp" secondAttribute="bottom" constant="74" id="Cbj-TV-Pde"/>
+                            <constraint firstItem="trG-hE-nA1" firstAttribute="trailing" secondItem="6TW-gO-k9w" secondAttribute="trailingMargin" id="Eux-yt-gsc"/>
                             <constraint firstItem="8k0-5n-B53" firstAttribute="top" secondItem="kCD-aO-4FI" secondAttribute="bottom" constant="189" id="LB0-Jv-2kN"/>
                             <constraint firstItem="pvd-TL-G1S" firstAttribute="leading" secondItem="6TW-gO-k9w" secondAttribute="leadingMargin" id="Q5w-mh-bL8"/>
                             <constraint firstItem="8k0-5n-B53" firstAttribute="leading" secondItem="pvd-TL-G1S" secondAttribute="trailing" constant="8" id="Qlh-GY-XXW"/>
+                            <constraint firstItem="trG-hE-nA1" firstAttribute="leading" secondItem="6TW-gO-k9w" secondAttribute="leadingMargin" id="WF9-8T-uJV"/>
                             <constraint firstItem="8k0-5n-B53" firstAttribute="trailing" secondItem="6TW-gO-k9w" secondAttribute="trailingMargin" id="aAs-kT-lLU"/>
+                            <constraint firstItem="hNd-uO-Xz4" firstAttribute="top" secondItem="trG-hE-nA1" secondAttribute="bottom" constant="8" id="hVI-W1-TZK"/>
                             <constraint firstItem="pvd-TL-G1S" firstAttribute="top" secondItem="hNd-uO-Xz4" secondAttribute="bottom" constant="8" id="kkR-HO-kqw"/>
                             <constraint firstItem="hNd-uO-Xz4" firstAttribute="leading" secondItem="6TW-gO-k9w" secondAttribute="leadingMargin" id="suC-qQ-2DB"/>
                             <constraint firstItem="tHh-Ni-FIp" firstAttribute="trailing" secondItem="6TW-gO-k9w" secondAttribute="trailingMargin" id="wkY-Pw-jox"/>
@@ -240,6 +250,7 @@
                     </view>
                     <connections>
                         <outlet property="instructionTextLabel" destination="pvd-TL-G1S" id="ov0-5i-UEn"/>
+                        <outlet property="typeLbl" destination="trG-hE-nA1" id="jxY-Nc-DuH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Km-S5-wF7" userLabel="First Responder" sceneMemberID="firstResponder"/>

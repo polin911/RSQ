@@ -29,6 +29,22 @@ class WhichQuizeVC: UIViewController{
         
        
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+       if let instructVC = segue.destination as? InstructionVC,
+        let typeOf = sender as? String {
+        
+        if typeOf == "Игра на роллы" {
+            instructVC.chooseType = .typeRolli
+        }
+        if typeOf == "Игра на сашими" {
+            instructVC.chooseType = .typeSashimi
+        }
+        if typeOf == "Игра на устрицы с шампанским" {
+            instructVC.chooseType = .typeUstrici
+        }
+        }
+    }
 
 
 }

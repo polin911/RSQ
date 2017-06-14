@@ -43,10 +43,7 @@ class NameVC: UIViewController  {
         let whichQuizeVC = segue.destination as! WhichQuizeVC
         whichQuizeVC.nameText = namePlayer.text!
         
-        if segue.identifier == "showInstructions" {
-            let instructVC = segue.destination as! InstructionVC
-            instructVC.nameUser = namePlayer.text
-        }
+      
     }
     
 
