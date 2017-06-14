@@ -19,6 +19,7 @@
 		36A949FF1EEFD84A00FDA807 /* FinalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A949FE1EEFD84A00FDA807 /* FinalVC.swift */; };
 		36A94A031EEFDD3500FDA807 /* WhichQuizeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A94A021EEFDD3500FDA807 /* WhichQuizeCell.swift */; };
 		36A94A051EEFDE3300FDA807 /* AnswersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A94A041EEFDE3300FDA807 /* AnswersCell.swift */; };
+		36A94A0B1EF11DEA00FDA807 /* InstructionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A94A0A1EF11DEA00FDA807 /* InstructionVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		36A949FE1EEFD84A00FDA807 /* FinalVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinalVC.swift; sourceTree = "<group>"; };
 		36A94A021EEFDD3500FDA807 /* WhichQuizeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhichQuizeCell.swift; sourceTree = "<group>"; };
 		36A94A041EEFDE3300FDA807 /* AnswersCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswersCell.swift; sourceTree = "<group>"; };
+		36A94A0A1EF11DEA00FDA807 /* InstructionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstructionVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 				36A949F61EEFD74000FDA807 /* MainVC.swift */,
 				36A949F81EEFD76700FDA807 /* NameVC.swift */,
 				36A949FA1EEFD79100FDA807 /* WhichQuizeVC.swift */,
+				36A94A0A1EF11DEA00FDA807 /* InstructionVC.swift */,
 				36A949FC1EEFD7BF00FDA807 /* QuizeVC.swift */,
 				36A949FE1EEFD84A00FDA807 /* FinalVC.swift */,
 			);
@@ -189,6 +192,7 @@
 				36A949F91EEFD76700FDA807 /* NameVC.swift in Sources */,
 				36A949F71EEFD74000FDA807 /* MainVC.swift in Sources */,
 				36A949E91EEFCF1C00FDA807 /* RybaSushiQuize.xcdatamodeld in Sources */,
+				36A94A0B1EF11DEA00FDA807 /* InstructionVC.swift in Sources */,
 				36A949FB1EEFD79100FDA807 /* WhichQuizeVC.swift in Sources */,
 				36A949FD1EEFD7BF00FDA807 /* QuizeVC.swift in Sources */,
 			);
@@ -356,6 +360,7 @@
 				36A949F41EEFCF1C00FDA807 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

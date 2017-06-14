@@ -171,11 +171,80 @@
                         <outlet property="nameLblTxt" destination="5Co-fd-tSH" id="Ppc-eF-7L9"/>
                         <outlet property="tableView" destination="yJ0-Xy-zOz" id="G7g-Js-5Vw"/>
                         <segue destination="OVk-T7-BNu" kind="show" identifier="showQuestions" id="L7r-nS-NWr"/>
+                        <segue destination="wxd-Er-D6x" kind="show" identifier="showInstructions" id="tnG-Vz-su3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Tu-e1-rPu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1584.8" y="161.46926536731635"/>
+        </scene>
+        <!--InstructionVC-->
+        <scene sceneID="xvf-Vb-6F0">
+            <objects>
+                <viewController id="wxd-Er-D6x" customClass="InstructionVC" customModule="RybaSushiQuize" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kCD-aO-4FI"/>
+                        <viewControllerLayoutGuide type="bottom" id="eKf-Mp-JKi"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6TW-gO-k9w">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="18" translatesAutoresizingMaskIntoConstraints="NO" id="hNd-uO-Xz4">
+                                <rect key="frame" x="16" y="50" width="124" height="124"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="124" id="AGt-Gn-BYa"/>
+                                    <constraint firstAttribute="height" constant="124" id="IaU-3g-vpy"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="aEh-bY-B7L"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="120" id="q9e-zG-vYb"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="4" translatesAutoresizingMaskIntoConstraints="NO" id="8k0-5n-B53">
+                                <rect key="frame" x="235" y="209" width="124" height="124"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="124" id="oH1-ST-quy"/>
+                                    <constraint firstAttribute="height" constant="124" id="r3H-1w-702"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="18" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pvd-TL-G1S">
+                                <rect key="frame" x="16" y="182" width="211" height="406"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="406" id="iSf-JP-nMV"/>
+                                </constraints>
+                                <string key="text">Жор, я смотрю ты не очень голоден....бла бла блабла бла блабла бла блабла бла блабла бла блабла бла блабла бла блабла бла блабла бла блабла бла блабла бла блабла бла блабла бла блабла бла бла бла блабла бла блабла бла блабла бла блаблабла бла блабла бла бла</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tHh-Ni-FIp">
+                                <rect key="frame" x="16" y="563" width="343" height="30"/>
+                                <state key="normal" title="Поехали!"/>
+                                <connections>
+                                    <action selector="continueBTNPressed:" destination="wxd-Er-D6x" eventType="touchUpInside" id="4HQ-Z0-YzU"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="eKf-Mp-JKi" firstAttribute="top" secondItem="tHh-Ni-FIp" secondAttribute="bottom" constant="74" id="Cbj-TV-Pde"/>
+                            <constraint firstItem="8k0-5n-B53" firstAttribute="top" secondItem="kCD-aO-4FI" secondAttribute="bottom" constant="189" id="LB0-Jv-2kN"/>
+                            <constraint firstItem="pvd-TL-G1S" firstAttribute="leading" secondItem="6TW-gO-k9w" secondAttribute="leadingMargin" id="Q5w-mh-bL8"/>
+                            <constraint firstItem="8k0-5n-B53" firstAttribute="leading" secondItem="pvd-TL-G1S" secondAttribute="trailing" constant="8" id="Qlh-GY-XXW"/>
+                            <constraint firstItem="8k0-5n-B53" firstAttribute="trailing" secondItem="6TW-gO-k9w" secondAttribute="trailingMargin" id="aAs-kT-lLU"/>
+                            <constraint firstItem="pvd-TL-G1S" firstAttribute="top" secondItem="hNd-uO-Xz4" secondAttribute="bottom" constant="8" id="kkR-HO-kqw"/>
+                            <constraint firstItem="hNd-uO-Xz4" firstAttribute="leading" secondItem="6TW-gO-k9w" secondAttribute="leadingMargin" id="suC-qQ-2DB"/>
+                            <constraint firstItem="tHh-Ni-FIp" firstAttribute="trailing" secondItem="6TW-gO-k9w" secondAttribute="trailingMargin" id="wkY-Pw-jox"/>
+                            <constraint firstItem="hNd-uO-Xz4" firstAttribute="top" secondItem="kCD-aO-4FI" secondAttribute="bottom" constant="30" id="wpx-t3-Pae"/>
+                            <constraint firstItem="tHh-Ni-FIp" firstAttribute="leading" secondItem="6TW-gO-k9w" secondAttribute="leadingMargin" id="zDr-2c-KdF"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="instructionTextLabel" destination="pvd-TL-G1S" id="ov0-5i-UEn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Km-S5-wF7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1901.5999999999999" y="831.63418290854577"/>
         </scene>
         <!--QuizeVC-->
         <scene sceneID="peW-Xs-XzA">
@@ -297,4 +366,8 @@
             <point key="canvasLocation" x="3132" y="260.41979010494754"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="18" width="120" height="120"/>
+        <image name="4" width="120" height="120"/>
+    </resources>
 </document>
