@@ -11,7 +11,7 @@ import UIKit
 class QuizeCollectionVC: UIViewController {
     
     var player = Player()
-    var question = [Question]()
+    //var question = [Question]()
     
     @IBOutlet var questionLbl: UILabel!
     @IBOutlet var questionImg: UIImageView!
@@ -32,9 +32,10 @@ class QuizeCollectionVC: UIViewController {
     
     var questionList : [Question]? {
         didSet {
+            let random = questionList?[Int(arc4random_uniform(UInt32((questionList?.count)!)))]
             currentQuestionIndex = 0
             score = 0
-            currentQuestion = questionList?.first
+            currentQuestion = random
         }
     }
     //*
