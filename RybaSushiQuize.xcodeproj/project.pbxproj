@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		365872DF1EF908EA003823BA /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365872DE1EF908EA003823BA /* Player.swift */; };
 		36A949E11EEFCF1C00FDA807 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A949E01EEFCF1C00FDA807 /* AppDelegate.swift */; };
 		36A949E61EEFCF1C00FDA807 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36A949E41EEFCF1C00FDA807 /* Main.storyboard */; };
 		36A949E91EEFCF1C00FDA807 /* RybaSushiQuize.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 36A949E71EEFCF1C00FDA807 /* RybaSushiQuize.xcdatamodeld */; };
@@ -20,9 +21,14 @@
 		36A94A031EEFDD3500FDA807 /* WhichQuizeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A94A021EEFDD3500FDA807 /* WhichQuizeCell.swift */; };
 		36A94A051EEFDE3300FDA807 /* AnswersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A94A041EEFDE3300FDA807 /* AnswersCell.swift */; };
 		36A94A0B1EF11DEA00FDA807 /* InstructionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A94A0A1EF11DEA00FDA807 /* InstructionVC.swift */; };
+		36A94A0D1EF12AF300FDA807 /* DataLoaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A94A0C1EF12AF300FDA807 /* DataLoaders.swift */; };
+		36A94A0F1EF12B5E00FDA807 /* Questions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A94A0E1EF12B5E00FDA807 /* Questions.swift */; };
+		36A94A141EF1502400FDA807 /* tryQuize.json in Resources */ = {isa = PBXBuildFile; fileRef = 36A94A131EF1502400FDA807 /* tryQuize.json */; };
+		36A94A161EF1797000FDA807 /* WhichQuizeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A94A151EF1797000FDA807 /* WhichQuizeModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		365872DE1EF908EA003823BA /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		36A949DD1EEFCF1C00FDA807 /* RybaSushiQuize.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RybaSushiQuize.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36A949E01EEFCF1C00FDA807 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		36A949E51EEFCF1C00FDA807 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -38,6 +44,10 @@
 		36A94A021EEFDD3500FDA807 /* WhichQuizeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhichQuizeCell.swift; sourceTree = "<group>"; };
 		36A94A041EEFDE3300FDA807 /* AnswersCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswersCell.swift; sourceTree = "<group>"; };
 		36A94A0A1EF11DEA00FDA807 /* InstructionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstructionVC.swift; sourceTree = "<group>"; };
+		36A94A0C1EF12AF300FDA807 /* DataLoaders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataLoaders.swift; sourceTree = "<group>"; };
+		36A94A0E1EF12B5E00FDA807 /* Questions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Questions.swift; sourceTree = "<group>"; };
+		36A94A131EF1502400FDA807 /* tryQuize.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tryQuize.json; sourceTree = "<group>"; };
+		36A94A151EF1797000FDA807 /* WhichQuizeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhichQuizeModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +80,7 @@
 		36A949DF1EEFCF1C00FDA807 /* RybaSushiQuize */ = {
 			isa = PBXGroup;
 			children = (
+				36A94A101EF14F5800FDA807 /* Files */,
 				36A94A011EEFD89600FDA807 /* View */,
 				36A94A001EEFD88700FDA807 /* Model */,
 				36A949F51EEFD71900FDA807 /* Controller */,
@@ -99,6 +110,10 @@
 		36A94A001EEFD88700FDA807 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				36A94A0C1EF12AF300FDA807 /* DataLoaders.swift */,
+				36A94A0E1EF12B5E00FDA807 /* Questions.swift */,
+				36A94A151EF1797000FDA807 /* WhichQuizeModel.swift */,
+				365872DE1EF908EA003823BA /* Player.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -110,6 +125,14 @@
 				36A94A041EEFDE3300FDA807 /* AnswersCell.swift */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		36A94A101EF14F5800FDA807 /* Files */ = {
+			isa = PBXGroup;
+			children = (
+				36A94A131EF1502400FDA807 /* tryQuize.json */,
+			);
+			name = Files;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -173,6 +196,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				36A949EE1EEFCF1C00FDA807 /* LaunchScreen.storyboard in Resources */,
+				36A94A141EF1502400FDA807 /* tryQuize.json in Resources */,
 				36A949EB1EEFCF1C00FDA807 /* Assets.xcassets in Resources */,
 				36A949E61EEFCF1C00FDA807 /* Main.storyboard in Resources */,
 			);
@@ -186,13 +210,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				36A94A051EEFDE3300FDA807 /* AnswersCell.swift in Sources */,
+				36A94A161EF1797000FDA807 /* WhichQuizeModel.swift in Sources */,
 				36A94A031EEFDD3500FDA807 /* WhichQuizeCell.swift in Sources */,
 				36A949FF1EEFD84A00FDA807 /* FinalVC.swift in Sources */,
+				365872DF1EF908EA003823BA /* Player.swift in Sources */,
 				36A949E11EEFCF1C00FDA807 /* AppDelegate.swift in Sources */,
 				36A949F91EEFD76700FDA807 /* NameVC.swift in Sources */,
 				36A949F71EEFD74000FDA807 /* MainVC.swift in Sources */,
 				36A949E91EEFCF1C00FDA807 /* RybaSushiQuize.xcdatamodeld in Sources */,
 				36A94A0B1EF11DEA00FDA807 /* InstructionVC.swift in Sources */,
+				36A94A0D1EF12AF300FDA807 /* DataLoaders.swift in Sources */,
+				36A94A0F1EF12B5E00FDA807 /* Questions.swift in Sources */,
 				36A949FB1EEFD79100FDA807 /* WhichQuizeVC.swift in Sources */,
 				36A949FD1EEFD7BF00FDA807 /* QuizeVC.swift in Sources */,
 			);

@@ -91,7 +91,7 @@
                     </view>
                     <connections>
                         <outlet property="namePlayer" destination="i53-r8-n2i" id="aEc-Mt-Xq1"/>
-                        <segue destination="oCw-lQ-qzk" kind="show" identifier="whichQuize" id="iXD-Ai-6Br"/>
+                        <segue destination="oCw-lQ-qzk" kind="show" identifier="goToWhich" id="rdd-Ab-rDd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fWn-Mr-NYk" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -170,7 +170,6 @@
                     <connections>
                         <outlet property="nameLblTxt" destination="5Co-fd-tSH" id="Ppc-eF-7L9"/>
                         <outlet property="tableView" destination="yJ0-Xy-zOz" id="G7g-Js-5Vw"/>
-                        <segue destination="OVk-T7-BNu" kind="show" identifier="showQuestions" id="L7r-nS-NWr"/>
                         <segue destination="wxd-Er-D6x" kind="show" identifier="showInstructions" id="tnG-Vz-su3"/>
                     </connections>
                 </viewController>
@@ -220,7 +219,7 @@
                                 <rect key="frame" x="16" y="563" width="343" height="30"/>
                                 <state key="normal" title="Поехали!"/>
                                 <connections>
-                                    <action selector="continueBTNPressed:" destination="wxd-Er-D6x" eventType="touchUpInside" id="4HQ-Z0-YzU"/>
+                                    <action selector="playBtnPressed:" destination="wxd-Er-D6x" eventType="touchUpInside" id="9eR-X3-4LC"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Игра на роллы!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="trG-hE-nA1">
@@ -251,11 +250,12 @@
                     <connections>
                         <outlet property="instructionTextLabel" destination="pvd-TL-G1S" id="ov0-5i-UEn"/>
                         <outlet property="typeLbl" destination="trG-hE-nA1" id="jxY-Nc-DuH"/>
+                        <segue destination="OVk-T7-BNu" kind="show" identifier="showQuize" id="Om3-64-5sk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Km-S5-wF7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1901.5999999999999" y="831.63418290854577"/>
+            <point key="canvasLocation" x="1796" y="942"/>
         </scene>
         <!--QuizeVC-->
         <scene sceneID="peW-Xs-XzA">
@@ -295,8 +295,8 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="343" height="54"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Vz-CZ-Aau">
-                                                            <rect key="frame" x="13" y="16" width="317" height="21"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Vz-CZ-Aau">
+                                                            <rect key="frame" x="13" y="26.5" width="317" height="0.0"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -374,7 +374,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w8M-sw-7AG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3132" y="260.41979010494754"/>
+            <point key="canvasLocation" x="3300" y="242"/>
         </scene>
     </scenes>
     <resources>

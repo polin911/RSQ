@@ -10,12 +10,15 @@ import UIKit
 
 class WhichQuizeVC: UIViewController{
 
+    var player = Player()
     
     @IBOutlet var nameLblTxt: UILabel!
     @IBOutlet var tableView: UITableView!
     
      var whichQuizeChoose = ["Игра на роллы", "Игра на сашими", "Игра на устрицы с шампанским" ]
      var nameText = String()
+     var whichQuize : WhichQuizeModel!
+    
     
     
     override func viewDidLoad() {
@@ -24,38 +27,29 @@ class WhichQuizeVC: UIViewController{
         tableView.delegate = self
         tableView.dataSource = self
         
-        nameLblTxt.text = "Привет \(nameText) ты готов перекусить ??"
+        
+        nameLblTxt.text = "Привет \(player.playerName) ты готов перекусить ??"
        
         
        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-       if let instructVC = segue.destination as? InstructionVC,
-        let typeOf = sender as? String {
-        
-        if typeOf == "Игра на роллы" {
-            instructVC.chooseType = .typeRolli
-        }
-        if typeOf == "Игра на сашими" {
-            instructVC.chooseType = .typeSashimi
-        }
-        if typeOf == "Игра на устрицы с шампанским" {
-            instructVC.chooseType = .typeUstrici
-        }
-        }
-    }
-
-
+        let instructVC = segue.destination as? InstructionVC
+       
+        instructVC?.player = self.player
+        //whichQuize.howManyQuestions(nameOfGame: typeOf)
 }
-
+}
 //MARK: TableView
 
 extension WhichQuizeVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let whichQuize = whichQuizeChoose[indexPath.row]
-        
-        performSegue(withIdentifier: "showInstructions", sender: whichQuize)
+        let nameQuize = player.wchiGame[indexPath.row]
+        self.player.nameGame = nameQuize
+        performSegue(withIdentifier: "showInstructions", sender: nameQuize)
+       
+      
     }
     
 }
@@ -68,12 +62,12 @@ extension WhichQuizeVC: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return whichQuizeChoose.count
+        return player.wchiGame.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "whichQuize") as! WhichQuizeCell
-        cell.quizeLabel.text = whichQuizeChoose[indexPath.row]
+        cell.quizeLabel.text = player.wchiGame[indexPath.row]
         
         return cell
     }

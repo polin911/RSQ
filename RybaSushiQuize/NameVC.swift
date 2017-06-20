@@ -18,7 +18,7 @@ class NameVC: UIViewController  {
     
     @IBOutlet var namePlayer: UITextField!
     
-
+    var player = Player()
     
     
     override func viewDidLoad() {
@@ -29,21 +29,19 @@ class NameVC: UIViewController  {
 
     }
 
-    @IBAction func startBtnPusshed(_ sender: UIButton) {
-        
-       guard namePlayer.text != "",
-        namePlayer.text != nil else {
-            return //можно вставить атеншион
+    @IBAction func startBtnPusshed(_ sender: Any) {
+        if namePlayer.text != nil {
+        self.player.playerName = namePlayer.text ?? ""
+            performSegue(withIdentifier: "goToWhich", sender: self)
         }
+        return
        
-               performSegue(withIdentifier: "whichQuize", sender: self)
+        
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let whichQuizeVC = segue.destination as! WhichQuizeVC
-        whichQuizeVC.nameText = namePlayer.text!
-        
-      
+        let vc = segue.destination as? WhichQuizeVC
+        vc?.player = self.player
     }
     
 

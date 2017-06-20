@@ -11,51 +11,54 @@ var TEXTINSTRUCT = " я смотрю ты не очень голоден....бл
 import UIKit
 
 class InstructionVC: UIViewController {
-
-    @IBOutlet var instructionTextLabel: UILabel!
     
+    @IBOutlet var instructionTextLabel: UILabel!
     @IBOutlet var typeLbl: UILabel!
     
-    var nameUser: String!
-    var typeOfGame = ["Игра на роллы", "Игра на сашими", "Игра на устрицы с шампанским" ]
+    var whichQuize = WhichQuizeModel()
     
-    
-    
-    //MARK: Enum
-    enum TypeInst {
-        case typeRolli
-        case typeSashimi
-        case typeUstrici
-    }
+    var player = Player()
 
-    var chooseType = TypeInst.typeRolli
-    
-    func updateView() {
-        
-        switch chooseType {
-        case .typeRolli:
-            instructionTextLabel.text = "любишь Роллы \(TEXTINSTRUCT) "
-        case .typeSashimi:
-            instructionTextLabel.text = "любишь Сашими \(TEXTINSTRUCT) "
-        case .typeUstrici:
-            instructionTextLabel.text = "мммм Устрицы с шампанским \(TEXTINSTRUCT) "
-        
-        }
-    }
-    
+    var typeOfGame = ["Игра на роллы", "Игра на сашими", "Игра на устрицы с шампанским" ]
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateUI()
         
-        updateView()
         
-
-    }
-
-
-    @IBAction func continueBTNPressed(_ sender: Any) {
+        
+        
     }
     
+    func updateUI() {
+        
+        typeLbl.text = player.nameGame
+        if player.nameGame == player.wchiGame[0] {
+            instructionTextLabel.text = "Любишь роллы \(TEXTINSTRUCT)"
+        }
+        if player.nameGame == player.wchiGame[1] {
+            instructionTextLabel.text = "Любишь сашими\(TEXTINSTRUCT)"
+        }
+        if player.nameGame == player.wchiGame[2] {
+            instructionTextLabel.text = "Любишь устрицы с шампанским \(TEXTINSTRUCT)"
+        }
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as? QuizeVC
+            vc?.player = self.player
+            }
+    
+    
+    
 
+    
+    @IBAction func playBtnPressed(_ sender: Any) {
+        
+        performSegue(withIdentifier: "showQuize", sender: self)
+    }
+    
+    
 }
