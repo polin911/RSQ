@@ -14,20 +14,14 @@ class InstructionVC: UIViewController {
     
     @IBOutlet var instructionTextLabel: UILabel!
     @IBOutlet var typeLbl: UILabel!
-    
-    var whichQuize = WhichQuizeModel()
+
     
     var player = Player()
-
-    var typeOfGame = ["Игра на роллы", "Игра на сашими", "Игра на устрицы с шампанским" ]
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         updateUI()
-        
-        
-        
         
     }
     
@@ -47,8 +41,11 @@ class InstructionVC: UIViewController {
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let vc = segue.destination as? QuizeVC
-            vc?.player = self.player
+        if let vc = segue.destination as? QuizeVC {
+            vc.player = self.player }
+        if let vc2 = segue.destination as? QuizeCollectionVC {
+            vc2.player = self.player
+        }
             }
     
     
