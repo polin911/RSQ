@@ -30,7 +30,7 @@ class FeliksGameVC: UIViewController {
         lblSec.text = String(seconds)
         if (seconds == 5) {
             lblSec.textColor = UIColor.red
-            lblSec.font = UIFont(name: "minisystem", size: 30)
+            lblSec.font = UIFont(name: "minisystem", size: 40)
         }
         if (seconds == 0) {
             self.player.playerScore = score
@@ -89,14 +89,14 @@ class FeliksGameVC: UIViewController {
         let duration = isOnScreen ? 0.2 : 0
         UIView.animate(withDuration: duration, animations: {
             self.questionLbl.alpha = 0
-            self.imageQuize.alpha = 0
+           // self.imageQuize.alpha = 0
         }) { (finished) in
             self.questionLbl.text = self.currentQuestion?.title
-            self.imageQuize.image = self.currentQuestion?.image
+           // self.imageQuize.image = self.currentQuestion?.image
             
             UIView.animate(withDuration: duration, animations: {
                 self.questionLbl.alpha = 1
-                self.imageQuize.alpha = 1
+              //  self.imageQuize.alpha = 1
             }, completion: nil)
         }
     }

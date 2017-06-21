@@ -602,7 +602,7 @@
                                     <constraint firstAttribute="height" constant="45" id="9Xu-Mr-29y"/>
                                     <constraint firstAttribute="width" constant="60" id="JIU-dd-nJP"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Minisystem-Regular" family="Minisystem" pointSize="16"/>
+                                <fontDescription key="fontDescription" name="Minisystem-Regular" family="Minisystem" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
