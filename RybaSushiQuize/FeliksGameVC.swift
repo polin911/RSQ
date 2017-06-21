@@ -10,26 +10,97 @@ import UIKit
 
 class FeliksGameVC: UIViewController {
 
+    var player = Player()
+    @IBOutlet var questionLbl: UILabel!
+    @IBOutlet var collectionV: UICollectionView!
+    @IBOutlet var imageQuize: UIImageView!
+    
+    //*
+    var isOnScreen: Bool {
+        return isViewLoaded && view.window != nil
+    }
+    var currentQuestionIndex = 0
+    var score = 0
+    
+    var currentQuestion: Question? {
+        didSet {
+            updateView()
+        }
+    }
+    var questionList : [Question]? {
+        didSet {
+            let random = questionList?[Int(arc4random_uniform(UInt32((questionList?.count)!)))]
+            currentQuestionIndex = 0
+            score = 0
+            currentQuestion = random
+        }
+    }
+    //*
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+        loadData()
+      
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    //MARK: Setup
+    
+    func loadData() {
+        collectionV.delegate = self
+        collectionV.dataSource =  self
+        
+        let loader = DataLoader()
+        let result = loader.loadData()
+        
+        self.title = result.quizeName
+        self.questionList = result.questions
     }
-    */
+    
+    private func updateView() {
+        let sectionToReload = IndexSet(integer: 0)
+        
+        self.collectionV.reloadSections(sectionToReload)
+        let duration = isOnScreen ? 0.2 : 0
+        UIView.animate(withDuration: duration, animations: {
+            self.questionLbl.alpha = 0
+            self.imageQuize.alpha = 0
+        }) { (finished) in
+            self.questionLbl.text = self.currentQuestion?.title
+            self.imageQuize.image = self.currentQuestion?.image
+            
+            UIView.animate(withDuration: duration, animations: {
+                self.questionLbl.alpha = 1
+                self.imageQuize.alpha = 1
+            }, completion: nil)
+        }
+    }
+
+    
 
 }
+extension FeliksGameVC: UICollectionViewDelegate {
+    
+}
+
+extension FeliksGameVC: UICollectionViewDataSource {
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        return UICollectionViewCell()
+    }
+}
+
+
+
+
+
+
+

@@ -26,5 +26,8 @@ class FinalVC: UIViewController {
     @IBAction func playAgainPressed(_ sender: Any) {
     }
 
+    @IBAction func playWithFeliksPressed(_ sender: Any) {
+    }
+
 
 }
