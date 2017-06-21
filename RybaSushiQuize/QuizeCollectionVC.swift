@@ -81,10 +81,12 @@ class QuizeCollectionVC: UIViewController {
             }, completion: nil)
         }
     }
+    //MARK: Cheking
     
     func checking() {
         print("@@@@@@@@@@@@@@@@@@@@@whichGame:\(player.wchiGame) @@@@@@@@@@@@@@name:\(player.playerName)@@@@@@@@@@@@@@@@@@@@\(player.playerScore) @@@@@@@@@@@@@name of Game: \(player.nameGame) with love")
     }
+    ///
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let vc = segue.destination as? FinalVC

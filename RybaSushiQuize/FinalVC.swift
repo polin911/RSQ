@@ -27,7 +27,14 @@ class FinalVC: UIViewController {
     }
 
     @IBAction func playWithFeliksPressed(_ sender: Any) {
+        
     }
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+      
+        self.player.playerScore = 0
+        let vc = segue.destination as! FeliksGameVC
+        vc.player = self.player
+    }
 
 }

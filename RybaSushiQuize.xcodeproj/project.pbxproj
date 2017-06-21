@@ -13,6 +13,8 @@
 		366FCF0E1EFA86CD00B2F500 /* FeliksGameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366FCF0D1EFA86CD00B2F500 /* FeliksGameVC.swift */; };
 		366FCF101EFA8AEC00B2F500 /* FelicsQuizeCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366FCF0F1EFA8AEC00B2F500 /* FelicsQuizeCollectionCell.swift */; };
 		366FCF121EFA904000B2F500 /* Felics.json in Resources */ = {isa = PBXBuildFile; fileRef = 366FCF111EFA904000B2F500 /* Felics.json */; };
+		366FCF141EFAA68900B2F500 /* FelicsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366FCF131EFAA68900B2F500 /* FelicsVC.swift */; };
+		366FCF161EFAB8F400B2F500 /* minisystem.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 366FCF151EFAB8F400B2F500 /* minisystem.ttf */; };
 		36A949E11EEFCF1C00FDA807 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A949E01EEFCF1C00FDA807 /* AppDelegate.swift */; };
 		36A949E61EEFCF1C00FDA807 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36A949E41EEFCF1C00FDA807 /* Main.storyboard */; };
 		36A949E91EEFCF1C00FDA807 /* RybaSushiQuize.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 36A949E71EEFCF1C00FDA807 /* RybaSushiQuize.xcdatamodeld */; };
@@ -39,6 +41,8 @@
 		366FCF0D1EFA86CD00B2F500 /* FeliksGameVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeliksGameVC.swift; sourceTree = "<group>"; };
 		366FCF0F1EFA8AEC00B2F500 /* FelicsQuizeCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FelicsQuizeCollectionCell.swift; sourceTree = "<group>"; };
 		366FCF111EFA904000B2F500 /* Felics.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Felics.json; sourceTree = "<group>"; };
+		366FCF131EFAA68900B2F500 /* FelicsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FelicsVC.swift; sourceTree = "<group>"; };
+		366FCF151EFAB8F400B2F500 /* minisystem.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = minisystem.ttf; sourceTree = "<group>"; };
 		36A949DD1EEFCF1C00FDA807 /* RybaSushiQuize.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RybaSushiQuize.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36A949E01EEFCF1C00FDA807 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		36A949E51EEFCF1C00FDA807 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -115,6 +119,7 @@
 				365872E01EF96216003823BA /* QuizeCollectionVC.swift */,
 				36A949FE1EEFD84A00FDA807 /* FinalVC.swift */,
 				366FCF0D1EFA86CD00B2F500 /* FeliksGameVC.swift */,
+				366FCF131EFAA68900B2F500 /* FelicsVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -145,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				36A94A131EF1502400FDA807 /* tryQuize.json */,
+				366FCF151EFAB8F400B2F500 /* minisystem.ttf */,
 				366FCF111EFA904000B2F500 /* Felics.json */,
 			);
 			name = Files;
@@ -214,6 +220,7 @@
 				36A949EE1EEFCF1C00FDA807 /* LaunchScreen.storyboard in Resources */,
 				36A94A141EF1502400FDA807 /* tryQuize.json in Resources */,
 				36A949EB1EEFCF1C00FDA807 /* Assets.xcassets in Resources */,
+				366FCF161EFAB8F400B2F500 /* minisystem.ttf in Resources */,
 				36A949E61EEFCF1C00FDA807 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -227,6 +234,7 @@
 			files = (
 				36A94A051EEFDE3300FDA807 /* AnswersCell.swift in Sources */,
 				36A94A161EF1797000FDA807 /* WhichQuizeModel.swift in Sources */,
+				366FCF141EFAA68900B2F500 /* FelicsVC.swift in Sources */,
 				36A94A031EEFDD3500FDA807 /* WhichQuizeCell.swift in Sources */,
 				36A949FF1EEFD84A00FDA807 /* FinalVC.swift in Sources */,
 				365872DF1EF908EA003823BA /* Player.swift in Sources */,

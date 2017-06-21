@@ -15,6 +15,30 @@ class FeliksGameVC: UIViewController {
     @IBOutlet var collectionV: UICollectionView!
     @IBOutlet var imageQuize: UIImageView!
     
+    
+    //MARK: Timer
+    @IBOutlet var lblSec: UILabel!
+    var seconds = 15
+    var timer = Timer()
+   
+    func startTimer() {
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(FeliksGameVC.counter), userInfo: nil, repeats: true)
+    }
+   
+    func counter() {
+        seconds -= 1
+        lblSec.text = String(seconds)
+        if (seconds == 5) {
+            lblSec.textColor = UIColor.red
+            lblSec.font = UIFont(name: "minisystem", size: 30)
+        }
+        if (seconds == 0) {
+            self.player.playerScore = score
+            performSegue(withIdentifier: "FelicsFinal", sender: self)
+            timer.invalidate()
+        }
+    }
+    
     //*
     var isOnScreen: Bool {
         return isViewLoaded && view.window != nil
@@ -41,7 +65,8 @@ class FeliksGameVC: UIViewController {
         super.viewDidLoad()
         
         loadData()
-      
+        checking()
+      startTimer()
     }
     
     //MARK: Setup
@@ -75,12 +100,36 @@ class FeliksGameVC: UIViewController {
             }, completion: nil)
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as! FelicsVC
+        vc.player = self.player
+    }
 
     
+    //MARK: Checking
+    func checking() {
+        print("@@@@@@@@@@@@@@@@@@@@@ whichGame:\(player.wchiGame) @@@@@@@@@@@@@@name:\(player.playerName)@@@@@@@@@@@@@@@@@@@@ score \(player.playerScore) @@@@@@@@@@@@@name of Game: \(player.nameGame) with love")
+    }
 
 }
 extension FeliksGameVC: UICollectionViewDelegate {
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let selectedAnswer = currentQuestion?.answers[indexPath.row]
+        if currentQuestion?.answerIsCorrect(answer: selectedAnswer) ?? false {
+            score += 1
+            
+        }
+        
+        currentQuestionIndex += 1
+        guard currentQuestionIndex < 10 else {
+            self.player.playerScore = score
+            performSegue(withIdentifier: "FelicsFinal", sender: score)
+            return
+        }
+        currentQuestion = questionList?[currentQuestionIndex]
+    }
 }
 
 extension FeliksGameVC: UICollectionViewDataSource {
