@@ -10,8 +10,8 @@ import Foundation
 
 class DataLoader {
     
-    func loadData() ->  (quizeName: String, questions:[Question]) {
-        let pathToFile = Bundle.main.path(forResource: "tryQuize", ofType: "json")!
+    func loadData(fileName: String) ->  (quizeName: String, questions:[Question]) {
+        let pathToFile = Bundle.main.path(forResource: fileName, ofType: "json")!
         print(pathToFile)
         
         let data = try! Data(contentsOf: URL(fileURLWithPath: pathToFile))

@@ -570,6 +570,9 @@
                                             <constraint firstItem="MLB-7O-FWt" firstAttribute="centerX" secondItem="Oej-Rp-7Tj" secondAttribute="centerX" id="Ng2-Jt-sll"/>
                                         </constraints>
                                         <size key="customSize" width="135" height="65"/>
+                                        <connections>
+                                            <outlet property="answersLbl" destination="MLB-7O-FWt" id="WgN-2J-tWs"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>

@@ -121,7 +121,7 @@ class QuizeVC: UIViewController {
 
     func loadData() {
         let loader = DataLoader()
-        let result = loader.loadData()//(fileName: quizeName[0]для разных типов игры)
+        let result = loader.loadData(fileName: "tryQuize")//(fileName: quizeName[0]для разных типов игры)
         print(result)
         
         self.title = result.quizeName

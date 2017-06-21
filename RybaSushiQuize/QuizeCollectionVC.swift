@@ -57,7 +57,7 @@ class QuizeCollectionVC: UIViewController {
         collectionV.dataSource =  self
         
         let loader = DataLoader()
-        let result = loader.loadData()
+        let result = loader.loadData(fileName: "tryQuize")
         
         self.title = result.quizeName
         self.questionList = result.questions
@@ -105,6 +105,7 @@ extension QuizeCollectionVC : UICollectionViewDelegate {
             currentQuestionIndex += 1
             guard currentQuestionIndex < 3 else {
                 print("don't go ")
+                self.player.playerScore = score
                 performSegue(withIdentifier: "ShowResult", sender: score)
                 return
             }

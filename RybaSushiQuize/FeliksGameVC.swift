@@ -51,7 +51,7 @@ class FeliksGameVC: UIViewController {
         collectionV.dataSource =  self
         
         let loader = DataLoader()
-        let result = loader.loadData()
+        let result = loader.loadData(fileName: "Felics")
         
         self.title = result.quizeName
         self.questionList = result.questions
@@ -90,11 +90,14 @@ extension FeliksGameVC: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return self.currentQuestion?.answers.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return UICollectionViewCell()
+        
+        let cell = collectionV.dequeueReusableCell(withReuseIdentifier: "FelicsCell", for: indexPath) as! FelicsQuizeCollectionCell
+        cell.answersLbl.text = currentQuestion?.answers[indexPath.row]
+        return cell
     }
 }
 
