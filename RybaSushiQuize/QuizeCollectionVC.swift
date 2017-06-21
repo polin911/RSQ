@@ -86,9 +86,58 @@ class QuizeCollectionVC: UIViewController {
         print("@@@@@@@@@@@@@@@@@@@@@whichGame:\(player.wchiGame) @@@@@@@@@@@@@@name:\(player.playerName)@@@@@@@@@@@@@@@@@@@@\(player.playerScore) @@@@@@@@@@@@@name of Game: \(player.nameGame) with love")
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as? FinalVC
+        vc?.player = self.player
+    }
+    
 }
 
 extension QuizeCollectionVC : UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if player.nameGame == player.wchiGame[0] {
+            let selectedAnswer = currentQuestion?.answers[indexPath.row]
+            if currentQuestion?.answerIsCorrect(answer: selectedAnswer) ?? false {
+                score += 1
+            }
+            print("ячейка c индексом\(indexPath) выбрана, счет \(score)")
+            currentQuestionIndex += 1
+            guard currentQuestionIndex < 3 else {
+                print("don't go ")
+                performSegue(withIdentifier: "ShowResult", sender: score)
+                return
+            }
+        }
+       else if player.nameGame == player.wchiGame[1] {
+            let selectedAnswer = currentQuestion?.answers[indexPath.row]
+            if currentQuestion?.answerIsCorrect(answer: selectedAnswer) ?? false {
+                score += 1
+            }
+            print("ячейка c индексом\(indexPath) выбрана, счет \(score)")
+            currentQuestionIndex += 1
+            guard currentQuestionIndex < 5 else {
+                print("don't go ")
+                self.player.playerScore = score
+                performSegue(withIdentifier: "ShowResult", sender: score)
+                return
+            }
+        }
+       else if player.nameGame == player.wchiGame[2] {
+            let selectedAnswer = currentQuestion?.answers[indexPath.row]
+            if currentQuestion?.answerIsCorrect(answer: selectedAnswer) ?? false {
+                score += 1
+            }
+            print("ячейка c индексом\(indexPath) выбрана, счет \(score)")
+            currentQuestionIndex += 1
+            guard currentQuestionIndex < 7 else {
+                print("don't go ")
+                performSegue(withIdentifier: "ShowResult", sender: score)
+                return
+            }
+        }
+        currentQuestion = questionList?[currentQuestionIndex]
+    }
     
 }
 extension QuizeCollectionVC: UICollectionViewDataSource {

@@ -10,6 +10,7 @@
 		365872DF1EF908EA003823BA /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365872DE1EF908EA003823BA /* Player.swift */; };
 		365872E11EF96216003823BA /* QuizeCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365872E01EF96216003823BA /* QuizeCollectionVC.swift */; };
 		365872E31EF96266003823BA /* WhichQuizeCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365872E21EF96266003823BA /* WhichQuizeCollectionCell.swift */; };
+		366FCF0E1EFA86CD00B2F500 /* FeliksGameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366FCF0D1EFA86CD00B2F500 /* FeliksGameVC.swift */; };
 		36A949E11EEFCF1C00FDA807 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A949E01EEFCF1C00FDA807 /* AppDelegate.swift */; };
 		36A949E61EEFCF1C00FDA807 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36A949E41EEFCF1C00FDA807 /* Main.storyboard */; };
 		36A949E91EEFCF1C00FDA807 /* RybaSushiQuize.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 36A949E71EEFCF1C00FDA807 /* RybaSushiQuize.xcdatamodeld */; };
@@ -33,6 +34,7 @@
 		365872DE1EF908EA003823BA /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		365872E01EF96216003823BA /* QuizeCollectionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizeCollectionVC.swift; sourceTree = "<group>"; };
 		365872E21EF96266003823BA /* WhichQuizeCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhichQuizeCollectionCell.swift; sourceTree = "<group>"; };
+		366FCF0D1EFA86CD00B2F500 /* FeliksGameVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeliksGameVC.swift; sourceTree = "<group>"; };
 		36A949DD1EEFCF1C00FDA807 /* RybaSushiQuize.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RybaSushiQuize.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36A949E01EEFCF1C00FDA807 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		36A949E51EEFCF1C00FDA807 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 				36A949FC1EEFD7BF00FDA807 /* QuizeVC.swift */,
 				365872E01EF96216003823BA /* QuizeCollectionVC.swift */,
 				36A949FE1EEFD84A00FDA807 /* FinalVC.swift */,
+				366FCF0D1EFA86CD00B2F500 /* FeliksGameVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -230,6 +233,7 @@
 				36A94A0D1EF12AF300FDA807 /* DataLoaders.swift in Sources */,
 				36A94A0F1EF12B5E00FDA807 /* Questions.swift in Sources */,
 				36A949FB1EEFD79100FDA807 /* WhichQuizeVC.swift in Sources */,
+				366FCF0E1EFA86CD00B2F500 /* FeliksGameVC.swift in Sources */,
 				36A949FD1EEFD7BF00FDA807 /* QuizeVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
