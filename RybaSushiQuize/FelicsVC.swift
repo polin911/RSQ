@@ -25,6 +25,11 @@ class FelicsVC: UIViewController {
 
 
     @IBAction func playAgainPressed(_ sender: Any) {
+        performSegue(withIdentifier: "playAgainFromFeliks", sender: self)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as! WhichQuizeVC
+        vc.player.playerName = self.player.playerName
     }
 
 }

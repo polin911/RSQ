@@ -109,7 +109,7 @@ class FeliksGameVC: UIViewController {
     
     //MARK: Checking
     func checking() {
-        print("@@@@@@@@@@@@@@@@@@@@@ whichGame:\(player.wchiGame) @@@@@@@@@@@@@@name:\(player.playerName)@@@@@@@@@@@@@@@@@@@@ score \(player.playerScore) @@@@@@@@@@@@@name of Game: \(player.nameGame) with love")
+        print("Feliks@@@@@@@@@@@@@@@@@@@@@ whichGame:\(player.wchiGame) @@@@@@@@@@@@@@name:\(player.playerName)@@@@@@@@@@@@@@@@@@@@ score \(player.playerScore) @@@@@@@@@@@@@name of Game: \(player.nameGame) with love")
     }
 
 }

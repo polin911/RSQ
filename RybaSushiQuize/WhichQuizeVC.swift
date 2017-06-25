@@ -30,7 +30,7 @@ class WhichQuizeVC: UIViewController{
         
         nameLblTxt.text = "Привет \(player.playerName) ты готов перекусить ??"
        
-        
+        checking()
        
     }
     
@@ -40,6 +40,10 @@ class WhichQuizeVC: UIViewController{
         instructVC?.player = self.player
         //whichQuize.howManyQuestions(nameOfGame: typeOf)
 }
+    
+    func checking() {
+        print("WhichQuize@@@@@@@@@@@@@@@@@@@@@whichGame:\(player.wchiGame) @@@@@@@@@@@@@@name:\(player.playerName)@@@@@@@@@@@@@@@@@@@@\(player.playerScore) @@@@@@@@@@@@@name of Game: \(player.nameGame)")
+    }
 }
 //MARK: TableView
 

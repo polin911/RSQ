@@ -27,10 +27,11 @@ class FinalVC: UIViewController {
     }
 
     @IBAction func playAgainPressed(_ sender: Any) {
+        
     }
 
     @IBAction func playWithFeliksPressed(_ sender: Any) {
-        
+        performSegue(withIdentifier: "PlayAgain", sender: self)
     }
     
     func updateScore() {
@@ -41,7 +42,7 @@ class FinalVC: UIViewController {
               lblTxt.text = "ты растроил Семена"
                 img.image = #imageLiteral(resourceName: "unSmile")
             case 1...2:
-                lblTxt.text = "Семен добрый он тебя угостит кусочком авакадо "
+                lblTxt.text = "ты ответил на \(score) вопроса ,Семен добрый он тебя угостит кусочком авакадо "
                 img.image = #imageLiteral(resourceName: "smile")
             case 3:
                 lblTxt.text = "Ты молодец, ты заработал \(score) очков! Получай свой обед! "
@@ -83,9 +84,14 @@ class FinalVC: UIViewController {
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
       
-        self.player.playerScore = 0
-        let vc = segue.destination as! FeliksGameVC
+       
+        if let vc = segue.destination as? FeliksGameVC {
+             self.player.playerScore = 0
         vc.player = self.player
+        }
+        if let vcPlayAgain = segue.destination as? WhichQuizeVC {
+            vcPlayAgain.player.playerName = self.player.playerName
+        }
     }
 
 }
