@@ -1,0 +1,25 @@
+PODS:
+  - RazzleDazzle (0.1.4)
+  - Spring (1.0.3)
+
+DEPENDENCIES:
+  - RazzleDazzle
+  - Spring (from `https://github.com/MengTo/Spring.git`, branch `swift3`)
+
+EXTERNAL SOURCES:
+  Spring:
+    :branch: swift3
+    :git: https://github.com/MengTo/Spring.git
+
+CHECKOUT OPTIONS:
+  Spring:
+    :commit: 8201b5c93bd7ebdf4cd18160bcde1e6e88c2be64
+    :git: https://github.com/MengTo/Spring.git
+
+SPEC CHECKSUMS:
+  RazzleDazzle: 63a140fd0048de82ab95699008e99294c5492068
+  Spring: 3f02b5dc3308572ef177b3cad0fa7bbc4b0706f7
+
+PODFILE CHECKSUM: 5b80130c64213c24769bc279902a966bb0788718
+
+COCOAPODS: 1.2.0

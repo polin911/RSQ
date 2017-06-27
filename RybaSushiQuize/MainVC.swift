@@ -50,7 +50,7 @@ class MainVC: AnimatedPagingScrollViewController {
         
         contentView.addConstraint(NSLayoutConstraint(item: txtFirstImg, attribute: .centerY, relatedBy: .equal, toItem: contentView, attribute: .centerY, multiplier: 1, constant: 0))
         
-        keepView(txtFirstImg, onPage: 1)
+        keepView(txtFirstImg, onPages: [0,1])
         keepView(sprView, onPages: [0,1,2,3])
     }
     

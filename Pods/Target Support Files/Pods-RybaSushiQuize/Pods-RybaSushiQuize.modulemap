@@ -1,0 +1,6 @@
+framework module Pods_RybaSushiQuize {
+  umbrella header "Pods-RybaSushiQuize-umbrella.h"
+
+  export *
+  module * { export * }
+}
