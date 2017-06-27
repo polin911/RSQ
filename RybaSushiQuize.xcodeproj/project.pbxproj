@@ -32,6 +32,7 @@
 		36A94A0F1EF12B5E00FDA807 /* Questions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A94A0E1EF12B5E00FDA807 /* Questions.swift */; };
 		36A94A141EF1502400FDA807 /* tryQuize.json in Resources */ = {isa = PBXBuildFile; fileRef = 36A94A131EF1502400FDA807 /* tryQuize.json */; };
 		36A94A161EF1797000FDA807 /* WhichQuizeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A94A151EF1797000FDA807 /* WhichQuizeModel.swift */; };
+		E1D989EEDD4CDD1184C2DCE7 /* Pods_RybaSushiQuize.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950D64513DFDA22B72AE0062 /* Pods_RybaSushiQuize.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,9 @@
 		36A94A0E1EF12B5E00FDA807 /* Questions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Questions.swift; sourceTree = "<group>"; };
 		36A94A131EF1502400FDA807 /* tryQuize.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tryQuize.json; sourceTree = "<group>"; };
 		36A94A151EF1797000FDA807 /* WhichQuizeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhichQuizeModel.swift; sourceTree = "<group>"; };
+		6DE1D0A2FED3C01EB3017163 /* Pods-RybaSushiQuize.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RybaSushiQuize.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RybaSushiQuize/Pods-RybaSushiQuize.debug.xcconfig"; sourceTree = "<group>"; };
+		7E6CB7FCB31BD366CB704D11 /* Pods-RybaSushiQuize.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RybaSushiQuize.release.xcconfig"; path = "Pods/Target Support Files/Pods-RybaSushiQuize/Pods-RybaSushiQuize.release.xcconfig"; sourceTree = "<group>"; };
+		950D64513DFDA22B72AE0062 /* Pods_RybaSushiQuize.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RybaSushiQuize.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1D989EEDD4CDD1184C2DCE7 /* Pods_RybaSushiQuize.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +85,8 @@
 			children = (
 				36A949DF1EEFCF1C00FDA807 /* RybaSushiQuize */,
 				36A949DE1EEFCF1C00FDA807 /* Products */,
+				C0B2159C3B98EA7645104AC2 /* Pods */,
+				E1050D23D3E69754F8E2E026 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -156,6 +163,23 @@
 			name = Files;
 			sourceTree = "<group>";
 		};
+		C0B2159C3B98EA7645104AC2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6DE1D0A2FED3C01EB3017163 /* Pods-RybaSushiQuize.debug.xcconfig */,
+				7E6CB7FCB31BD366CB704D11 /* Pods-RybaSushiQuize.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E1050D23D3E69754F8E2E026 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				950D64513DFDA22B72AE0062 /* Pods_RybaSushiQuize.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -163,9 +187,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 36A949F21EEFCF1C00FDA807 /* Build configuration list for PBXNativeTarget "RybaSushiQuize" */;
 			buildPhases = (
+				BC013A85742BAE05858FD9B8 /* [CP] Check Pods Manifest.lock */,
 				36A949D91EEFCF1C00FDA807 /* Sources */,
 				36A949DA1EEFCF1C00FDA807 /* Frameworks */,
 				36A949DB1EEFCF1C00FDA807 /* Resources */,
+				198DF8A833F11C02FEC7E97E /* [CP] Embed Pods Frameworks */,
+				48F087D078542451F11B3265 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -226,6 +253,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		198DF8A833F11C02FEC7E97E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RybaSushiQuize/Pods-RybaSushiQuize-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		48F087D078542451F11B3265 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RybaSushiQuize/Pods-RybaSushiQuize-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BC013A85742BAE05858FD9B8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		36A949D91EEFCF1C00FDA807 /* Sources */ = {
@@ -373,6 +448,7 @@
 		};
 		36A949F31EEFCF1C00FDA807 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6DE1D0A2FED3C01EB3017163 /* Pods-RybaSushiQuize.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = CBVCE8QCE8;
@@ -386,6 +462,7 @@
 		};
 		36A949F41EEFCF1C00FDA807 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7E6CB7FCB31BD366CB704D11 /* Pods-RybaSushiQuize.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = CBVCE8QCE8;
