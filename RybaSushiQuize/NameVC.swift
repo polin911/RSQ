@@ -13,8 +13,9 @@ import UIKit
 
 
 
-class NameVC: UIViewController  {
+class NameVC: UIViewController, UITextFieldDelegate  {
 
+    @IBOutlet var startBtn: UIButton!
     
     @IBOutlet var namePlayer: UITextField!
     
@@ -24,13 +25,26 @@ class NameVC: UIViewController  {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        namePlayer.enablesReturnKeyAutomatically = true
+        namePlayer.delegate = self
 
 
+    }
+    
+    //textField
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        namePlayer.resignFirstResponder()
+        return(true)
     }
 
     @IBAction func startBtnPusshed(_ sender: Any) {
         if namePlayer.text != nil {
+           startBtn.isHidden = false
         self.player.playerName = namePlayer.text ?? ""
             performSegue(withIdentifier: "goToWhich", sender: self)
         }
