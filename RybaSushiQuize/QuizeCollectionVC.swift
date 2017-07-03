@@ -10,6 +10,8 @@ import UIKit
 
 class QuizeCollectionVC: UIViewController {
     
+    var quizeCell = WhichQuizeCollectionCell()
+    
     var player = Player()
     //var question = [Question]()
     
@@ -103,15 +105,18 @@ extension QuizeCollectionVC : UICollectionViewDelegate {
             if currentQuestion?.answerIsCorrect(answer: selectedAnswer) ?? false {
                 score += 1
             }
+            
             print("ячейка c индексом\(indexPath) выбрана, счет \(score)")
             currentQuestionIndex += 1
-            guard currentQuestionIndex < 3 else {
+            guard currentQuestionIndex < 5 else {
                 print("don't go ")
                 self.player.playerScore = score
                 performSegue(withIdentifier: "ShowResult", sender: score)
                 return
             }
         }
+            
+            
        else if player.nameGame == player.wchiGame[1] {
             let selectedAnswer = currentQuestion?.answers[indexPath.row]
             if currentQuestion?.answerIsCorrect(answer: selectedAnswer) ?? false {
@@ -141,6 +146,33 @@ extension QuizeCollectionVC : UICollectionViewDelegate {
         }
         currentQuestion = questionList?[currentQuestionIndex]
     }
+    
+    //
+    
+    func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
+        let selectedAnswer = currentQuestion?.answers[indexPath.row]
+        
+        if currentQuestion?.answerIsCorrect(answer: selectedAnswer) ?? false {
+            collectionView.cellForItem(at: indexPath)?.backgroundColor = UIColor.green
+            
+        }
+        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
+    
+        
+            collectionView.cellForItem(at: indexPath)?.backgroundColor = UIColor.darkGray
+            
+        
+//        if currentQuestion?.answerIsCorrect(answer: selectedAnswer) == false {
+//            collectionView.cellForItem(at: indexPath)?.backgroundColor = UIColor.red
+//            
+//        }
+       
+    }
+    
+    
     
 }
 extension QuizeCollectionVC: UICollectionViewDataSource {

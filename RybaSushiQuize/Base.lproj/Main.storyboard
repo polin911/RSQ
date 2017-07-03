@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16B2659" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16B2659" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="MsH-DM-PKQ">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -15,6 +15,48 @@
         </array>
     </customFonts>
     <scenes>
+        <!--WelcomeVC-->
+        <scene sceneID="DED-jh-d9R">
+            <objects>
+                <viewController id="MsH-DM-PKQ" customClass="WelcomeVC" customModule="RybaSushiQuize" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Acu-Cb-93T"/>
+                        <viewControllerLayoutGuide type="bottom" id="pp6-6c-QY0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xt5-XF-zmg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WelkomPageSakura2" translatesAutoresizingMaskIntoConstraints="NO" id="mdI-cV-agf" customClass="SpringImageView" customModule="Spring">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="rolliVRyad" translatesAutoresizingMaskIntoConstraints="NO" id="X4q-J5-7HH" customClass="SpringImageView" customModule="Spring">
+                                <rect key="frame" x="16" y="584" width="349" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="349" id="U7s-0i-5FH"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="X4q-J5-7HH" firstAttribute="centerX" secondItem="xt5-XF-zmg" secondAttribute="centerX" id="19O-ug-3UW"/>
+                            <constraint firstItem="pp6-6c-QY0" firstAttribute="top" secondItem="X4q-J5-7HH" secondAttribute="bottom" constant="46" id="WAX-Cx-ezJ"/>
+                            <constraint firstItem="mdI-cV-agf" firstAttribute="leading" secondItem="xt5-XF-zmg" secondAttribute="leading" id="XHx-vF-WyL"/>
+                            <constraint firstAttribute="trailing" secondItem="mdI-cV-agf" secondAttribute="trailing" id="lHe-ao-nmG"/>
+                            <constraint firstItem="pp6-6c-QY0" firstAttribute="top" secondItem="mdI-cV-agf" secondAttribute="bottom" id="qmh-wA-JLu"/>
+                            <constraint firstItem="mdI-cV-agf" firstAttribute="top" secondItem="xt5-XF-zmg" secondAttribute="top" id="sQq-yP-3No"/>
+                            <constraint firstItem="pp6-6c-QY0" firstAttribute="top" secondItem="X4q-J5-7HH" secondAttribute="bottom" constant="46" id="tKn-uH-2va"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backGround" destination="mdI-cV-agf" id="OiG-0T-Oeu"/>
+                        <outlet property="sprRolliVRyad" destination="X4q-J5-7HH" id="bJy-d0-ail"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wfA-SQ-M8P" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-874.39999999999998" y="117.39130434782609"/>
+        </scene>
         <!--MainVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -217,10 +259,10 @@
                                 <color key="sectionIndexBackgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="whichQuize" rowHeight="84" id="6Ya-1i-WR1" customClass="WhichQuizeCell" customModule="RybaSushiQuize" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="56" width="343" height="84"/>
+                                        <rect key="frame" x="0.0" y="55.5" width="343" height="84"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6Ya-1i-WR1" id="4HN-L2-YYe">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="83"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="83.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o02-1m-pIl">
@@ -392,7 +434,7 @@
                                         <rect key="frame" x="46.5" y="0.0" width="250" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="251" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="250" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kxb-8z-vcM">
@@ -736,7 +778,9 @@
         <image name="18" width="120" height="120"/>
         <image name="4" width="120" height="120"/>
         <image name="Groupfirst" width="419" height="742"/>
+        <image name="WelkomPageSakura2" width="414" height="736"/>
         <image name="appBack" width="414" height="736"/>
+        <image name="rolliVRyad" width="356" height="43"/>
         <image name="semenGroup" width="334" height="523"/>
         <image name="txtFirst" width="399" height="481"/>
     </resources>

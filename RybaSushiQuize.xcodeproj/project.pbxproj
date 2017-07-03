@@ -32,6 +32,7 @@
 		36A94A0F1EF12B5E00FDA807 /* Questions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A94A0E1EF12B5E00FDA807 /* Questions.swift */; };
 		36A94A141EF1502400FDA807 /* tryQuize.json in Resources */ = {isa = PBXBuildFile; fileRef = 36A94A131EF1502400FDA807 /* tryQuize.json */; };
 		36A94A161EF1797000FDA807 /* WhichQuizeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A94A151EF1797000FDA807 /* WhichQuizeModel.swift */; };
+		36BCC1AC1F06393E00D1C59C /* WelcomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BCC1AB1F06393E00D1C59C /* WelcomeVC.swift */; };
 		E1D989EEDD4CDD1184C2DCE7 /* Pods_RybaSushiQuize.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950D64513DFDA22B72AE0062 /* Pods_RybaSushiQuize.framework */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +64,7 @@
 		36A94A0E1EF12B5E00FDA807 /* Questions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Questions.swift; sourceTree = "<group>"; };
 		36A94A131EF1502400FDA807 /* tryQuize.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tryQuize.json; sourceTree = "<group>"; };
 		36A94A151EF1797000FDA807 /* WhichQuizeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhichQuizeModel.swift; sourceTree = "<group>"; };
+		36BCC1AB1F06393E00D1C59C /* WelcomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeVC.swift; sourceTree = "<group>"; };
 		6DE1D0A2FED3C01EB3017163 /* Pods-RybaSushiQuize.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RybaSushiQuize.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RybaSushiQuize/Pods-RybaSushiQuize.debug.xcconfig"; sourceTree = "<group>"; };
 		7E6CB7FCB31BD366CB704D11 /* Pods-RybaSushiQuize.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RybaSushiQuize.release.xcconfig"; path = "Pods/Target Support Files/Pods-RybaSushiQuize/Pods-RybaSushiQuize.release.xcconfig"; sourceTree = "<group>"; };
 		950D64513DFDA22B72AE0062 /* Pods_RybaSushiQuize.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RybaSushiQuize.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -118,6 +120,7 @@
 		36A949F51EEFD71900FDA807 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				36BCC1AB1F06393E00D1C59C /* WelcomeVC.swift */,
 				36A949F61EEFD74000FDA807 /* MainVC.swift */,
 				36A949F81EEFD76700FDA807 /* NameVC.swift */,
 				36A949FA1EEFD79100FDA807 /* WhichQuizeVC.swift */,
@@ -318,6 +321,7 @@
 				365872E31EF96266003823BA /* WhichQuizeCollectionCell.swift in Sources */,
 				36A949E11EEFCF1C00FDA807 /* AppDelegate.swift in Sources */,
 				36A949F91EEFD76700FDA807 /* NameVC.swift in Sources */,
+				36BCC1AC1F06393E00D1C59C /* WelcomeVC.swift in Sources */,
 				36A949F71EEFD74000FDA807 /* MainVC.swift in Sources */,
 				36A949E91EEFCF1C00FDA807 /* RybaSushiQuize.xcdatamodeld in Sources */,
 				36A94A0B1EF11DEA00FDA807 /* InstructionVC.swift in Sources */,

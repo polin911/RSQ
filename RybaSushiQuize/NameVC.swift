@@ -39,12 +39,13 @@ class NameVC: UIViewController, UITextFieldDelegate  {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         namePlayer.resignFirstResponder()
+        startBtn.isHidden = false
         return(true)
     }
 
     @IBAction func startBtnPusshed(_ sender: Any) {
         if namePlayer.text != nil {
-           startBtn.isHidden = false
+           
         self.player.playerName = namePlayer.text ?? ""
             performSegue(withIdentifier: "goToWhich", sender: self)
         }

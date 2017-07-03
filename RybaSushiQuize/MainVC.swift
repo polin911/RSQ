@@ -13,15 +13,12 @@ import RazzleDazzle
 class MainVC: AnimatedPagingScrollViewController {
 
     @IBOutlet var sprView: SpringImageView!
-   // @IBOutlet var sprTxtLbl: SpringLabel!
     @IBOutlet var txtFirstImg: UIImageView!
     @IBOutlet var semenSecImg: UIImageView!
-    //@IBOutlet var stackV: UIStackView!
     @IBOutlet var btnEnter: UIButton!
     @IBOutlet var pageCont: UIPageControl!
     @IBOutlet var viewLine: UIView!
-    
-    //@IBOutlet var mainView: UIView!
+
     
     
     override func viewDidLoad() {
@@ -39,14 +36,12 @@ class MainVC: AnimatedPagingScrollViewController {
     }
     
     func razDaz() {
-        //contentView.addSubview(mainView)
         contentView.addSubview(sprView)
- 
         contentView.addSubview(txtFirstImg)
         contentView.addSubview(semenSecImg)
         contentView.addSubview(btnEnter)
         contentView.addSubview(pageCont)
-       // contentView.addSubview(viewLine)
+
         
         
         contentView.addConstraint(NSLayoutConstraint(item: txtFirstImg, attribute: .centerY, relatedBy: .equal, toItem: contentView, attribute: .centerY, multiplier: 1, constant: 0))
@@ -60,7 +55,7 @@ class MainVC: AnimatedPagingScrollViewController {
     
     func sprAnimation() {
         sprView.animation = "fadeIn"
-        sprView.duration = 9
+        sprView.duration = 15
         sprView.animate()
         
 
