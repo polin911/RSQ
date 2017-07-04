@@ -18,6 +18,8 @@ class MainVC: AnimatedPagingScrollViewController {
     @IBOutlet var btnEnter: UIButton!
     @IBOutlet var pageCont: UIPageControl!
     @IBOutlet var viewLine: UIView!
+    
+    @IBOutlet var bubleTxtImg: UIImageView!
 
     
     
@@ -28,6 +30,12 @@ class MainVC: AnimatedPagingScrollViewController {
         razDaz()
         
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+ 
+    }
+    
+    
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {
         pageCont.currentPage = Int(pageOffset + 0.5)
     }
@@ -36,20 +44,28 @@ class MainVC: AnimatedPagingScrollViewController {
     }
     
     func razDaz() {
+        
+        
         contentView.addSubview(sprView)
         contentView.addSubview(txtFirstImg)
         contentView.addSubview(semenSecImg)
         contentView.addSubview(btnEnter)
         contentView.addSubview(pageCont)
+        
+        contentView.addSubview(bubleTxtImg)
 
         
         
         contentView.addConstraint(NSLayoutConstraint(item: txtFirstImg, attribute: .centerY, relatedBy: .equal, toItem: contentView, attribute: .centerY, multiplier: 1, constant: 0))
         contentView.addConstraint(NSLayoutConstraint(item: semenSecImg, attribute: .centerY, relatedBy: .equal, toItem: contentView, attribute: .centerY, multiplier: 1, constant: 0))
         
-        keepView(txtFirstImg, onPages: [0,1])
+        contentView.addConstraint(NSLayoutConstraint(item: bubleTxtImg, attribute: .centerY, relatedBy: .equal, toItem: contentView, attribute: .centerY, multiplier: 1, constant: 0))
+        
         keepView(sprView, onPages: [0,1,2,3])
-        keepView(semenSecImg, onPage: 1)
+        keepView(txtFirstImg, onPage: 0)
+        keepView(semenSecImg, onPage: 2)
+        
+        keepView(bubleTxtImg, onPage: 1)
        // keepView(btnEnter, onPages: [0,1,2,3,4])
     }
     
