@@ -43,7 +43,7 @@ class FinalVC: UIViewController {
                 img.image = #imageLiteral(resourceName: "unSmile")
             case 1...2:
                 lblTxt.text = "ты ответил на \(score) вопроса ,Семен добрый он тебя угостит кусочком авакадо "
-                img.image = #imageLiteral(resourceName: "smile")
+                img.image = #imageLiteral(resourceName: "18")
             case 3:
                 lblTxt.text = "Ты молодец, ты заработал \(score) очков! Получай свой обед! "
                 img.image = #imageLiteral(resourceName: "glass")
@@ -58,7 +58,7 @@ class FinalVC: UIViewController {
                 img.image = #imageLiteral(resourceName: "unSmile")
             case 1...3:
                 lblTxt.text = "ты заработал \(score) балла Семен добрый он тебя угостит кусочком авакадо "
-                img.image = #imageLiteral(resourceName: "smile")
+                img.image = #imageLiteral(resourceName: "18")
             case 5:
                 lblTxt.text = "Ты молодец, ты заработал \(score) очков! Получай свой обед! "
                 img.image = #imageLiteral(resourceName: "glass")
