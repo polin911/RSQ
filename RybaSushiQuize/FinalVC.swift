@@ -31,7 +31,7 @@ class FinalVC: UIViewController {
     }
 
     @IBAction func playWithFeliksPressed(_ sender: Any) {
-        performSegue(withIdentifier: "PlayAgain", sender: self)
+        performSegue(withIdentifier: "PlayFeniks", sender: self)
     }
     
     func updateScore() {
@@ -83,15 +83,12 @@ class FinalVC: UIViewController {
         }
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-      
-       
+    
         if let vc = segue.destination as? FeliksGameVC {
              self.player.playerScore = 0
         vc.player = self.player
         }
-        if let vcPlayAgain = segue.destination as? WelcomeVC {
-            
-        }
+      
     }
 
 }
