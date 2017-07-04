@@ -12,10 +12,7 @@ import Spring
 class WelcomeVC: UIViewController {
 
     @IBOutlet var backGround: SpringImageView!
-    
-    
     @IBOutlet var sprRolliVRyad: SpringImageView!
-    
     @IBOutlet var sprWelcomeSushi: SpringImageView!
 
     

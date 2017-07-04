@@ -109,6 +109,11 @@ extension QuizeCollectionVC : UICollectionViewDelegate {
             guard currentQuestionIndex < 3 else {
                 print("don't go ")
                 self.player.playerScore = score
+                
+                if score == 3 {
+                    performSegue(withIdentifier: "winnerVC", sender: self)
+                }
+                
                 performSegue(withIdentifier: "ShowResult", sender: score)
                 return
             }
@@ -125,6 +130,11 @@ extension QuizeCollectionVC : UICollectionViewDelegate {
             guard currentQuestionIndex < 5 else {
                 print("don't go ")
                 self.player.playerScore = score
+                
+                if score >= 5 {
+                    performSegue(withIdentifier: "winnerVC", sender: self)
+                }
+                
                 performSegue(withIdentifier: "ShowResult", sender: score)
                 return
             }
@@ -138,6 +148,10 @@ extension QuizeCollectionVC : UICollectionViewDelegate {
             currentQuestionIndex += 1
             guard currentQuestionIndex < 7 else {
                 print("don't go ")
+                
+                if score >= 7 {
+                    performSegue(withIdentifier: "winnerVC", sender: self)
+                }
                 performSegue(withIdentifier: "ShowResult", sender: score)
                 return
             }
