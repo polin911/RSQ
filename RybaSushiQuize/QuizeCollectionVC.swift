@@ -89,9 +89,14 @@ class QuizeCollectionVC: UIViewController {
     ///
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let vc = segue.destination as? FinalVC
-        vc?.player = self.player
+        if let vc = segue.destination as? FinalVC {
+        vc.player = self.player
+        }
+        if let vcWinner = segue.destination as? WinnerVC {
+            vcWinner.player = self.player
+        }
     }
+    
     
 }
 

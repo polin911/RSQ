@@ -20,7 +20,21 @@ class WinnerVC: UIViewController {
         super.viewDidLoad()
         
         
+    
        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as? FeliksGameVC
+        self.player.playerScore = 0
+        vc?.player = self.player
+    }
+    
+    func updateLblTxt() {
+        if player.wchiGame[0] == player.nameGame {
+            txtLbl.text = "\(player.playerName) ура поздравляю!!! Вот твои Роллы!"
+            sprImage.image = #imageLiteral(resourceName: "Sushi_Tray_icon")
+        }
     }
 
     func showSprAnimation() {
@@ -32,6 +46,11 @@ class WinnerVC: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         showSprAnimation()
+        updateLblTxt()
+    }
+    
+    
+    @IBAction func pressPlayAgain(_ sender: Any) {
     }
 
 }

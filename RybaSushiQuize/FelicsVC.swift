@@ -39,8 +39,8 @@ class FelicsVC: UIViewController {
             lblTxt.text = "Феликс подумал что ты тупой"
         case 1...3:
             lblTxt.text = "ты угадал всего \(score) Феликс разачарован"
-        case 3...7:
-            lblTxt.text = "\(score)Феликс гордиться тобой"
+        case 3...77:
+            lblTxt.text = "\(score) ответов ,Феликс гордиться тобой"
         default:
             lblTxt.text = "ты бот ??"
         }
