@@ -76,7 +76,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wfA-SQ-M8P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-876" y="117.39130434782609"/>
+            <point key="canvasLocation" x="-329" y="940"/>
         </scene>
         <!--MainVC-->
         <scene sceneID="tne-QT-ifu">
@@ -317,13 +317,17 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="4u4-li-CtV" firstAttribute="top" secondItem="A53-Oe-Zt9" secondAttribute="top" id="08g-QE-VjH"/>
+                            <constraint firstItem="4u4-li-CtV" firstAttribute="leading" secondItem="A53-Oe-Zt9" secondAttribute="leading" id="126-ue-jdv"/>
+                            <constraint firstItem="KTn-h6-awQ" firstAttribute="top" secondItem="4u4-li-CtV" secondAttribute="bottom" id="4kw-Ul-VQ6"/>
                             <constraint firstItem="4u4-li-CtV" firstAttribute="top" secondItem="A53-Oe-Zt9" secondAttribute="top" id="5lf-1h-kpi"/>
                             <constraint firstItem="KTn-h6-awQ" firstAttribute="top" secondItem="4u4-li-CtV" secondAttribute="bottom" id="9EB-Og-RVQ"/>
                             <constraint firstItem="KTn-h6-awQ" firstAttribute="top" secondItem="4u4-li-CtV" secondAttribute="bottom" id="HKq-0x-Mq4"/>
                             <constraint firstItem="4u4-li-CtV" firstAttribute="leading" secondItem="A53-Oe-Zt9" secondAttribute="leading" id="Hoj-3C-Dfi"/>
                             <constraint firstAttribute="trailing" secondItem="4u4-li-CtV" secondAttribute="trailing" id="N2T-rv-ltY"/>
+                            <constraint firstItem="4u4-li-CtV" firstAttribute="top" secondItem="A53-Oe-Zt9" secondAttribute="top" id="QFe-W1-b00"/>
                             <constraint firstItem="4u4-li-CtV" firstAttribute="leading" secondItem="A53-Oe-Zt9" secondAttribute="leading" id="Qzc-j1-XeN"/>
                             <constraint firstItem="Hxo-Vi-P8p" firstAttribute="centerY" secondItem="A53-Oe-Zt9" secondAttribute="centerY" id="WBV-P7-bi7"/>
+                            <constraint firstAttribute="trailing" secondItem="4u4-li-CtV" secondAttribute="trailing" id="YeW-bF-eda"/>
                             <constraint firstItem="Hxo-Vi-P8p" firstAttribute="centerX" secondItem="A53-Oe-Zt9" secondAttribute="centerX" id="bhw-4x-eM7"/>
                             <constraint firstAttribute="trailing" secondItem="4u4-li-CtV" secondAttribute="trailing" id="zOh-lz-cSB"/>
                         </constraints>
@@ -364,7 +368,7 @@
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="120" id="q9e-zG-vYb"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="4" translatesAutoresizingMaskIntoConstraints="NO" id="8k0-5n-B53">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="foodJ" translatesAutoresizingMaskIntoConstraints="NO" id="8k0-5n-B53">
                                 <rect key="frame" x="270" y="209" width="124" height="124"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="124" id="oH1-ST-quy"/>
@@ -387,9 +391,9 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G6x-qQ-Cf6">
-                                <rect key="frame" x="20" y="601" width="374" height="30"/>
-                                <state key="normal" title="Поехали!">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G6x-qQ-Cf6">
+                                <rect key="frame" x="20" y="601" width="374" height="52"/>
+                                <state key="normal" image="btnGo">
                                     <color key="titleColor" red="1" green="1" blue="0.40000000600000002" alpha="0.56546982020000003" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -573,7 +577,6 @@
                                 </state>
                                 <connections>
                                     <action selector="playAgainPressed:" destination="Njf-V4-EQL" eventType="touchUpInside" id="Z2K-C6-PEl"/>
-                                    <segue destination="oCw-lQ-qzk" kind="show" identifier="PlayAgain" id="X1C-qn-QHk"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Zg-An-74G">
@@ -612,6 +615,7 @@
                     <connections>
                         <outlet property="img" destination="9L5-Dw-J19" id="fOI-Cy-lBm"/>
                         <outlet property="lblTxt" destination="9cQ-FQ-PyG" id="rNV-Vs-wG6"/>
+                        <segue destination="MsH-DM-PKQ" kind="show" identifier="welcomePage" id="DPs-1s-EyH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w8M-sw-7AG" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -803,11 +807,13 @@
         <image name="Groupfirst" width="419" height="742"/>
         <image name="WelkomPageSakura2" width="414" height="736"/>
         <image name="appBack" width="414" height="736"/>
+        <image name="btnGo" width="413" height="52"/>
         <image name="btnRolli" width="413" height="52"/>
         <image name="btnSashimi" width="413" height="52"/>
         <image name="btnUstrici" width="413" height="52"/>
         <image name="bubleTxt" width="377" height="298"/>
-        <image name="fonSakuraRyba" width="411" height="716"/>
+        <image name="fonSakuraRyba" width="414" height="736"/>
+        <image name="foodJ" width="224" height="147"/>
         <image name="rolliVRyad" width="356" height="43"/>
         <image name="semenGroup" width="334" height="523"/>
         <image name="txtFirst" width="400" height="481"/>

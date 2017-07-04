@@ -22,9 +22,9 @@ class WelcomeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        showAnimation()
+       // showAnimation()
 
-        // Do any additional setup after loading the view.
+   
     }
 
 
@@ -49,6 +49,7 @@ class WelcomeVC: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         
+        showAnimation()
     }
 
 }

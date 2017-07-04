@@ -27,7 +27,7 @@ class FinalVC: UIViewController {
     }
 
     @IBAction func playAgainPressed(_ sender: Any) {
-        
+        performSegue(withIdentifier: "welcomePage", sender: self)
     }
 
     @IBAction func playWithFeliksPressed(_ sender: Any) {
@@ -89,8 +89,8 @@ class FinalVC: UIViewController {
              self.player.playerScore = 0
         vc.player = self.player
         }
-        if let vcPlayAgain = segue.destination as? WhichQuizeVC {
-            vcPlayAgain.player.playerName = self.player.playerName
+        if let vcPlayAgain = segue.destination as? WelcomeVC {
+            
         }
     }
 
