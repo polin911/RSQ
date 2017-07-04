@@ -37,6 +37,7 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>minisystem</string>
+		<string></string>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
