@@ -29,7 +29,8 @@ class FelicsVC: UIViewController {
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let vc = segue.destination as! WhichQuizeVC
-        vc.player.playerName = self.player.playerName
+        self.player.playerScore = 0
+        vc.player = self.player
     }
     
     func updateScore() {

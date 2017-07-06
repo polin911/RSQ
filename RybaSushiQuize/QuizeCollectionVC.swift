@@ -15,6 +15,8 @@ class QuizeCollectionVC: UIViewController {
     var player = Player()
     //var question = [Question]()
     
+    
+    @IBOutlet var scoreLbl: UILabel!
     @IBOutlet var questionLbl: UILabel!
     @IBOutlet var questionImg: UIImageView!
     @IBOutlet var collectionV: UICollectionView!
@@ -65,19 +67,20 @@ class QuizeCollectionVC: UIViewController {
     
     private func updateView() {
         let sectionToReload = IndexSet(integer: 0)
-        
+        self.scoreLbl.text = "\(score)"
         self.collectionV.reloadSections(sectionToReload)
+
         let duration = isOnScreen ? 0.2 : 0
         UIView.animate(withDuration: duration, animations: {
             self.questionLbl.alpha = 0
-            self.questionImg.alpha = 0
+           // self.questionImg.alpha = 0
         }) { (finished) in
             self.questionLbl.text = self.currentQuestion?.title
-            self.questionImg.image = self.currentQuestion?.image
+            //self.questionImg.image = self.currentQuestion?.image
             
             UIView.animate(withDuration: duration, animations: {
                 self.questionLbl.alpha = 1
-                self.questionImg.alpha = 1
+                //self.questionImg.alpha = 1
             }, completion: nil)
         }
     }
@@ -108,6 +111,7 @@ extension QuizeCollectionVC : UICollectionViewDelegate {
             if currentQuestion?.answerIsCorrect(answer: selectedAnswer) ?? false {
                 score += 1
             }
+            
             
             print("ячейка c индексом\(indexPath) выбрана, счет \(score)")
             currentQuestionIndex += 1

@@ -28,6 +28,7 @@ class WhichQuizeVC: UIViewController{
 
         nameLblTxt.text = "Привет \(player.playerName) ты готов перекусить ??"
        
+        updateWinnerView()
         checking()
        
     }
@@ -39,7 +40,7 @@ class WhichQuizeVC: UIViewController{
 }
     
     func checking() {
-        print("WhichQuize@@@@@@@@@@@@@@@@@@@@@whichGame:\(player.wchiGame) @@@@@@@@@@@@@@name:\(player.playerName)@@@@@@@@@@@@@@@@@@@@\(player.playerScore) @@@@@@@@@@@@@name of Game: \(player.nameGame)")
+        print("WhichQuize@@@@@@@@@@@@@@@@@@@@@whichGame:\(player.wchiGame) @@@@@@@@@@@@@@name:\(player.playerName)@@@@@@@@@@@@@@@@@@@@\(player.playerScore) @@@@@@@@@@@@@name of Game: \(player.nameGame) ######### winnnersGame: \(player.winGame)")
     }
 
     
@@ -54,6 +55,15 @@ class WhichQuizeVC: UIViewController{
             self.player.nameGame = "Игра на устрицы с шампанским"
         }
         performSegue(withIdentifier: "showInstructions", sender: self)
+    }
+    
+    //MARK: UpdateView
+    
+    func updateWinnerView() {
+        if player.nameGame == player.wchiGame[0] {
+            btnR.alpha = 0.4
+        }
+        
     }
     
     

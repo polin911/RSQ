@@ -25,6 +25,8 @@ class InstructionVC: UIViewController {
         
     }
     
+    //MARK: UpdateView
+    
     func updateUI() {
         
         typeLbl.text = player.nameGame

@@ -15,4 +15,6 @@ class Player {
     var wchiGame = ["Игра на роллы", "Игра на сашими", "Игра на устрицы с шампанским" ]
     var helpFromFeliks = 2
     var nameGame = ""
+    
+    var winGame = ""
 }

@@ -18,9 +18,8 @@ class MainVC: AnimatedPagingScrollViewController {
     @IBOutlet var btnEnter: UIButton!
     @IBOutlet var pageCont: UIPageControl!
     @IBOutlet var viewLine: UIView!
-    
     @IBOutlet var bubleTxtImg: UIImageView!
-
+    @IBOutlet var sprFeliksTalk: UIImageView!
     
     
     override func viewDidLoad() {
@@ -51,6 +50,7 @@ class MainVC: AnimatedPagingScrollViewController {
         contentView.addSubview(semenSecImg)
         contentView.addSubview(btnEnter)
         contentView.addSubview(pageCont)
+        contentView.addSubview(sprFeliksTalk)
         
         contentView.addSubview(bubleTxtImg)
 
@@ -60,12 +60,13 @@ class MainVC: AnimatedPagingScrollViewController {
         contentView.addConstraint(NSLayoutConstraint(item: semenSecImg, attribute: .centerY, relatedBy: .equal, toItem: contentView, attribute: .centerY, multiplier: 1, constant: 0))
         
         contentView.addConstraint(NSLayoutConstraint(item: bubleTxtImg, attribute: .centerY, relatedBy: .equal, toItem: contentView, attribute: .centerY, multiplier: 1, constant: 0))
+        contentView.addConstraint(NSLayoutConstraint(item: sprFeliksTalk, attribute: .centerY, relatedBy: .equal, toItem: contentView, attribute: .centerY, multiplier: 1, constant: 0))
         
         keepView(sprView, onPages: [0,1,2,3])
         keepView(txtFirstImg, onPage: 0)
         keepView(semenSecImg, onPage: 2)
-        
         keepView(bubleTxtImg, onPage: 1)
+        keepView(sprFeliksTalk, onPage: 3)
        // keepView(btnEnter, onPages: [0,1,2,3,4])
     }
     
