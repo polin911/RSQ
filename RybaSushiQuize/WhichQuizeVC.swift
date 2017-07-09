@@ -63,6 +63,12 @@ class WhichQuizeVC: UIViewController{
         if player.nameGame == player.wchiGame[0] {
             btnR.alpha = 0.4
         }
+        if player.nameGame == player.wchiGame[1] {
+            btnR.alpha = 0.4
+        }
+        if player.nameGame == player.wchiGame[2] {
+            btnR.alpha = 0.4
+        }
         
     }
     

@@ -51,6 +51,7 @@ class QuizeCollectionVC: UIViewController {
         
         loadData()
         checking()
+        startTimer()
  
     }
     
@@ -66,6 +67,10 @@ class QuizeCollectionVC: UIViewController {
     }
     
     private func updateView() {
+        
+        //timer:
+        
+        timerOn = true
         let sectionToReload = IndexSet(integer: 0)
         self.scoreLbl.text = "\(score)"
         self.collectionV.reloadSections(sectionToReload)
@@ -100,6 +105,43 @@ class QuizeCollectionVC: UIViewController {
         }
     }
     
+    //MARK: timer
+    
+    @IBOutlet var timerView: UIProgressView!
+    var seconds      = 20
+    var timerOn      = true
+    var timer        = Timer()
+    var poseDuration = 20
+    
+    func startTimer() {
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(QuizeCollectionVC.counter), userInfo: nil, repeats: true)
+    }
+    func counter() {
+        if timerOn {
+            seconds -= 1
+            timerView.progress = Float(seconds) / Float(poseDuration - 1)
+            if seconds == 0 {
+              
+                timerOn = false
+                currentQuestionIndex += 1
+                
+                
+                guard currentQuestionIndex < questionList?.count ?? 0 else {
+                    print("don't go ")
+                    self.player.playerScore = score
+                    
+                    if score == 3 {
+                        performSegue(withIdentifier: "winnerVC", sender: self)
+                    }
+                    
+                    performSegue(withIdentifier: "ShowResult", sender: score)
+                    return
+                }
+            
+                
+            }
+        }
+    }
     
 }
 

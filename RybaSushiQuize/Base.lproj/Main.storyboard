@@ -40,31 +40,37 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="animation" value="slideLeft"/>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="Добро пожаловать в с" translatesAutoresizingMaskIntoConstraints="NO" id="Whb-BD-psn" customClass="SpringImageView" customModule="Spring">
-                                <rect key="frame" x="10" y="242" width="355" height="53"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hkq-8v-sSe">
-                                <rect key="frame" x="32.5" y="486" width="310" height="52"/>
+                                <rect key="frame" x="32.5" y="502" width="310" height="52"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="310" id="f34-XU-ViW"/>
                                     <constraint firstAttribute="height" constant="52" id="vQx-u0-GXz"/>
                                 </constraints>
-                                <state key="normal" image="btnGoWelcome"/>
+                                <size key="titleShadowOffset" width="2" height="2"/>
+                                <state key="normal" image="btnGoWelcome">
+                                    <color key="titleShadowColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="show" id="6bG-UE-qaU"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WelcomeTxt" translatesAutoresizingMaskIntoConstraints="NO" id="Whb-BD-psn" customClass="SpringImageView" customModule="Spring">
+                                <rect key="frame" x="37.5" y="163" width="300" height="89"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="89" id="K4C-bc-1iC"/>
+                                    <constraint firstAttribute="width" constant="300" id="bZ9-SN-kod"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="X4q-J5-7HH" firstAttribute="centerX" secondItem="xt5-XF-zmg" secondAttribute="centerX" constant="3" id="19O-ug-3UW"/>
-                            <constraint firstItem="Whb-BD-psn" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Acu-Cb-93T" secondAttribute="bottom" constant="170" id="Hpi-Pq-jU4"/>
-                            <constraint firstItem="Whb-BD-psn" firstAttribute="leading" secondItem="xt5-XF-zmg" secondAttribute="leading" constant="10" id="Iez-qE-cnO"/>
+                            <constraint firstItem="Whb-BD-psn" firstAttribute="centerX" secondItem="xt5-XF-zmg" secondAttribute="centerX" id="O96-i6-vEe"/>
+                            <constraint firstItem="X4q-J5-7HH" firstAttribute="top" secondItem="Hkq-8v-sSe" secondAttribute="bottom" constant="30" id="STk-Fa-W5o"/>
                             <constraint firstItem="pp6-6c-QY0" firstAttribute="top" secondItem="X4q-J5-7HH" secondAttribute="bottom" constant="46" id="WAX-Cx-ezJ"/>
                             <constraint firstItem="mdI-cV-agf" firstAttribute="leading" secondItem="xt5-XF-zmg" secondAttribute="leading" id="XHx-vF-WyL"/>
-                            <constraint firstItem="X4q-J5-7HH" firstAttribute="top" secondItem="Hkq-8v-sSe" secondAttribute="bottom" constant="46" id="hKf-dK-XiO"/>
+                            <constraint firstItem="Hkq-8v-sSe" firstAttribute="top" secondItem="Whb-BD-psn" secondAttribute="bottom" constant="250" id="elL-t2-Wa8"/>
                             <constraint firstAttribute="trailing" secondItem="mdI-cV-agf" secondAttribute="trailing" id="lHe-ao-nmG"/>
-                            <constraint firstAttribute="trailing" secondItem="Whb-BD-psn" secondAttribute="trailing" constant="10" id="nB3-7p-Tgb"/>
                             <constraint firstItem="pp6-6c-QY0" firstAttribute="top" secondItem="mdI-cV-agf" secondAttribute="bottom" id="qmh-wA-JLu"/>
                             <constraint firstItem="Hkq-8v-sSe" firstAttribute="centerX" secondItem="xt5-XF-zmg" secondAttribute="centerX" id="sE0-H2-X84"/>
                             <constraint firstItem="mdI-cV-agf" firstAttribute="top" secondItem="xt5-XF-zmg" secondAttribute="top" id="sQq-yP-3No"/>
@@ -79,7 +85,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wfA-SQ-M8P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-598" y="1010"/>
+            <point key="canvasLocation" x="-599.20000000000005" y="1009.7451274362819"/>
         </scene>
         <!--MainVC-->
         <scene sceneID="tne-QT-ifu">
@@ -97,7 +103,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="587"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="txtFirst" translatesAutoresizingMaskIntoConstraints="NO" id="Ndg-So-fGg">
-                                <rect key="frame" x="10" y="144" width="337" height="380"/>
+                                <rect key="frame" x="10" y="144" width="337" height="400"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="317" id="MUj-Fv-uRS"/>
                                     <constraint firstAttribute="width" constant="303" id="TmP-FG-cy5"/>
@@ -538,6 +544,10 @@
                                 <color key="textColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="un5-3V-AAe">
+                                <rect key="frame" x="16" y="275" width="343" height="2"/>
+                                <color key="progressTintColor" red="0.9152866006" green="0.24655312300000001" blue="0.20107686520000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </progressView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -546,6 +556,7 @@
                             <constraint firstItem="AJE-XF-VqK" firstAttribute="top" secondItem="I9o-mE-xs3" secondAttribute="bottom" id="6xY-3O-dxZ"/>
                             <constraint firstItem="I9o-mE-xs3" firstAttribute="leading" secondItem="fAD-au-ckd" secondAttribute="leading" id="8eF-Bb-8OG"/>
                             <constraint firstAttribute="trailing" secondItem="I9o-mE-xs3" secondAttribute="trailing" id="Nbe-I4-KJR"/>
+                            <constraint firstItem="CrJ-pa-N33" firstAttribute="top" secondItem="un5-3V-AAe" secondAttribute="bottom" constant="8" id="Wvm-2E-ddN"/>
                             <constraint firstItem="bAd-I9-jhF" firstAttribute="centerY" secondItem="4OQ-qU-OZO" secondAttribute="centerY" id="aCJ-2Q-d81"/>
                             <constraint firstItem="CrJ-pa-N33" firstAttribute="leading" secondItem="fAD-au-ckd" secondAttribute="leadingMargin" id="eEs-Am-Wx4"/>
                             <constraint firstItem="rQU-13-FG6" firstAttribute="centerX" secondItem="fAD-au-ckd" secondAttribute="centerX" id="hDt-3i-vAm"/>
@@ -553,21 +564,24 @@
                             <constraint firstItem="4OQ-qU-OZO" firstAttribute="centerX" secondItem="fAD-au-ckd" secondAttribute="centerX" constant="-1.5" id="jNo-ek-Zdh"/>
                             <constraint firstItem="CrJ-pa-N33" firstAttribute="trailing" secondItem="fAD-au-ckd" secondAttribute="trailingMargin" id="mHI-pN-TTr"/>
                             <constraint firstItem="AJE-XF-VqK" firstAttribute="top" secondItem="CrJ-pa-N33" secondAttribute="bottom" constant="20" id="o4o-Au-ikb"/>
+                            <constraint firstItem="un5-3V-AAe" firstAttribute="trailing" secondItem="fAD-au-ckd" secondAttribute="trailingMargin" id="r82-ez-i8h"/>
                             <constraint firstItem="CrJ-pa-N33" firstAttribute="top" secondItem="rQU-13-FG6" secondAttribute="bottom" constant="44" id="uyW-8D-z6d"/>
                             <constraint firstItem="bAd-I9-jhF" firstAttribute="centerX" secondItem="4OQ-qU-OZO" secondAttribute="centerX" constant="-2" id="wP6-NG-VaQ"/>
+                            <constraint firstItem="un5-3V-AAe" firstAttribute="leading" secondItem="fAD-au-ckd" secondAttribute="leadingMargin" id="xNl-KG-pLZ"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="collectionV" destination="CrJ-pa-N33" id="7du-WA-X7y"/>
                         <outlet property="questionLbl" destination="rQU-13-FG6" id="PBP-yE-SEB"/>
                         <outlet property="scoreLbl" destination="bAd-I9-jhF" id="a2t-fw-zlq"/>
+                        <outlet property="timerView" destination="un5-3V-AAe" id="a03-eT-BJg"/>
                         <segue destination="Njf-V4-EQL" kind="show" identifier="ShowResult" id="vbt-bI-ynS"/>
                         <segue destination="VlY-zi-cR0" kind="show" identifier="winnerVC" id="fst-1Y-bIM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nUx-ym-xJe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2873" y="1107"/>
+            <point key="canvasLocation" x="2872.8000000000002" y="1106.8965517241379"/>
         </scene>
         <!--WinnerVC-->
         <scene sceneID="DVV-19-bCz">
@@ -978,6 +992,7 @@
         <image name="Groupfirst" width="419" height="742"/>
         <image name="SemenFace" width="143" height="193"/>
         <image name="SemenSan" width="277" height="460"/>
+        <image name="WelcomeTxt" width="318" height="88"/>
         <image name="appBack" width="414" height="736"/>
         <image name="btnFeliks" width="413" height="52"/>
         <image name="btnGo" width="413" height="52"/>
@@ -996,7 +1011,6 @@
         <image name="rybaScore" width="125" height="52"/>
         <image name="semenGroup" width="334" height="523"/>
         <image name="txtFirst" width="400" height="481"/>
-        <image name="Добро пожаловать в с" width="368" height="53"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="rdd-Ab-rDd"/>

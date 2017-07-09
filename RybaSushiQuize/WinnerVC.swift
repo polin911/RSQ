@@ -37,6 +37,7 @@ class WinnerVC: UIViewController {
         }
     }
     
+    //MARK: updateUI
     func updateLblTxt() {
         if player.wchiGame[0] == player.nameGame {
             txtLbl.text = "\(player.playerName) ура поздравляю!!! Вот твои Роллы!"

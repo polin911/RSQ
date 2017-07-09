@@ -26,15 +26,22 @@ class WelcomeVC: UIViewController {
 
 
     func showAnimation() {
-       
-//        ustriciNabor2.animation = "swing"
-//        ustriciNabor2.duration = 10
-//        ustriciNabor2.animate()
 
-        
             sprRolliVRyad.animation = "slideLeft"
-            sprRolliVRyad.duration = 10
+            sprRolliVRyad.duration = 6
             sprRolliVRyad.animate()
+        
+        sprRolliVRyad.animateNext {
+            self.sprRolliVRyad.animation = "slideLeft"
+            self.sprRolliVRyad.duration = 6
+            self.sprRolliVRyad.animate()
+        }
+        sprRolliVRyad.animateNext {
+            self.sprRolliVRyad.animation = "slideLeft"
+            self.sprRolliVRyad.duration = 6
+            self.sprRolliVRyad.animate()
+        }
+        
         
         sprWelcomeSushi.animation = "zoomIn"
         sprWelcomeSushi.duration = 10
