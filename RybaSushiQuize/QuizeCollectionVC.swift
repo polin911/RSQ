@@ -49,9 +49,10 @@ class QuizeCollectionVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        startTimer()
         loadData()
         checking()
-        startTimer()
+       
  
     }
     
@@ -71,6 +72,8 @@ class QuizeCollectionVC: UIViewController {
         //timer:
         
         timerOn = true
+        seconds = 20
+        
         let sectionToReload = IndexSet(integer: 0)
         self.scoreLbl.text = "\(score)"
         self.collectionV.reloadSections(sectionToReload)
@@ -92,7 +95,7 @@ class QuizeCollectionVC: UIViewController {
     //MARK: Cheking
     
     func checking() {
-        print("Quize@@@@@@@@@@@@@@@@@@@@@whichGame:\(player.wchiGame) @@@@@@@@@@@@@@name:\(player.playerName)@@@@@@@@@@@@@@@@@@@@\(player.playerScore) @@@@@@@@@@@@@name of Game: \(player.nameGame) with love")
+        print("Quize@@@@@@@@@@@@@@@@@@@@@whichGame:\(player.wchiGame) @@@@@@@@@@@@@@name:\(player.playerName)@@@@@@@@@@@@@@@@@@@@\(player.playerScore) @@@@@@@@@@@@@name of Game: \(player.nameGame) with love, and numberOfQuestions \(player.totalQuestion) how many Q. to win \(player.winnerScore) and loose \(player.looserScore)")
     }
     ///
     
@@ -117,31 +120,30 @@ class QuizeCollectionVC: UIViewController {
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(QuizeCollectionVC.counter), userInfo: nil, repeats: true)
     }
     func counter() {
-        if timerOn {
+        if timerOn == true {
             seconds -= 1
             timerView.progress = Float(seconds) / Float(poseDuration - 1)
             if seconds == 0 {
-              
-                timerOn = false
                 currentQuestionIndex += 1
+                timerOn = false
                 
                 
-                guard currentQuestionIndex < questionList?.count ?? 0 else {
+                guard currentQuestionIndex < player.totalQuestion else {
                     print("don't go ")
                     self.player.playerScore = score
                     
-                    if score == 3 {
+                    if score == player.winnerScore {
                         performSegue(withIdentifier: "winnerVC", sender: self)
                     }
                     
                     performSegue(withIdentifier: "ShowResult", sender: score)
                     return
                 }
-            
-                
+                currentQuestion = questionList?[currentQuestionIndex]
             }
         }
     }
+
     
 }
 
@@ -157,11 +159,11 @@ extension QuizeCollectionVC : UICollectionViewDelegate {
             
             print("ячейка c индексом\(indexPath) выбрана, счет \(score)")
             currentQuestionIndex += 1
-            guard currentQuestionIndex < 3 else {
+            guard currentQuestionIndex < player.totalQuestion else {
                 print("don't go ")
                 self.player.playerScore = score
                 
-                if score == 3 {
+                if score == player.winnerScore {
                     performSegue(withIdentifier: "winnerVC", sender: self)
                 }
                 
@@ -171,18 +173,18 @@ extension QuizeCollectionVC : UICollectionViewDelegate {
         }
             
             
-       else if player.nameGame == player.wchiGame[1] {
+        else if player.nameGame == player.wchiGame[1] {
             let selectedAnswer = currentQuestion?.answers[indexPath.row]
             if currentQuestion?.answerIsCorrect(answer: selectedAnswer) ?? false {
                 score += 1
             }
             print("ячейка c индексом\(indexPath) выбрана, счет \(score)")
             currentQuestionIndex += 1
-            guard currentQuestionIndex < 5 else {
+            guard currentQuestionIndex < player.totalQuestion else {
                 print("don't go ")
                 self.player.playerScore = score
                 
-                if score >= 5 {
+                if score > player.winnerScore {
                     performSegue(withIdentifier: "winnerVC", sender: self)
                 }
                 
@@ -190,17 +192,17 @@ extension QuizeCollectionVC : UICollectionViewDelegate {
                 return
             }
         }
-       else if player.nameGame == player.wchiGame[2] {
+        else if player.nameGame == player.wchiGame[2] {
             let selectedAnswer = currentQuestion?.answers[indexPath.row]
             if currentQuestion?.answerIsCorrect(answer: selectedAnswer) ?? false {
                 score += 1
             }
             print("ячейка c индексом\(indexPath) выбрана, счет \(score)")
             currentQuestionIndex += 1
-            guard currentQuestionIndex < 7 else {
+            guard currentQuestionIndex < player.totalQuestion else {
                 print("don't go ")
                 
-                if score >= 7 {
+                if score >= player.winnerScore {
                     performSegue(withIdentifier: "winnerVC", sender: self)
                 }
                 performSegue(withIdentifier: "ShowResult", sender: score)
@@ -209,7 +211,7 @@ extension QuizeCollectionVC : UICollectionViewDelegate {
         }
         currentQuestion = questionList?[currentQuestionIndex]
     }
-
+    
 }
 
 extension QuizeCollectionVC: UICollectionViewDataSource {

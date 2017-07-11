@@ -13,8 +13,11 @@ class Player {
     var playerName: String = ""
     var playerScore: Int   = 0
     var wchiGame = ["Игра на роллы", "Игра на сашими", "Игра на устрицы с шампанским" ]
-    var helpFromFeliks = 2
     var nameGame = ""
     
     var winGame = ""
+    
+    var totalQuestion = 0
+    var winnerScore = 0
+    var looserScore = 0
 }

@@ -28,6 +28,7 @@ class WhichQuizeVC: UIViewController{
 
         nameLblTxt.text = "Привет \(player.playerName) ты готов перекусить ??"
        
+        
         updateWinnerView()
         checking()
        
@@ -47,12 +48,21 @@ class WhichQuizeVC: UIViewController{
     @IBAction func btnPressed(_ sender: UIButton) {
         if sender == btnR {
             self.player.nameGame = "Игра на роллы"
+            self.player.totalQuestion = 3
+            self.player.winnerScore   = 3
+            self.player.looserScore   = 0
         }
         if sender == btnS {
             self.player.nameGame = "Игра на сашими"
+            self.player.totalQuestion = 5
+            self.player.winnerScore   = 5
+            self.player.looserScore   = 0
         }
         if sender == btnU {
             self.player.nameGame = "Игра на устрицы с шампанским"
+            self.player.totalQuestion = 7
+            self.player.winnerScore   = 7
+            self.player.looserScore   = 0
         }
         performSegue(withIdentifier: "showInstructions", sender: self)
     }
@@ -62,12 +72,15 @@ class WhichQuizeVC: UIViewController{
     func updateWinnerView() {
         if player.nameGame == player.wchiGame[0] {
             btnR.alpha = 0.4
+            
         }
         if player.nameGame == player.wchiGame[1] {
             btnR.alpha = 0.4
+
         }
         if player.nameGame == player.wchiGame[2] {
             btnR.alpha = 0.4
+
         }
         
     }
