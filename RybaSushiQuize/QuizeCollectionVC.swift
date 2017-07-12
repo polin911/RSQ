@@ -163,7 +163,8 @@ extension QuizeCollectionVC : UICollectionViewDelegate {
                 print("don't go ")
                 self.player.playerScore = score
                 
-                if score == player.winnerScore {
+                if score >= player.winnerScore {
+                    self.player.winGame = self.player.nameGame
                     performSegue(withIdentifier: "winnerVC", sender: self)
                 }
                 
@@ -184,7 +185,8 @@ extension QuizeCollectionVC : UICollectionViewDelegate {
                 print("don't go ")
                 self.player.playerScore = score
                 
-                if score > player.winnerScore {
+                if score >= player.winnerScore {
+                    self.player.winGame = self.player.nameGame
                     performSegue(withIdentifier: "winnerVC", sender: self)
                 }
                 
@@ -203,6 +205,7 @@ extension QuizeCollectionVC : UICollectionViewDelegate {
                 print("don't go ")
                 
                 if score >= player.winnerScore {
+                    self.player.winGame = self.player.nameGame
                     performSegue(withIdentifier: "winnerVC", sender: self)
                 }
                 performSegue(withIdentifier: "ShowResult", sender: score)

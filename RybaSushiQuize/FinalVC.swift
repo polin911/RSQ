@@ -7,10 +7,11 @@
 //
 
 import UIKit
+import Spring
 
 class FinalVC: UIViewController {
 
-    @IBOutlet var img: UIImageView!
+    @IBOutlet var img: SpringImageView!
     var player = Player()
     
     @IBOutlet var lblTxt: UILabel!
@@ -39,14 +40,14 @@ class FinalVC: UIViewController {
         if player.nameGame == player.wchiGame[0] {
             switch score {
             case 0:
-              lblTxt.text = "ты растроил Семена"
-                img.image = #imageLiteral(resourceName: "unSmile")
+              lblTxt.text = "держи авакадку и не в чем себе не отказывай"
+                img.image = #imageLiteral(resourceName: "laobc-Avocado")
             case 1...2:
                 lblTxt.text = "ты ответил на \(score) вопроса ,Семен добрый он тебя угостит кусочком авакадо "
-                img.image = #imageLiteral(resourceName: "18")
+                img.image = #imageLiteral(resourceName: "laobc-Avocado")
             case 3:
                 lblTxt.text = "Ты молодец, ты заработал \(score) очков! Получай свой обед! "
-                img.image = #imageLiteral(resourceName: "glass")
+                img.image = #imageLiteral(resourceName: "rolliVRyad")
             default:
                 lblTxt.text = "стоит переиграть"
             }
@@ -55,13 +56,13 @@ class FinalVC: UIViewController {
             switch score {
             case 0:
                 lblTxt.text = "ты растроил Семена"
-                img.image = #imageLiteral(resourceName: "unSmile")
-            case 1...3:
+                img.image = #imageLiteral(resourceName: "losserRyba")
+            case 1...4:
                 lblTxt.text = "ты заработал \(score) балла Семен добрый он тебя угостит кусочком авакадо "
-                img.image = #imageLiteral(resourceName: "18")
-            case 5:
+                img.image = #imageLiteral(resourceName: "sushi2")
+            case 3:
                 lblTxt.text = "Ты молодец, ты заработал \(score) очков! Получай свой обед! "
-                img.image = #imageLiteral(resourceName: "glass")
+                img.image = #imageLiteral(resourceName: "sushi2")
             default:
                 lblTxt.text = "стоит переиграть"
             }
@@ -70,7 +71,7 @@ class FinalVC: UIViewController {
             switch score {
             case 0:
                 lblTxt.text = "ты растроил Семена"
-                img.image = #imageLiteral(resourceName: "unSmile")
+                img.image = #imageLiteral(resourceName: "losserRyba")
             case 1...3:
                 lblTxt.text = "ты заработал \(score)Семен добрый он тебя угостит тремя устрицами "
                 img.image = #imageLiteral(resourceName: "smile")
@@ -89,6 +90,18 @@ class FinalVC: UIViewController {
         vc.player = self.player
         }
       
+    }
+    
+    //MARK : SprAnimation
+    func sprAnimation() {
+        img.animation = "pop"
+        img.duration = 5
+        img.animate()
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        sprAnimation()
     }
 
 }

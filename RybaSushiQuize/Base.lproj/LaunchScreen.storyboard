@@ -21,15 +21,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="IQ с Васаби" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aId-cQ-6CG">
-                                <rect key="frame" x="57" y="281" width="260" height="105"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="31"/>
-                                <color key="textColor" red="0.50196081400000003" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iqVAsabi" translatesAutoresizingMaskIntoConstraints="NO" id="1Kk-0g-fjE">
+                                <rect key="frame" x="66" y="274" width="243" height="119"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="119" id="Tvc-ge-02x"/>
+                                    <constraint firstAttribute="width" constant="243" id="aZD-Ke-NNy"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="1Kk-0g-fjE" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="4lr-VH-C6T"/>
+                            <constraint firstItem="1Kk-0g-fjE" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="i7d-aO-cYv"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -37,4 +41,7 @@
             <point key="canvasLocation" x="52" y="374.66266866566718"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="iqVAsabi" width="236" height="143"/>
+    </resources>
 </document>

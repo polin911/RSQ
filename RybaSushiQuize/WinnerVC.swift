@@ -18,7 +18,7 @@ class WinnerVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        checking()
         
     
        
@@ -30,7 +30,7 @@ class WinnerVC: UIViewController {
             vc.player = self.player
         }
         if let whichVC = segue.destination as? WhichQuizeVC {
-           self.player.winGame = self.player.nameGame
+           
             self.player.playerScore = 0
             whichVC.player = self.player
         
@@ -42,6 +42,14 @@ class WinnerVC: UIViewController {
         if player.wchiGame[0] == player.nameGame {
             txtLbl.text = "\(player.playerName) ура поздравляю!!! Вот твои Роллы!"
             sprImage.image = #imageLiteral(resourceName: "Sushi_Tray_icon")
+        }
+        else if player.wchiGame[1] == player.nameGame {
+            txtLbl.text = "\(player.playerName) ура поздравляю!!! Вот твои Суши!"
+            sprImage.image = #imageLiteral(resourceName: "sushi")
+        }
+        else if player.wchiGame[2] == player.nameGame {
+            txtLbl.text = "\(player.playerName) ура поздравляю!!! Вот твои Устрицы!"
+            sprImage.image = #imageLiteral(resourceName: "ustriciNabor")
         }
     }
 
@@ -59,7 +67,11 @@ class WinnerVC: UIViewController {
     
     
     @IBAction func pressPlayAgain(_ sender: Any) {
-        
+        self.player.winGame = self.player.nameGame
+    }
+    
+    func checking() {
+        print("WhichQuize@@@@@@@@@@@@@@@@@@@@@whichGame:\(player.wchiGame) @@@@@@@@@@@@@@name:\(player.playerName)@@@@@@@@@@@@@@@@@@@@\(player.playerScore) @@@@@@@@@@@@@name of Game: \(player.nameGame) ######### winnnersGame: \(player.winGame)")
     }
 
 }

@@ -34,7 +34,7 @@ class InstructionVC: UIViewController {
             instructionTextLabel.text = "Любишь роллы \(TEXTINSTRUCT)"
         }
         if player.nameGame == player.wchiGame[1] {
-            instructionTextLabel.text = "Любишь сашими\(TEXTINSTRUCT)"
+            instructionTextLabel.text = "Любишь сушими\(TEXTINSTRUCT)"
         }
         if player.nameGame == player.wchiGame[2] {
             instructionTextLabel.text = "Любишь устрицы с шампанским \(TEXTINSTRUCT)"
