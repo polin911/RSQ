@@ -80,15 +80,15 @@ class QuizeCollectionVC: UIViewController {
 
         let duration = isOnScreen ? 0.2 : 0
         UIView.animate(withDuration: duration, animations: {
+
             self.questionLbl.alpha = 0
-           // self.questionImg.alpha = 0
         }) { (finished) in
             self.questionLbl.text = self.currentQuestion?.title
-            //self.questionImg.image = self.currentQuestion?.image
+
             
             UIView.animate(withDuration: duration, animations: {
                 self.questionLbl.alpha = 1
-                //self.questionImg.alpha = 1
+                
             }, completion: nil)
         }
     }
@@ -214,6 +214,7 @@ extension QuizeCollectionVC : UICollectionViewDelegate {
         }
         currentQuestion = questionList?[currentQuestionIndex]
     }
+
     
 }
 
@@ -230,8 +231,16 @@ extension QuizeCollectionVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionV.dequeueReusableCell(withReuseIdentifier: "CollectionCell", for: indexPath) as! WhichQuizeCollectionCell
-        cell.answersLbl.text = currentQuestion?.answers[indexPath.row]
+        let answerText = currentQuestion?.answers[indexPath.row]
+        cell.answersLbl.text = answerText
         
+        if cell.selectedBackgroundView == nil {
+            cell.selectedBackgroundView = UIView()
+            cell.selectedBackgroundView?.translatesAutoresizingMaskIntoConstraints = false
+            cell.selectedBackgroundView?.frame = cell.contentView.bounds
+        }
+        let isRightAnswer = currentQuestion?.answerIsCorrect(answer: answerText) ?? false
+        cell.selectedBackgroundView?.backgroundColor = isRightAnswer ? .yellow : .red
         return cell
     }
     

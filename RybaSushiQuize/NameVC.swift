@@ -39,7 +39,7 @@ class NameVC: UIViewController, UITextFieldDelegate  {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         namePlayer.resignFirstResponder()
-        startBtn.isHidden = false
+        //startBtn.isHidden = false
         return(true)
     }
 
