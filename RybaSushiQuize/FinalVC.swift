@@ -43,7 +43,7 @@ class FinalVC: UIViewController {
               lblTxt.text = "держи авакадку и не в чем себе не отказывай"
                 img.image = #imageLiteral(resourceName: "laobc-Avocado")
             case 1...2:
-                lblTxt.text = "ты ответил на \(score) вопроса ,Семен добрый он тебя угостит кусочком авакадо "
+                lblTxt.text = "Ты ответил на \(score) вопроса ,пора бы повторить школьную программу! Но Семен добрый он тебя угостит кусочком авакадо "
                 img.image = #imageLiteral(resourceName: "laobc-Avocado")
             case 3:
                 lblTxt.text = "Ты молодец, ты заработал \(score) очков! Получай свой обед! "
