@@ -59,7 +59,7 @@ class WhichQuizeVC: UIViewController{
         if sender == btnU {
             self.player.nameGame = "Игра на устрицы с шампанским"
             self.player.totalQuestion = 7
-            self.player.winnerScore   = 6
+            self.player.winnerScore   = 7
             self.player.looserScore   = 0
         }
         performSegue(withIdentifier: "showInstructions", sender: self)

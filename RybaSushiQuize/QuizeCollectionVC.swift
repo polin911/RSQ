@@ -198,9 +198,10 @@ extension QuizeCollectionVC : UICollectionViewDelegate {
             let selectedAnswer = currentQuestion?.answers[indexPath.row]
             if currentQuestion?.answerIsCorrect(answer: selectedAnswer) ?? false {
                 score += 1
+                currentQuestionIndex += 1
             }
             print("ячейка c индексом\(indexPath) выбрана, счет \(score)")
-            currentQuestionIndex += 1
+            
             guard currentQuestionIndex < player.totalQuestion else {
                 print("don't go ")
                 
@@ -208,8 +209,12 @@ extension QuizeCollectionVC : UICollectionViewDelegate {
                     self.player.winGame = self.player.nameGame
                     performSegue(withIdentifier: "winnerVC", sender: self)
                 }
-                performSegue(withIdentifier: "ShowResult", sender: score)
+               
                 return
+            }
+            if currentQuestion?.answerIsCorrect(answer: selectedAnswer) == false {
+                performSegue(withIdentifier: "ShowResult", sender: score)
+                
             }
         }
         currentQuestion = questionList?[currentQuestionIndex]

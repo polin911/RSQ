@@ -69,15 +69,13 @@ class FinalVC: UIViewController {
         }
         if player.nameGame == player.wchiGame[2] {
             switch score {
-            case 0:
-                lblTxt.text = "ты растроил Семена"
-                img.image = #imageLiteral(resourceName: "losserRyba")
-            case 1...3:
-                lblTxt.text = "ты заработал \(score)Семен добрый он тебя угостит тремя устрицами "
-                img.image = #imageLiteral(resourceName: "smile")
-            case 5...7:
+            case 0...6:
+                lblTxt.text = "Я предупреждал ... с устрицами лучше не ошибаться"
+                img.image = #imageLiteral(resourceName: "cat_3")
+            
+            case 7:
                 lblTxt.text = "Ты молодец, ты заработал \(score) очков! Рома тебе сейчас откроет 12 устриц "
-                img.image = #imageLiteral(resourceName: "glass")
+                img.image = #imageLiteral(resourceName: "ustriciNabor")
             default:
                 lblTxt.text = "стоит переиграть"
             }
