@@ -13,9 +13,7 @@ class QuizeCollectionVC: UIViewController {
     var quizeCell = WhichQuizeCollectionCell()
     
     var player = Player()
-    //var question = [Question]()
-    
-    
+
     @IBOutlet var scoreLbl: UILabel!
     @IBOutlet var questionLbl: UILabel!
     @IBOutlet var questionImg: UIImageView!
@@ -42,18 +40,14 @@ class QuizeCollectionVC: UIViewController {
             currentQuestion = random
         }
     }
-    
 
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         startTimer()
         loadData()
         checking()
-       
- 
+
     }
     
     func loadData() {

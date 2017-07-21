@@ -46,20 +46,20 @@ class WhichQuizeVC: UIViewController{
     @IBAction func btnPressed(_ sender: UIButton) {
         if sender == btnR {
             self.player.nameGame = "Игра на роллы"
-            self.player.totalQuestion = 3
-            self.player.winnerScore   = 3
+            self.player.totalQuestion = 25
+            self.player.winnerScore   = 22
             self.player.looserScore   = 0
         }
         if sender == btnS {
             self.player.nameGame = "Игра на суши"
-            self.player.totalQuestion = 5
-            self.player.winnerScore   = 4
+            self.player.totalQuestion = 50
+            self.player.winnerScore   = 46
             self.player.looserScore   = 0
         }
         if sender == btnU {
             self.player.nameGame = "Игра на устрицы с шампанским"
-            self.player.totalQuestion = 7
-            self.player.winnerScore   = 7
+            self.player.totalQuestion = 70
+            self.player.winnerScore   = 70
             self.player.looserScore   = 0
         }
         performSegue(withIdentifier: "showInstructions", sender: self)

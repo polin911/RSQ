@@ -39,14 +39,14 @@ class FinalVC: UIViewController {
         score = player.playerScore
         if player.nameGame == player.wchiGame[0] {
             switch score {
-            case 0:
-              lblTxt.text = "держи авакадку и не в чем себе не отказывай"
+            case 0...10:
+              lblTxt.text = "Держи авакадку, читай букварь и не в чем себе не отказывай"
                 img.image = #imageLiteral(resourceName: "laobc-Avocado")
-            case 1...2:
+            case 10...18:
                 lblTxt.text = "Ты ответил на \(score) вопроса ,пора бы повторить школьную программу! Но Семен добрый он тебя угостит кусочком авакадо "
                 img.image = #imageLiteral(resourceName: "laobc-Avocado")
-            case 3:
-                lblTxt.text = "Ты молодец, ты заработал \(score) очков! Получай свой обед! "
+            case 18...22:
+                lblTxt.text = "Ты молодец, ответил на \(score) вопросов! С тобой есть о чем поговорить! "
                 img.image = #imageLiteral(resourceName: "rolliVRyad")
             default:
                 lblTxt.text = "стоит переиграть"
@@ -54,13 +54,13 @@ class FinalVC: UIViewController {
         }
         if player.nameGame == player.wchiGame[1] {
             switch score {
-            case 0:
+            case 0...5:
                 lblTxt.text = "ты растроил Семена"
                 img.image = #imageLiteral(resourceName: "losserRyba")
-            case 1...4:
+            case 5...20:
                 lblTxt.text = "ты заработал \(score) балла Семен добрый он тебя угостит кусочком авакадо "
                 img.image = #imageLiteral(resourceName: "sushi2")
-            case 3:
+            case 20...45:
                 lblTxt.text = "Ты молодец, ты заработал \(score) очков! Получай свой обед! "
                 img.image = #imageLiteral(resourceName: "sushi2")
             default:
@@ -69,11 +69,11 @@ class FinalVC: UIViewController {
         }
         if player.nameGame == player.wchiGame[2] {
             switch score {
-            case 0...6:
+            case 0...69:
                 lblTxt.text = "Я предупреждал ... с устрицами лучше не ошибаться"
                 img.image = #imageLiteral(resourceName: "cat_3")
             
-            case 7:
+            case 69:
                 lblTxt.text = "Ты молодец, ты заработал \(score) очков! Рома тебе сейчас откроет 12 устриц "
                 img.image = #imageLiteral(resourceName: "ustriciNabor")
             default:

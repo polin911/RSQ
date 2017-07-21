@@ -391,20 +391,20 @@
                                     <constraint firstAttribute="width" constant="205" id="iht-Yz-UeQ"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="26" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pvd-TL-G1S">
-                                <rect key="frame" x="16" y="136" width="240" height="420"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="60" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pvd-TL-G1S">
+                                <rect key="frame" x="16" y="103.5" width="210" height="450"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="420" id="OLf-pw-5Sk"/>
-                                    <constraint firstAttribute="width" constant="240" id="VkC-Ul-0YW"/>
+                                    <constraint firstAttribute="height" constant="450" id="OLf-pw-5Sk"/>
+                                    <constraint firstAttribute="width" constant="210" id="VkC-Ul-0YW"/>
                                 </constraints>
                                 <string key="text">Жор, я смотрю ты не очень голоден....бла бла блабла бла блабла бла блабла бла блабла бла блабла бла блабла бла блабла бла блабла бла блабла бла блабла бла блабла бла блабла бла блабла бла бла бла блабла бла блабла бла блабла бла блаблабла бла блабла бла бла,kблаааблаааа блааааблааа блааа</string>
-                                <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="19"/>
                                 <color key="textColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Игра на роллы!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="trG-hE-nA1">
-                                <rect key="frame" x="16" y="100" width="343" height="32"/>
-                                <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="24"/>
+                                <rect key="frame" x="57" y="75" width="128.5" height="24.5"/>
+                                <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="18"/>
                                 <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="highlightedColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="shadowColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -429,18 +429,17 @@
                             <constraint firstItem="eKf-Mp-JKi" firstAttribute="top" secondItem="G6x-qQ-Cf6" secondAttribute="bottom" constant="40" id="8Es-lc-3d5"/>
                             <constraint firstItem="R8B-Gl-7SM" firstAttribute="top" secondItem="6TW-gO-k9w" secondAttribute="top" id="9Hz-Us-AWB"/>
                             <constraint firstItem="G6x-qQ-Cf6" firstAttribute="trailing" secondItem="6TW-gO-k9w" secondAttribute="trailingMargin" id="AZh-s0-IvN"/>
+                            <constraint firstItem="trG-hE-nA1" firstAttribute="leading" secondItem="6TW-gO-k9w" secondAttribute="leadingMargin" constant="41" id="BSi-uP-Tgq"/>
                             <constraint firstItem="G6x-qQ-Cf6" firstAttribute="leading" secondItem="6TW-gO-k9w" secondAttribute="leadingMargin" id="Ghi-zG-K6F"/>
-                            <constraint firstItem="trG-hE-nA1" firstAttribute="leading" secondItem="6TW-gO-k9w" secondAttribute="leadingMargin" id="KG3-1g-xD0"/>
                             <constraint firstItem="eKf-Mp-JKi" firstAttribute="top" secondItem="8k0-5n-B53" secondAttribute="bottom" constant="40" id="Kaj-9G-52w"/>
                             <constraint firstItem="G6x-qQ-Cf6" firstAttribute="trailing" secondItem="6TW-gO-k9w" secondAttribute="trailingMargin" id="Xxy-Cb-JLU"/>
-                            <constraint firstItem="trG-hE-nA1" firstAttribute="top" secondItem="kCD-aO-4FI" secondAttribute="bottom" constant="80" id="Yfv-7m-Cnq"/>
+                            <constraint firstItem="trG-hE-nA1" firstAttribute="top" secondItem="kCD-aO-4FI" secondAttribute="bottom" constant="55" id="Yfv-7m-Cnq"/>
                             <constraint firstItem="eKf-Mp-JKi" firstAttribute="top" secondItem="R8B-Gl-7SM" secondAttribute="bottom" id="a3b-PH-l1H"/>
                             <constraint firstItem="pvd-TL-G1S" firstAttribute="top" secondItem="trG-hE-nA1" secondAttribute="bottom" constant="4" id="feP-6o-2wZ"/>
                             <constraint firstItem="R8B-Gl-7SM" firstAttribute="leading" secondItem="6TW-gO-k9w" secondAttribute="leading" id="kZk-FZ-JPx"/>
                             <constraint firstAttribute="trailing" secondItem="R8B-Gl-7SM" secondAttribute="trailing" id="vaY-Jw-ja5"/>
                             <constraint firstItem="pvd-TL-G1S" firstAttribute="leading" secondItem="6TW-gO-k9w" secondAttribute="leadingMargin" id="wXE-94-ctX"/>
                             <constraint firstItem="G6x-qQ-Cf6" firstAttribute="leading" secondItem="6TW-gO-k9w" secondAttribute="leadingMargin" id="wi8-ym-QSe"/>
-                            <constraint firstItem="trG-hE-nA1" firstAttribute="trailing" secondItem="6TW-gO-k9w" secondAttribute="trailingMargin" id="xIh-dv-Aim"/>
                         </constraints>
                     </view>
                     <connections>
@@ -752,12 +751,12 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="9" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9cQ-FQ-PyG">
-                                        <rect key="frame" x="66.5" y="188" width="242" height="200"/>
+                                        <rect key="frame" x="47.5" y="188" width="280" height="200"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="200" id="LAR-5V-VTa"/>
-                                            <constraint firstAttribute="width" constant="242" id="YeH-aw-19b"/>
+                                            <constraint firstAttribute="width" constant="280" id="YeH-aw-19b"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="27"/>
+                                        <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="22"/>
                                         <color key="textColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>

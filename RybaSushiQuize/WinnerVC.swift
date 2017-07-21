@@ -19,9 +19,7 @@ class WinnerVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         checking()
-        
-    
-       
+
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -40,7 +38,7 @@ class WinnerVC: UIViewController {
     //MARK: updateUI
     func updateLblTxt() {
         if player.wchiGame[0] == player.nameGame {
-            txtLbl.text = "\(player.playerName) ура поздравляю!!! Вот твои Роллы!"
+            txtLbl.text = "\(player.playerName) поздравляю!!! Ты практически гений!!!На все вопросы у тебя есть ответ!!!"
             sprImage.image = #imageLiteral(resourceName: "Sushi_Tray_icon")
         }
         else if player.wchiGame[1] == player.nameGame {

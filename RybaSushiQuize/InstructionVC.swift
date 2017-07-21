@@ -29,11 +29,11 @@ class InstructionVC: UIViewController {
     
     func updateUI() {
         
-        let addToMyMutatbleStr: [String: AnyObject]? = [NSFontAttributeName: UIFont(name: "Bradley Hand", size:21)!, NSForegroundColorAttributeName: UIColor.yellow,NSStrokeWidthAttributeName: 3 as AnyObject ]
-        let instractTxt1 = "Роллы у нас на любой вкус! От редких до самых элементарных, твой выбор зависит от твоего IQ, вкусно будет в любом случае."
-        let itogTxt1 = "Итак: всего 50 вопросов, отвечая на 10  выходит уровень твоего IQ = , от 30 верных - Я поверю, что ты закончил среднюю школу! А если ответишь на все 50 - то твой "
+        let addToMyMutatbleStr: [String: AnyObject]? = [NSFontAttributeName: UIFont(name: "Bradley Hand", size:18)!, NSForegroundColorAttributeName: UIColor.white]
+        let instractTxt1 = "Роллы у нас на любой вкус! От редких до самых элементарных, твой выбор зависит от твоего IQ . Вкусно будет в любом случае."
+        let itogTxt1 = " Итак: всего 25 вопросов, отвечая на 5 - уровень твоего IQ соответствует уровню взрослого примата обезьяны, от 20 верных - Я поверю, что ты закончил среднюю школу! А если ответишь на все 25 - смело можешь претендовать на звание интеллектуала,не забывай этот уровень самый легкий! Удачи!"
         
-        let myMutableString1 = NSMutableAttributedString(string: instractTxt1, attributes: [NSFontAttributeName: UIFont(name: "Bradley Hand", size:20)!])
+        let myMutableString1 = NSMutableAttributedString(string: instractTxt1, attributes: [NSFontAttributeName: UIFont(name: "Bradley Hand", size:18)!, NSForegroundColorAttributeName: UIColor.white])
         
         
         let itog1 = NSMutableAttributedString(string: itogTxt1, attributes: addToMyMutatbleStr)
@@ -45,7 +45,7 @@ class InstructionVC: UIViewController {
         }
         
         if player.nameGame == player.wchiGame[1] {
-            instructionTextLabel.text = "А суши у нас самые вкусные в Москве. Ты поразишься разнообразию ассортимента: хамачи, гребешок, тунец, лосось, альбокор, гребенчатая креветка и т.д.. Итак: всего 70 вопросов, отвечая на 25 получишь аппетитный утешительный приз, от 55 верных, блюдо будет более изысканным! А если ответишь на все 70 - то твой  "
+            instructionTextLabel.text = "А суши у нас самые вкусные в Москве. Ты поразишься разнообразию ассортимента: хамачи, гребешок, тунец, лосось, альбокор, гребенчатая креветка и т.д.. Итак: всего 70 вопросов, отвечая на 25 уровень твоего IQ соответствует уровню взрослого примата обезьяны, от 55 верных - Я поверю, что ты закончил среднюю школу! А если ответишь на все 70 - смело можешь претендовать на звание интелектуала!"
         }
         if player.nameGame == player.wchiGame[2] {
             instructionTextLabel.text = "И... Высший пилотаж! - дюжина свежайших устриц Кумамото. Игра без права на ошибку! С устрицами не шутят 100 вопросов - 100 ответов устрицы твои! + Шампанское от Феликса (если повезет и он на месте) Удачи!"
