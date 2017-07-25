@@ -18,7 +18,7 @@ class FeliksGameVC: UIViewController {
     
     //MARK: Timer
     @IBOutlet var lblSec: UILabel!
-    var seconds = 15
+    var seconds = 35
     var timer = Timer()
    
     func startTimer() {
@@ -128,7 +128,8 @@ extension FeliksGameVC: UICollectionViewDelegate {
             performSegue(withIdentifier: "FelicsFinal", sender: score)
             return
         }
-        currentQuestion = questionList?[currentQuestionIndex]
+        let random = questionList?[Int(arc4random_uniform(UInt32((questionList?.count)!)))]
+        currentQuestion = random
     }
 }
 

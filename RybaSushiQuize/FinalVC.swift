@@ -43,7 +43,7 @@ class FinalVC: UIViewController {
               lblTxt.text = "Держи авакадку, читай букварь и не в чем себе не отказывай"
                 img.image = #imageLiteral(resourceName: "laobc-Avocado")
             case 10...18:
-                lblTxt.text = "Ты ответил на \(score) вопроса ,пора бы повторить школьную программу! Но Семен добрый он тебя угостит кусочком авакадо "
+                lblTxt.text = "Ты ответил на \(score) вопроса ,пора бы повторить школьную программу! Но Семен добрый он тебя угостит кусочком авакадо"
                 img.image = #imageLiteral(resourceName: "laobc-Avocado")
             case 18...22:
                 lblTxt.text = "Ты молодец, ответил на \(score) вопросов! С тобой есть о чем поговорить! "
@@ -58,10 +58,10 @@ class FinalVC: UIViewController {
                 lblTxt.text = "ты растроил Семена"
                 img.image = #imageLiteral(resourceName: "losserRyba")
             case 5...20:
-                lblTxt.text = "ты заработал \(score) балла Семен добрый он тебя угостит кусочком авакадо "
+                lblTxt.text = "Ты ответил на \(score) вопроса ,пора бы повторить школьную программу! Но Семен добрый он тебя угостит кусочком авакадо"
                 img.image = #imageLiteral(resourceName: "sushi2")
             case 20...45:
-                lblTxt.text = "Ты молодец, ты заработал \(score) очков! Получай свой обед! "
+                lblTxt.text = "Ты молодец, ответил на \(score) вопросов! С тобой есть о чем поговорить!"
                 img.image = #imageLiteral(resourceName: "sushi2")
             default:
                 lblTxt.text = "стоит переиграть"
@@ -74,7 +74,7 @@ class FinalVC: UIViewController {
                 img.image = #imageLiteral(resourceName: "cat_3")
             
             case 69:
-                lblTxt.text = "Ты молодец, ты заработал \(score) очков! Рома тебе сейчас откроет 12 устриц "
+                lblTxt.text = "Крута!!! 69 правильных ответов!!! Ты гений!!!  )))"
                 img.image = #imageLiteral(resourceName: "ustriciNabor")
             default:
                 lblTxt.text = "стоит переиграть"
