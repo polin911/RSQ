@@ -211,7 +211,9 @@ extension QuizeCollectionVC : UICollectionViewDelegate {
                 
             }
         }
-        currentQuestion = questionList?[currentQuestionIndex]
+        
+        let random = questionList?[Int(arc4random_uniform(UInt32((questionList?.count)!)))]
+        currentQuestion = random
     }
 
     
