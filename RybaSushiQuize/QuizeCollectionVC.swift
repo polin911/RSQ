@@ -7,14 +7,23 @@
 //
 
 import UIKit
+import GameplayKit
+import Spring
 
 class QuizeCollectionVC: UIViewController {
     
     var quizeCell = WhichQuizeCollectionCell()
     
+    var wrongAnswer = true
+    var changeSizeFish = true
     var player = Player()
 
-    @IBOutlet var scoreLbl: UILabel!
+    
+    @IBOutlet var appBackSpr: SpringImageView!
+    
+    @IBOutlet var rybaScoreImgSpr: SpringImageView!
+    
+    @IBOutlet var scoreLbl: SpringLabel!
     @IBOutlet var questionLbl: UILabel!
     @IBOutlet var questionImg: UIImageView!
     @IBOutlet var collectionV: UICollectionView!
@@ -34,7 +43,9 @@ class QuizeCollectionVC: UIViewController {
     
     var questionList : [Question]? {
         didSet {
-            let random = questionList?[Int(arc4random_uniform(UInt32((questionList?.count)!)))]
+            //let random = questionList?[Int(arc4random_uniform(UInt32((questionList?.count)!)))]
+            let randomQ = GKShuffledDistribution.d6()
+            let random = questionList?[randomQ.nextInt()]
             currentQuestionIndex = 0
             score = 0
             currentQuestion = random
@@ -146,10 +157,13 @@ extension QuizeCollectionVC : UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if player.nameGame == player.wchiGame[0] {
             let selectedAnswer = currentQuestion?.answers[indexPath.row]
-            if currentQuestion?.answerIsCorrect(answer: selectedAnswer) ?? false {
+            if currentQuestion?.answerIsCorrect(answer: selectedAnswer) == true {
                 score += 1
+                changeSizeFishImg()
             }
-            
+            if currentQuestion?.answerIsCorrect(answer: selectedAnswer) == false {
+                wrongSpr()
+            }
             
             print("ячейка c индексом\(indexPath) выбрана, счет \(score)")
             currentQuestionIndex += 1
@@ -212,8 +226,18 @@ extension QuizeCollectionVC : UICollectionViewDelegate {
             }
         }
         
-        let random = questionList?[Int(arc4random_uniform(UInt32((questionList?.count)!)))]
-        currentQuestion = random
+       // let randomDistribution = GKShuffledDistribution.init(lowestValue: 1, highestValue: (questionList?.count)! - 1 )
+        
+        
+        //currentQuestion = questionList?[randomDistribution.nextInt()]
+       // let questionRandom = questionList?.count.random.nextInt()
+            //GKShuffledDistribution(lowestValue: 1, highestValue: (questionList?.count)!)
+        //let random = questionList?[Int(arc4random_uniform(UInt32((questionList?.count)!)))]
+        
+        //currentQuestion = random
+        
+        let randomQ = GKShuffledDistribution.d20()
+        currentQuestion = questionList?[randomQ.nextInt()]
     }
 
     
@@ -244,5 +268,34 @@ extension QuizeCollectionVC: UICollectionViewDataSource {
         cell.selectedBackgroundView?.backgroundColor = isRightAnswer ? .yellow : .red
         return cell
     }
+    
+    func changeSizeFishImg() {
+        changeSizeFish = true
+        if changeSizeFish == true {
+            rybaScoreImgSpr.animation = "pop"
+            rybaScoreImgSpr.duration = 2
+            rybaScoreImgSpr.animate()
+            
+            scoreLbl.animation = "pop"
+            scoreLbl.duration = 1
+            scoreLbl.animate()
+            
+        }
+        changeSizeFish = false
+    }
+    func wrongSpr() {
+        wrongAnswer = true
+        if wrongAnswer == true {
+            appBackSpr.animation = "shake"
+            appBackSpr.duration = 2
+            appBackSpr.animate()
+            
+        }
+        wrongAnswer = false
+    }
+    
+    
+    
+    
     
 }

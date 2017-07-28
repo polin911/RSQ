@@ -93,7 +93,7 @@ class FinalVC: UIViewController {
     //MARK : SprAnimation
     func sprAnimation() {
         img.animation = "pop"
-        img.duration = 5
+        img.duration = 8
         img.animate()
         
     }

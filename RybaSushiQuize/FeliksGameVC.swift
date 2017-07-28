@@ -15,10 +15,12 @@ class FeliksGameVC: UIViewController {
     @IBOutlet var collectionV: UICollectionView!
     @IBOutlet var imageQuize: UIImageView!
     
+    @IBOutlet var scoreLbl: UILabel!
+    
     
     //MARK: Timer
     @IBOutlet var lblSec: UILabel!
-    var seconds = 35
+    var seconds = 55
     var timer = Timer()
    
     func startTimer() {
@@ -84,7 +86,7 @@ class FeliksGameVC: UIViewController {
     
     private func updateView() {
         let sectionToReload = IndexSet(integer: 0)
-        
+        self.scoreLbl.text = "\(score)"
         self.collectionV.reloadSections(sectionToReload)
         let duration = isOnScreen ? 0.2 : 0
         UIView.animate(withDuration: duration, animations: {
@@ -146,7 +148,16 @@ extension FeliksGameVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionV.dequeueReusableCell(withReuseIdentifier: "FelicsCell", for: indexPath) as! FelicsQuizeCollectionCell
-        cell.answersLbl.text = currentQuestion?.answers[indexPath.row]
+        
+        let answerText = currentQuestion?.answers[indexPath.row]
+        cell.answersLbl.text = answerText
+        
+        if cell.selectedBackgroundView == nil {
+            cell.selectedBackgroundView = UIView()
+            cell.selectedBackgroundView?.frame = cell.contentView.bounds
+        }
+        let isRightAnswer = currentQuestion?.answerIsCorrect(answer: answerText) ?? false
+        cell.selectedBackgroundView?.backgroundColor = isRightAnswer ? .green : .red
         return cell
     }
 }

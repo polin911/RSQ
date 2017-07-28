@@ -463,7 +463,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appBack" translatesAutoresizingMaskIntoConstraints="NO" id="I9o-mE-xs3">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appBack" translatesAutoresizingMaskIntoConstraints="NO" id="3V5-Dc-55U">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appBack" translatesAutoresizingMaskIntoConstraints="NO" id="I9o-mE-xs3" customClass="SpringImageView" customModule="Spring">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.69999999999999996" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="CrJ-pa-N33">
@@ -519,14 +522,14 @@
                                 <color key="textColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rybaScore" translatesAutoresizingMaskIntoConstraints="NO" id="4OQ-qU-OZO">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rybaScore" translatesAutoresizingMaskIntoConstraints="NO" id="4OQ-qU-OZO" customClass="SpringImageView" customModule="Spring">
                                 <rect key="frame" x="121" y="37" width="130" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="130" id="K98-xe-Hb1"/>
                                     <constraint firstAttribute="height" constant="40" id="XhG-WR-rih"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bAd-I9-jhF">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bAd-I9-jhF" customClass="SpringLabel" customModule="Spring">
                                 <rect key="frame" x="149" y="41" width="69" height="33"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="69" id="3Dh-3Q-0qJ"/>
@@ -557,18 +560,24 @@
                             <constraint firstItem="CrJ-pa-N33" firstAttribute="leading" secondItem="fAD-au-ckd" secondAttribute="leadingMargin" id="eEs-Am-Wx4"/>
                             <constraint firstItem="rQU-13-FG6" firstAttribute="centerX" secondItem="fAD-au-ckd" secondAttribute="centerX" id="hDt-3i-vAm"/>
                             <constraint firstItem="I9o-mE-xs3" firstAttribute="top" secondItem="fAD-au-ckd" secondAttribute="top" id="hXj-u8-Tm4"/>
+                            <constraint firstItem="3V5-Dc-55U" firstAttribute="leading" secondItem="fAD-au-ckd" secondAttribute="leading" id="iQs-xu-Wfl"/>
                             <constraint firstItem="4OQ-qU-OZO" firstAttribute="centerX" secondItem="fAD-au-ckd" secondAttribute="centerX" constant="-1.5" id="jNo-ek-Zdh"/>
+                            <constraint firstAttribute="trailing" secondItem="3V5-Dc-55U" secondAttribute="trailing" id="kVs-0U-sKf"/>
                             <constraint firstItem="CrJ-pa-N33" firstAttribute="trailing" secondItem="fAD-au-ckd" secondAttribute="trailingMargin" id="mHI-pN-TTr"/>
                             <constraint firstItem="AJE-XF-VqK" firstAttribute="top" secondItem="CrJ-pa-N33" secondAttribute="bottom" constant="20" id="o4o-Au-ikb"/>
                             <constraint firstItem="un5-3V-AAe" firstAttribute="trailing" secondItem="fAD-au-ckd" secondAttribute="trailingMargin" id="r82-ez-i8h"/>
                             <constraint firstItem="CrJ-pa-N33" firstAttribute="top" secondItem="rQU-13-FG6" secondAttribute="bottom" constant="44" id="uyW-8D-z6d"/>
                             <constraint firstItem="bAd-I9-jhF" firstAttribute="centerX" secondItem="4OQ-qU-OZO" secondAttribute="centerX" constant="-2" id="wP6-NG-VaQ"/>
+                            <constraint firstItem="3V5-Dc-55U" firstAttribute="top" secondItem="fAD-au-ckd" secondAttribute="top" id="x8P-L1-ZWj"/>
                             <constraint firstItem="un5-3V-AAe" firstAttribute="leading" secondItem="fAD-au-ckd" secondAttribute="leadingMargin" id="xNl-KG-pLZ"/>
+                            <constraint firstItem="AJE-XF-VqK" firstAttribute="top" secondItem="3V5-Dc-55U" secondAttribute="bottom" id="yiQ-WY-z1j"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="appBackSpr" destination="I9o-mE-xs3" id="0HW-YU-clT"/>
                         <outlet property="collectionV" destination="CrJ-pa-N33" id="7du-WA-X7y"/>
                         <outlet property="questionLbl" destination="rQU-13-FG6" id="PBP-yE-SEB"/>
+                        <outlet property="rybaScoreImgSpr" destination="4OQ-qU-OZO" id="gAa-hV-J75"/>
                         <outlet property="scoreLbl" destination="bAd-I9-jhF" id="a2t-fw-zlq"/>
                         <outlet property="timerView" destination="un5-3V-AAe" id="a03-eT-BJg"/>
                         <segue destination="Njf-V4-EQL" kind="show" identifier="ShowResult" id="vbt-bI-ynS"/>
@@ -577,7 +586,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nUx-ym-xJe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2872.8000000000002" y="1106.8965517241379"/>
+            <point key="canvasLocation" x="2872.8000000000002" y="1105.9970014992505"/>
         </scene>
         <!--WinnerVC-->
         <scene sceneID="DVV-19-bCz">
@@ -813,10 +822,10 @@
                             <imageView userInteractionEnabled="NO" alpha="0.65000000000000002" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appBack" translatesAutoresizingMaskIntoConstraints="NO" id="VHl-sW-yCX">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.84999999999999998" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="b6i-k2-f3o">
-                                <rect key="frame" x="16" y="320" width="343" height="173"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.84999999999999998" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="b6i-k2-f3o">
+                                <rect key="frame" x="16" y="320" width="345" height="173"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="iKu-oj-9C0">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="iKu-oj-9C0">
                                     <size key="itemSize" width="162" height="61"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -871,6 +880,16 @@
                                     <constraint firstAttribute="width" constant="256" id="YdZ-ir-4BR"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eur-Ed-qvc">
+                                <rect key="frame" x="126" y="586" width="123" height="53"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="123" id="cqd-wS-wGR"/>
+                                    <constraint firstAttribute="height" constant="53" id="vx7-lV-L63"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="32"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -881,12 +900,14 @@
                             <constraint firstItem="b6i-k2-f3o" firstAttribute="trailing" secondItem="ua1-Ea-kRF" secondAttribute="trailingMargin" id="Bre-eL-o00"/>
                             <constraint firstItem="MsT-fc-3I5" firstAttribute="top" secondItem="IAe-67-a0F" secondAttribute="bottom" constant="52" id="CZL-50-pqJ"/>
                             <constraint firstItem="dff-8X-8LA" firstAttribute="top" secondItem="b6i-k2-f3o" secondAttribute="bottom" constant="174" id="Gs1-0a-0co"/>
+                            <constraint firstItem="dff-8X-8LA" firstAttribute="top" secondItem="Eur-Ed-qvc" secondAttribute="bottom" constant="28" id="H5E-oH-jpX"/>
                             <constraint firstItem="mIL-Lx-fv8" firstAttribute="leading" secondItem="ua1-Ea-kRF" secondAttribute="leading" id="Hd9-ij-j72"/>
                             <constraint firstItem="IAe-67-a0F" firstAttribute="top" secondItem="7xY-59-q8V" secondAttribute="bottom" constant="8" id="LTA-xI-3yN"/>
                             <constraint firstItem="b6i-k2-f3o" firstAttribute="top" secondItem="MsT-fc-3I5" secondAttribute="bottom" constant="20" id="LZd-yP-FoZ"/>
                             <constraint firstItem="IAe-67-a0F" firstAttribute="centerX" secondItem="ua1-Ea-kRF" secondAttribute="centerX" id="Oof-x6-JbH"/>
                             <constraint firstAttribute="trailing" secondItem="VHl-sW-yCX" secondAttribute="trailing" id="Rzh-gg-wCo"/>
                             <constraint firstItem="VHl-sW-yCX" firstAttribute="leading" secondItem="ua1-Ea-kRF" secondAttribute="leading" id="aFZ-0w-HQh"/>
+                            <constraint firstItem="Eur-Ed-qvc" firstAttribute="centerX" secondItem="ua1-Ea-kRF" secondAttribute="centerX" id="eU6-Wo-sC3"/>
                             <constraint firstItem="b6i-k2-f3o" firstAttribute="leading" secondItem="ua1-Ea-kRF" secondAttribute="leadingMargin" id="fId-xb-cmJ"/>
                             <constraint firstAttribute="trailing" secondItem="mIL-Lx-fv8" secondAttribute="trailing" id="jPC-pE-MWe"/>
                             <constraint firstItem="mIL-Lx-fv8" firstAttribute="top" secondItem="ua1-Ea-kRF" secondAttribute="top" id="krA-Kc-fLr"/>
@@ -898,12 +919,13 @@
                         <outlet property="collectionV" destination="b6i-k2-f3o" id="UGq-ce-OiB"/>
                         <outlet property="imageQuize" destination="MsT-fc-3I5" id="a0v-dS-JAo"/>
                         <outlet property="lblSec" destination="IAe-67-a0F" id="v0v-CE-7K6"/>
+                        <outlet property="scoreLbl" destination="Eur-Ed-qvc" id="FHO-yg-drJ"/>
                         <segue destination="2ev-Vb-LDs" kind="show" identifier="FelicsFinal" id="Hjo-tI-RMG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aT9-vt-e5i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4621.6000000000004" y="1422.6386806596702"/>
+            <point key="canvasLocation" x="4621.6000000000004" y="1421.7391304347827"/>
         </scene>
         <!--Feliks Instructions-->
         <scene sceneID="7am-hX-GQ8">
