@@ -522,6 +522,21 @@
                                 <color key="textColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" progress="1" translatesAutoresizingMaskIntoConstraints="NO" id="un5-3V-AAe">
+                                <rect key="frame" x="16" y="272" width="343" height="6"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="5" id="7fk-g7-HKI"/>
+                                </constraints>
+                                <color key="progressTintColor" red="0.9152866006" green="0.24655312300000001" blue="0.20107686520000001" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="trackTintColor" red="1" green="1" blue="0.0" alpha="0.65132705479452058" colorSpace="calibratedRGB"/>
+                            </progressView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lmw-yj-JCs">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <state key="normal" image="BackGRyba2"/>
+                                <connections>
+                                    <action selector="tokenAction:" destination="KWb-yC-ZYF" eventType="touchUpInside" id="lrE-Ui-FGy"/>
+                                </connections>
+                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rybaScore" translatesAutoresizingMaskIntoConstraints="NO" id="4OQ-qU-OZO" customClass="SpringImageView" customModule="Spring">
                                 <rect key="frame" x="121" y="37" width="130" height="40"/>
                                 <constraints>
@@ -539,28 +554,24 @@
                                 <color key="textColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" progress="1" translatesAutoresizingMaskIntoConstraints="NO" id="un5-3V-AAe">
-                                <rect key="frame" x="16" y="272" width="343" height="6"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="5" id="7fk-g7-HKI"/>
-                                </constraints>
-                                <color key="progressTintColor" red="0.9152866006" green="0.24655312300000001" blue="0.20107686520000001" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="trackTintColor" red="1" green="1" blue="0.0" alpha="0.65132705479452058" colorSpace="calibratedRGB"/>
-                            </progressView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="4OQ-qU-OZO" firstAttribute="top" secondItem="c1c-IP-ISw" secondAttribute="bottom" constant="17" id="3NO-ni-8Hl"/>
                             <constraint firstItem="rQU-13-FG6" firstAttribute="top" secondItem="4OQ-qU-OZO" secondAttribute="bottom" constant="30" id="6lE-ky-nYY"/>
                             <constraint firstItem="AJE-XF-VqK" firstAttribute="top" secondItem="I9o-mE-xs3" secondAttribute="bottom" id="6xY-3O-dxZ"/>
+                            <constraint firstItem="lmw-yj-JCs" firstAttribute="leading" secondItem="fAD-au-ckd" secondAttribute="leading" id="7b4-kd-xre"/>
                             <constraint firstItem="I9o-mE-xs3" firstAttribute="leading" secondItem="fAD-au-ckd" secondAttribute="leading" id="8eF-Bb-8OG"/>
+                            <constraint firstItem="lmw-yj-JCs" firstAttribute="top" secondItem="fAD-au-ckd" secondAttribute="top" id="F3z-ZW-dfy"/>
                             <constraint firstAttribute="trailing" secondItem="I9o-mE-xs3" secondAttribute="trailing" id="Nbe-I4-KJR"/>
                             <constraint firstItem="CrJ-pa-N33" firstAttribute="top" secondItem="un5-3V-AAe" secondAttribute="bottom" constant="8" id="Wvm-2E-ddN"/>
                             <constraint firstItem="bAd-I9-jhF" firstAttribute="centerY" secondItem="4OQ-qU-OZO" secondAttribute="centerY" id="aCJ-2Q-d81"/>
                             <constraint firstItem="CrJ-pa-N33" firstAttribute="leading" secondItem="fAD-au-ckd" secondAttribute="leadingMargin" id="eEs-Am-Wx4"/>
+                            <constraint firstAttribute="trailing" secondItem="lmw-yj-JCs" secondAttribute="trailing" id="fF1-1X-Q3E"/>
                             <constraint firstItem="rQU-13-FG6" firstAttribute="centerX" secondItem="fAD-au-ckd" secondAttribute="centerX" id="hDt-3i-vAm"/>
                             <constraint firstItem="I9o-mE-xs3" firstAttribute="top" secondItem="fAD-au-ckd" secondAttribute="top" id="hXj-u8-Tm4"/>
                             <constraint firstItem="3V5-Dc-55U" firstAttribute="leading" secondItem="fAD-au-ckd" secondAttribute="leading" id="iQs-xu-Wfl"/>
+                            <constraint firstItem="AJE-XF-VqK" firstAttribute="top" secondItem="lmw-yj-JCs" secondAttribute="bottom" id="j5R-vg-a2n"/>
                             <constraint firstItem="4OQ-qU-OZO" firstAttribute="centerX" secondItem="fAD-au-ckd" secondAttribute="centerX" constant="-1.5" id="jNo-ek-Zdh"/>
                             <constraint firstAttribute="trailing" secondItem="3V5-Dc-55U" secondAttribute="trailing" id="kVs-0U-sKf"/>
                             <constraint firstItem="CrJ-pa-N33" firstAttribute="trailing" secondItem="fAD-au-ckd" secondAttribute="trailingMargin" id="mHI-pN-TTr"/>
@@ -580,6 +591,7 @@
                         <outlet property="rybaScoreImgSpr" destination="4OQ-qU-OZO" id="gAa-hV-J75"/>
                         <outlet property="scoreLbl" destination="bAd-I9-jhF" id="a2t-fw-zlq"/>
                         <outlet property="timerView" destination="un5-3V-AAe" id="a03-eT-BJg"/>
+                        <outlet property="tokenImg" destination="lmw-yj-JCs" id="SWb-1F-K5t"/>
                         <segue destination="Njf-V4-EQL" kind="show" identifier="ShowResult" id="vbt-bI-ynS"/>
                         <segue destination="VlY-zi-cR0" kind="show" identifier="winnerVC" id="fst-1Y-bIM"/>
                     </connections>
@@ -1041,6 +1053,7 @@
         <image name="18" width="120" height="120"/>
         <image name="4" width="120" height="120"/>
         <image name="BackGRyba" width="414" height="736"/>
+        <image name="BackGRyba2" width="414" height="736"/>
         <image name="Groupfirst" width="419" height="742"/>
         <image name="SemenSan" width="277" height="475"/>
         <image name="WelcomeTxt" width="318" height="88"/>

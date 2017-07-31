@@ -14,11 +14,13 @@ class QuizeCollectionVC: UIViewController {
     
     var quizeCell = WhichQuizeCollectionCell()
     
+    var tokenActionBool = true
     var wrongAnswer = true
     var changeSizeFish = true
     var player = Player()
 
     
+    @IBOutlet var tokenImg: UIButton!
     @IBOutlet var appBackSpr: SpringImageView!
     
     @IBOutlet var rybaScoreImgSpr: SpringImageView!
@@ -27,6 +29,14 @@ class QuizeCollectionVC: UIViewController {
     @IBOutlet var questionLbl: UILabel!
     @IBOutlet var questionImg: UIImageView!
     @IBOutlet var collectionV: UICollectionView!
+    
+    //
+    
+    @IBAction func tokenAction(_ sender: Any) {
+        tokenImg.isHidden = true
+        timerOn = true
+    }
+    
     
     //*
     
@@ -76,7 +86,9 @@ class QuizeCollectionVC: UIViewController {
         
         //timer:
         
-        timerOn = true
+        //timerOn = true
+        
+        tokenWorks()
         seconds = 20
         
         let sectionToReload = IndexSet(integer: 0)
@@ -273,11 +285,11 @@ extension QuizeCollectionVC: UICollectionViewDataSource {
         changeSizeFish = true
         if changeSizeFish == true {
             rybaScoreImgSpr.animation = "pop"
-            rybaScoreImgSpr.duration = 2
+            rybaScoreImgSpr.duration = 4
             rybaScoreImgSpr.animate()
             
             scoreLbl.animation = "pop"
-            scoreLbl.duration = 1
+            scoreLbl.duration = 4
             scoreLbl.animate()
             
         }
@@ -286,14 +298,28 @@ extension QuizeCollectionVC: UICollectionViewDataSource {
     func wrongSpr() {
         wrongAnswer = true
         if wrongAnswer == true {
-            appBackSpr.animation = "shake"
-            appBackSpr.duration = 2
-            appBackSpr.animate()
+            rybaScoreImgSpr.animation = "shake"
+            rybaScoreImgSpr.duration = 1
+            rybaScoreImgSpr.animate()
+            
+            scoreLbl.animation = "shake"
+            scoreLbl.duration = 1
+            scoreLbl.animate()
+            
             
         }
         wrongAnswer = false
     }
-    
+  
+    func tokenWorks() {
+        tokenActionBool = true
+        if tokenActionBool {
+            tokenImg.isHidden = false
+            timerOn = false
+            
+        }
+        // tokenActionBool = false
+    }
     
     
     
