@@ -269,12 +269,12 @@ extension QuizeCollectionVC : UICollectionViewDelegate {
         //currentQuestion = questionList?[randomDistribution.nextInt()]
         // let questionRandom = questionList?.count.random.nextInt()
         //GKShuffledDistribution(lowestValue: 1, highestValue: (questionList?.count)!)
-        //let random = questionList?[Int(arc4random_uniform(UInt32((questionList?.count)!)))]
+        let random = questionList?[Int(arc4random_uniform(UInt32((questionList?.count)!)))]
         
         //currentQuestion = random
         
-        let randomQ = GKShuffledDistribution.d20()
-        currentQuestion = questionList?[randomQ.nextInt()]
+        //let randomQ = GKShuffledDistribution.d20()
+        currentQuestion = random
     }
     
     
@@ -358,6 +358,9 @@ extension QuizeCollectionVC: UICollectionViewDataSource {
         //timerOn = false
         
         if scoreRolliActionBool {
+//            scoreLbl.isHidden = true
+//            rybaScoreImgSpr.isHidden = true
+            
             timerOn = false
             rolliScoreImg.isHidden = false
             tokenImg.isHidden = false

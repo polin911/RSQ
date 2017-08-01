@@ -491,7 +491,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="9tj-Ku-jyT"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="20"/>
+                                                    <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="21"/>
                                                     <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -512,13 +512,23 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bAd-I9-jhF" customClass="SpringLabel" customModule="Spring">
+                                <rect key="frame" x="149" y="41" width="69" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="69" id="3Dh-3Q-0qJ"/>
+                                    <constraint firstAttribute="height" constant="33" id="wux-B4-oiM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="16"/>
+                                <color key="textColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ВопроссЖЖ" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rQU-13-FG6">
                                 <rect key="frame" x="45.5" y="107" width="284" height="134"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="134" id="mNt-gx-uWH"/>
                                     <constraint firstAttribute="width" constant="284" id="ok4-X5-IJU"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="20"/>
                                 <color key="textColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -537,19 +547,9 @@
                                 <color key="progressTintColor" red="0.9152866006" green="0.24655312300000001" blue="0.20107686520000001" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="trackTintColor" red="1" green="1" blue="0.0" alpha="0.65132705479452058" colorSpace="calibratedRGB"/>
                             </progressView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bAd-I9-jhF" customClass="SpringLabel" customModule="Spring">
-                                <rect key="frame" x="149" y="41" width="69" height="33"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="69" id="3Dh-3Q-0qJ"/>
-                                    <constraint firstAttribute="height" constant="33" id="wux-B4-oiM"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="16"/>
-                                <color key="textColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lmw-yj-JCs">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <state key="normal" image="BackGRyba2"/>
+                                <state key="normal" image="appBack"/>
                                 <connections>
                                     <action selector="tokenAction:" destination="KWb-yC-ZYF" eventType="touchUpInside" id="lrE-Ui-FGy"/>
                                 </connections>
@@ -1086,7 +1086,6 @@
         <image name="18" width="120" height="120"/>
         <image name="4" width="120" height="120"/>
         <image name="BackGRyba" width="414" height="736"/>
-        <image name="BackGRyba2" width="414" height="736"/>
         <image name="Groupfirst" width="419" height="742"/>
         <image name="SemenSan" width="277" height="475"/>
         <image name="WelcomeTxt" width="318" height="88"/>

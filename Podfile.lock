@@ -1,9 +1,11 @@
 PODS:
   - RazzleDazzle (0.1.4)
+  - SCLAlertView (0.7.0)
   - Spring (1.0.3)
 
 DEPENDENCIES:
   - RazzleDazzle
+  - SCLAlertView
   - Spring (from `https://github.com/MengTo/Spring.git`, branch `swift3`)
 
 EXTERNAL SOURCES:
@@ -18,8 +20,9 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   RazzleDazzle: 63a140fd0048de82ab95699008e99294c5492068
+  SCLAlertView: 8a14ffc40590c619e183eed2298b854385f30be1
   Spring: 3f02b5dc3308572ef177b3cad0fa7bbc4b0706f7
 
-PODFILE CHECKSUM: 30ba45337760baae8d543004ffcaacf11270712b
+PODFILE CHECKSUM: 36d2ccddebdc252e0e15dd8f96379a104039192c
 
 COCOAPODS: 1.2.0
