@@ -522,6 +522,13 @@
                                 <color key="textColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rybaScore" translatesAutoresizingMaskIntoConstraints="NO" id="4OQ-qU-OZO" customClass="SpringImageView" customModule="Spring">
+                                <rect key="frame" x="121" y="37" width="130" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="130" id="K98-xe-Hb1"/>
+                                    <constraint firstAttribute="height" constant="40" id="XhG-WR-rih"/>
+                                </constraints>
+                            </imageView>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" progress="1" translatesAutoresizingMaskIntoConstraints="NO" id="un5-3V-AAe">
                                 <rect key="frame" x="16" y="272" width="343" height="6"/>
                                 <constraints>
@@ -530,20 +537,6 @@
                                 <color key="progressTintColor" red="0.9152866006" green="0.24655312300000001" blue="0.20107686520000001" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="trackTintColor" red="1" green="1" blue="0.0" alpha="0.65132705479452058" colorSpace="calibratedRGB"/>
                             </progressView>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lmw-yj-JCs">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <state key="normal" image="BackGRyba2"/>
-                                <connections>
-                                    <action selector="tokenAction:" destination="KWb-yC-ZYF" eventType="touchUpInside" id="lrE-Ui-FGy"/>
-                                </connections>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rybaScore" translatesAutoresizingMaskIntoConstraints="NO" id="4OQ-qU-OZO" customClass="SpringImageView" customModule="Spring">
-                                <rect key="frame" x="121" y="37" width="130" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="130" id="K98-xe-Hb1"/>
-                                    <constraint firstAttribute="height" constant="40" id="XhG-WR-rih"/>
-                                </constraints>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bAd-I9-jhF" customClass="SpringLabel" customModule="Spring">
                                 <rect key="frame" x="149" y="41" width="69" height="33"/>
                                 <constraints>
@@ -554,17 +547,53 @@
                                 <color key="textColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lmw-yj-JCs">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <state key="normal" image="BackGRyba2"/>
+                                <connections>
+                                    <action selector="tokenAction:" destination="KWb-yC-ZYF" eventType="touchUpInside" id="lrE-Ui-FGy"/>
+                                </connections>
+                            </button>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YMU-7N-sDf" customClass="SpringImageView" customModule="Spring">
+                                <rect key="frame" x="30.5" y="278.5" width="314" height="110"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="110" id="C96-Jt-QhQ"/>
+                                    <constraint firstAttribute="width" constant="314" id="dvH-2B-ZJN"/>
+                                </constraints>
+                            </imageView>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rybaScore" translatesAutoresizingMaskIntoConstraints="NO" id="WL1-ph-I30" customClass="SpringImageView" customModule="Spring">
+                                <rect key="frame" x="67.5" y="286" width="240" height="95"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="95" id="PGk-cB-1XU"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="240" id="o26-v4-rAx"/>
+                                </constraints>
+                            </imageView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UlC-nA-GsO" customClass="SpringLabel" customModule="Spring">
+                                <rect key="frame" x="98.5" y="300.5" width="144" height="74"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="74" id="7LO-PH-Psa"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="144" id="dDQ-V9-eEl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MalayalamSangamMN" family="Malayalam Sangam MN" pointSize="44"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="4OQ-qU-OZO" firstAttribute="top" secondItem="c1c-IP-ISw" secondAttribute="bottom" constant="17" id="3NO-ni-8Hl"/>
+                            <constraint firstItem="YMU-7N-sDf" firstAttribute="centerY" secondItem="fAD-au-ckd" secondAttribute="centerY" id="6XW-ya-Izs"/>
                             <constraint firstItem="rQU-13-FG6" firstAttribute="top" secondItem="4OQ-qU-OZO" secondAttribute="bottom" constant="30" id="6lE-ky-nYY"/>
                             <constraint firstItem="AJE-XF-VqK" firstAttribute="top" secondItem="I9o-mE-xs3" secondAttribute="bottom" id="6xY-3O-dxZ"/>
                             <constraint firstItem="lmw-yj-JCs" firstAttribute="leading" secondItem="fAD-au-ckd" secondAttribute="leading" id="7b4-kd-xre"/>
                             <constraint firstItem="I9o-mE-xs3" firstAttribute="leading" secondItem="fAD-au-ckd" secondAttribute="leading" id="8eF-Bb-8OG"/>
                             <constraint firstItem="lmw-yj-JCs" firstAttribute="top" secondItem="fAD-au-ckd" secondAttribute="top" id="F3z-ZW-dfy"/>
+                            <constraint firstItem="YMU-7N-sDf" firstAttribute="centerX" secondItem="fAD-au-ckd" secondAttribute="centerX" id="Gf5-zz-yyh"/>
+                            <constraint firstItem="WL1-ph-I30" firstAttribute="centerY" secondItem="fAD-au-ckd" secondAttribute="centerY" id="Mwt-HC-BMy"/>
                             <constraint firstAttribute="trailing" secondItem="I9o-mE-xs3" secondAttribute="trailing" id="Nbe-I4-KJR"/>
+                            <constraint firstItem="WL1-ph-I30" firstAttribute="centerX" secondItem="fAD-au-ckd" secondAttribute="centerX" id="TtH-Ok-LIE"/>
                             <constraint firstItem="CrJ-pa-N33" firstAttribute="top" secondItem="un5-3V-AAe" secondAttribute="bottom" constant="8" id="Wvm-2E-ddN"/>
+                            <constraint firstItem="UlC-nA-GsO" firstAttribute="top" secondItem="WL1-ph-I30" secondAttribute="bottom" constant="-80.5" id="Z8k-RB-tKp"/>
                             <constraint firstItem="bAd-I9-jhF" firstAttribute="centerY" secondItem="4OQ-qU-OZO" secondAttribute="centerY" id="aCJ-2Q-d81"/>
                             <constraint firstItem="CrJ-pa-N33" firstAttribute="leading" secondItem="fAD-au-ckd" secondAttribute="leadingMargin" id="eEs-Am-Wx4"/>
                             <constraint firstAttribute="trailing" secondItem="lmw-yj-JCs" secondAttribute="trailing" id="fF1-1X-Q3E"/>
@@ -575,6 +604,7 @@
                             <constraint firstItem="4OQ-qU-OZO" firstAttribute="centerX" secondItem="fAD-au-ckd" secondAttribute="centerX" constant="-1.5" id="jNo-ek-Zdh"/>
                             <constraint firstAttribute="trailing" secondItem="3V5-Dc-55U" secondAttribute="trailing" id="kVs-0U-sKf"/>
                             <constraint firstItem="CrJ-pa-N33" firstAttribute="trailing" secondItem="fAD-au-ckd" secondAttribute="trailingMargin" id="mHI-pN-TTr"/>
+                            <constraint firstItem="WL1-ph-I30" firstAttribute="leading" secondItem="UlC-nA-GsO" secondAttribute="trailing" constant="-175" id="mvF-Lp-7JH"/>
                             <constraint firstItem="AJE-XF-VqK" firstAttribute="top" secondItem="CrJ-pa-N33" secondAttribute="bottom" constant="20" id="o4o-Au-ikb"/>
                             <constraint firstItem="un5-3V-AAe" firstAttribute="trailing" secondItem="fAD-au-ckd" secondAttribute="trailingMargin" id="r82-ez-i8h"/>
                             <constraint firstItem="CrJ-pa-N33" firstAttribute="top" secondItem="rQU-13-FG6" secondAttribute="bottom" constant="44" id="uyW-8D-z6d"/>
@@ -588,10 +618,13 @@
                         <outlet property="appBackSpr" destination="I9o-mE-xs3" id="0HW-YU-clT"/>
                         <outlet property="collectionV" destination="CrJ-pa-N33" id="7du-WA-X7y"/>
                         <outlet property="questionLbl" destination="rQU-13-FG6" id="PBP-yE-SEB"/>
+                        <outlet property="rolliScoreImg" destination="YMU-7N-sDf" id="Tnt-Ey-1Lp"/>
                         <outlet property="rybaScoreImgSpr" destination="4OQ-qU-OZO" id="gAa-hV-J75"/>
                         <outlet property="scoreLbl" destination="bAd-I9-jhF" id="a2t-fw-zlq"/>
                         <outlet property="timerView" destination="un5-3V-AAe" id="a03-eT-BJg"/>
                         <outlet property="tokenImg" destination="lmw-yj-JCs" id="SWb-1F-K5t"/>
+                        <outlet property="visibleFishSpr" destination="WL1-ph-I30" id="ztO-yo-cDY"/>
+                        <outlet property="visibleScoreSpr" destination="UlC-nA-GsO" id="5vE-Rc-5XZ"/>
                         <segue destination="Njf-V4-EQL" kind="show" identifier="ShowResult" id="vbt-bI-ynS"/>
                         <segue destination="VlY-zi-cR0" kind="show" identifier="winnerVC" id="fst-1Y-bIM"/>
                     </connections>

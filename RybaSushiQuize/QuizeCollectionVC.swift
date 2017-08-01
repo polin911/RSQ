@@ -18,7 +18,15 @@ class QuizeCollectionVC: UIViewController {
     var wrongAnswer = true
     var changeSizeFish = true
     var player = Player()
-
+    
+    //MARK: RolliScore
+    var scoreRolliActionBool = true
+    var rolliScore = 3
+    @IBOutlet var rolliScoreImg: SpringImageView!
+    
+    //MARK: Token
+    @IBOutlet var visibleScoreSpr: SpringLabel!
+    @IBOutlet var visibleFishSpr: SpringImageView!
     
     @IBOutlet var tokenImg: UIButton!
     @IBOutlet var appBackSpr: SpringImageView!
@@ -30,10 +38,18 @@ class QuizeCollectionVC: UIViewController {
     @IBOutlet var questionImg: UIImageView!
     @IBOutlet var collectionV: UICollectionView!
     
-    //
+    //MARK: TokenAction
     
     @IBAction func tokenAction(_ sender: Any) {
         tokenImg.isHidden = true
+        visibleScoreSpr.isHidden = true
+        visibleFishSpr.isHidden = true
+        //
+        rolliScoreImg.isHidden = true
+        if rolliScore == 0 {
+            performSegue(withIdentifier: "ShowResult", sender: score)
+        }
+        
         timerOn = true
     }
     
@@ -61,14 +77,16 @@ class QuizeCollectionVC: UIViewController {
             currentQuestion = random
         }
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         startTimer()
         loadData()
         checking()
-
+        
+        
+        
     }
     
     func loadData() {
@@ -76,7 +94,7 @@ class QuizeCollectionVC: UIViewController {
         collectionV.dataSource =  self
         
         let loader = DataLoader()
-        let result = loader.loadData(fileName: "tryQuize")
+        let result = loader.loadData(fileName: player.nameGame)
         
         self.title = result.quizeName
         self.questionList = result.questions
@@ -88,20 +106,20 @@ class QuizeCollectionVC: UIViewController {
         
         //timerOn = true
         
-        tokenWorks()
+        //tokenWorks()
         seconds = 20
         
         let sectionToReload = IndexSet(integer: 0)
         self.scoreLbl.text = "\(score)"
         self.collectionV.reloadSections(sectionToReload)
-
+        
         let duration = isOnScreen ? 0.2 : 0
         UIView.animate(withDuration: duration, animations: {
-
+            
             self.questionLbl.alpha = 0
         }) { (finished) in
             self.questionLbl.text = self.currentQuestion?.title
-
+            
             
             UIView.animate(withDuration: duration, animations: {
                 self.questionLbl.alpha = 1
@@ -118,7 +136,7 @@ class QuizeCollectionVC: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let vc = segue.destination as? FinalVC {
-        vc.player = self.player
+            vc.player = self.player
         }
         if let vcWinner = segue.destination as? WinnerVC {
             vcWinner.player = self.player
@@ -160,7 +178,7 @@ class QuizeCollectionVC: UIViewController {
             }
         }
     }
-
+    
     
 }
 
@@ -171,13 +189,19 @@ extension QuizeCollectionVC : UICollectionViewDelegate {
             let selectedAnswer = currentQuestion?.answers[indexPath.row]
             if currentQuestion?.answerIsCorrect(answer: selectedAnswer) == true {
                 score += 1
+                //
                 changeSizeFishImg()
+                //
+                tokenWorks()
             }
             if currentQuestion?.answerIsCorrect(answer: selectedAnswer) == false {
                 wrongSpr()
+                //
+                rolliScore -= 1
+                rolliScoreLife()
             }
             
-            print("ячейка c индексом\(indexPath) выбрана, счет \(score)")
+            print("ячейка c индексом\(indexPath) выбрана, счет \(score), score\(rolliScore)")
             currentQuestionIndex += 1
             guard currentQuestionIndex < player.totalQuestion else {
                 print("don't go ")
@@ -188,7 +212,8 @@ extension QuizeCollectionVC : UICollectionViewDelegate {
                     performSegue(withIdentifier: "winnerVC", sender: self)
                 }
                 
-                performSegue(withIdentifier: "ShowResult", sender: score)
+                
+                // performSegue(withIdentifier: "ShowResult", sender: score)
                 return
             }
         }
@@ -229,7 +254,7 @@ extension QuizeCollectionVC : UICollectionViewDelegate {
                     self.player.winGame = self.player.nameGame
                     performSegue(withIdentifier: "winnerVC", sender: self)
                 }
-               
+                
                 return
             }
             if currentQuestion?.answerIsCorrect(answer: selectedAnswer) == false {
@@ -238,12 +263,12 @@ extension QuizeCollectionVC : UICollectionViewDelegate {
             }
         }
         
-       // let randomDistribution = GKShuffledDistribution.init(lowestValue: 1, highestValue: (questionList?.count)! - 1 )
+        // let randomDistribution = GKShuffledDistribution.init(lowestValue: 1, highestValue: (questionList?.count)! - 1 )
         
         
         //currentQuestion = questionList?[randomDistribution.nextInt()]
-       // let questionRandom = questionList?.count.random.nextInt()
-            //GKShuffledDistribution(lowestValue: 1, highestValue: (questionList?.count)!)
+        // let questionRandom = questionList?.count.random.nextInt()
+        //GKShuffledDistribution(lowestValue: 1, highestValue: (questionList?.count)!)
         //let random = questionList?[Int(arc4random_uniform(UInt32((questionList?.count)!)))]
         
         //currentQuestion = random
@@ -251,7 +276,7 @@ extension QuizeCollectionVC : UICollectionViewDelegate {
         let randomQ = GKShuffledDistribution.d20()
         currentQuestion = questionList?[randomQ.nextInt()]
     }
-
+    
     
 }
 
@@ -281,16 +306,18 @@ extension QuizeCollectionVC: UICollectionViewDataSource {
         return cell
     }
     
+    //MARK: Token and Score
+    
     func changeSizeFishImg() {
         changeSizeFish = true
         if changeSizeFish == true {
-            rybaScoreImgSpr.animation = "pop"
-            rybaScoreImgSpr.duration = 4
-            rybaScoreImgSpr.animate()
+            visibleFishSpr.animation = "pop"
+            visibleFishSpr.duration = 4
+            visibleFishSpr.animate()
             
-            scoreLbl.animation = "pop"
-            scoreLbl.duration = 4
-            scoreLbl.animate()
+            visibleScoreSpr.animation = "pop"
+            visibleScoreSpr.duration = 4
+            visibleScoreSpr.animate()
             
         }
         changeSizeFish = false
@@ -310,17 +337,51 @@ extension QuizeCollectionVC: UICollectionViewDataSource {
         }
         wrongAnswer = false
     }
-  
+    
     func tokenWorks() {
         tokenActionBool = true
         if tokenActionBool {
+            // let answerText = currentQuestion?.answers[currentQuestionIndex]
+            visibleScoreSpr.text = "\(score)"
             tokenImg.isHidden = false
+            visibleFishSpr.isHidden = false
+            visibleScoreSpr.isHidden = false
             timerOn = false
             
         }
         // tokenActionBool = false
     }
     
+    func rolliScoreLife() {
+        
+        scoreRolliActionBool = true
+        //timerOn = false
+        
+        if scoreRolliActionBool {
+            timerOn = false
+            rolliScoreImg.isHidden = false
+            tokenImg.isHidden = false
+            
+            rolliScoreImg.animation = "fadeIn"
+            rolliScoreImg.duration  = 3
+            rolliScoreImg.animate()
+            
+            switch rolliScore {
+            case 2:
+                rolliScoreImg.image = #imageLiteral(resourceName: "2RollaScore")
+            case 1:
+                rolliScoreImg.image = #imageLiteral(resourceName: "1RollScore")
+            case 0 :
+                rolliScoreImg.image = #imageLiteral(resourceName: "0RollaScore")
+            //performSegue(withIdentifier: "ShowResult", sender: score)
+            default:
+                rolliScoreImg.image = #imageLiteral(resourceName: "3RollaScore")
+                
+            }
+        }
+        scoreRolliActionBool = false
+        
+    }
     
     
     
