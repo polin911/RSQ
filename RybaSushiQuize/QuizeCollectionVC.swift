@@ -9,6 +9,7 @@
 import UIKit
 import GameplayKit
 import Spring
+import SCLAlertView
 
 class QuizeCollectionVC: UIViewController {
     
