@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		363E42DD1F0BF0C1000F6C8F /* WinnerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363E42DC1F0BF0C1000F6C8F /* WinnerVC.swift */; };
+		364268921F346E1300B3782E /* Игра на суши.json in Resources */ = {isa = PBXBuildFile; fileRef = 364268911F346E1300B3782E /* Игра на суши.json */; };
+		364268941F346E5800B3782E /* Игра на устрицы с шампанским.json in Resources */ = {isa = PBXBuildFile; fileRef = 364268931F346E5800B3782E /* Игра на устрицы с шампанским.json */; };
 		365872DF1EF908EA003823BA /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365872DE1EF908EA003823BA /* Player.swift */; };
 		365872E11EF96216003823BA /* QuizeCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365872E01EF96216003823BA /* QuizeCollectionVC.swift */; };
 		365872E31EF96266003823BA /* WhichQuizeCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365872E21EF96266003823BA /* WhichQuizeCollectionCell.swift */; };
@@ -41,6 +43,8 @@
 
 /* Begin PBXFileReference section */
 		363E42DC1F0BF0C1000F6C8F /* WinnerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WinnerVC.swift; sourceTree = "<group>"; };
+		364268911F346E1300B3782E /* Игра на суши.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Игра на суши.json"; sourceTree = "<group>"; };
+		364268931F346E5800B3782E /* Игра на устрицы с шампанским.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Игра на устрицы с шампанским.json"; sourceTree = "<group>"; };
 		365872DE1EF908EA003823BA /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		365872E01EF96216003823BA /* QuizeCollectionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizeCollectionVC.swift; sourceTree = "<group>"; };
 		365872E21EF96266003823BA /* WhichQuizeCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhichQuizeCollectionCell.swift; sourceTree = "<group>"; };
@@ -168,6 +172,8 @@
 		36A94A101EF14F5800FDA807 /* Files */ = {
 			isa = PBXGroup;
 			children = (
+				364268931F346E5800B3782E /* Игра на устрицы с шампанским.json */,
+				364268911F346E1300B3782E /* Игра на суши.json */,
 				36A94A131EF1502400FDA807 /* Игра на роллы.json */,
 				366FCF151EFAB8F400B2F500 /* minisystem.ttf */,
 				366FCF111EFA904000B2F500 /* Felics.json */,
@@ -260,7 +266,9 @@
 				36A94A141EF1502400FDA807 /* Игра на роллы.json in Resources */,
 				36A949EB1EEFCF1C00FDA807 /* Assets.xcassets in Resources */,
 				36BCB2CC1F0B94DF00B66C28 /* fonSakuraRyba.png in Resources */,
+				364268921F346E1300B3782E /* Игра на суши.json in Resources */,
 				366FCF161EFAB8F400B2F500 /* minisystem.ttf in Resources */,
+				364268941F346E5800B3782E /* Игра на устрицы с шампанским.json in Resources */,
 				36A949E61EEFCF1C00FDA807 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

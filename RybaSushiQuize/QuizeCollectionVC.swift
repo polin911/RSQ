@@ -24,6 +24,7 @@ class QuizeCollectionVC: UIViewController {
     var scoreRolliActionBool = true
     var rolliScore = 3
     @IBOutlet var rolliScoreImg: SpringImageView!
+    var rolliScoreSushi = 2
     
     //MARK: Token
     @IBOutlet var visibleScoreSpr: SpringLabel!
@@ -162,7 +163,8 @@ class QuizeCollectionVC: UIViewController {
             if seconds == 0 {
                 currentQuestionIndex += 1
                 timerOn = false
-                
+                rolliScore -= 1
+                rolliScoreLife()
                 
                 guard currentQuestionIndex < player.totalQuestion else {
                     print("don't go ")
@@ -221,11 +223,23 @@ extension QuizeCollectionVC : UICollectionViewDelegate {
             
             
         else if player.nameGame == player.wchiGame[1] {
+            
             let selectedAnswer = currentQuestion?.answers[indexPath.row]
-            if currentQuestion?.answerIsCorrect(answer: selectedAnswer) ?? false {
+            if currentQuestion?.answerIsCorrect(answer: selectedAnswer) == true {
                 score += 1
+                //
+                changeSizeFishImg()
+                //
+                tokenWorks()
             }
-            print("ячейка c индексом\(indexPath) выбрана, счет \(score)")
+            if currentQuestion?.answerIsCorrect(answer: selectedAnswer) == false {
+                wrongSpr()
+                //
+                rolliScore -= 1
+                rolliScoreLife()
+            }
+            
+            print("ячейка c индексом\(indexPath) выбрана, счет \(score), score\(rolliScore)")
             currentQuestionIndex += 1
             guard currentQuestionIndex < player.totalQuestion else {
                 print("don't go ")
@@ -236,7 +250,8 @@ extension QuizeCollectionVC : UICollectionViewDelegate {
                     performSegue(withIdentifier: "winnerVC", sender: self)
                 }
                 
-                performSegue(withIdentifier: "ShowResult", sender: score)
+                
+                // performSegue(withIdentifier: "ShowResult", sender: score)
                 return
             }
         }
@@ -366,7 +381,7 @@ extension QuizeCollectionVC: UICollectionViewDataSource {
             rolliScoreImg.isHidden = false
             tokenImg.isHidden = false
             
-            rolliScoreImg.animation = "fadeIn"
+            rolliScoreImg.animation = "shake"
             rolliScoreImg.duration  = 3
             rolliScoreImg.animate()
             

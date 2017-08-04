@@ -8,6 +8,7 @@
 
 import UIKit
 import Spring
+import SCLAlertView
 
 class WhichQuizeVC: UIViewController{
 
@@ -45,23 +46,47 @@ class WhichQuizeVC: UIViewController{
     
     @IBAction func btnPressed(_ sender: UIButton) {
         if sender == btnR {
+            //MARK: AlertIcon
+            let alert = SCLAlertView()
+            let alertViewIcon = #imageLiteral(resourceName: "odiRoll")
+            _ = alert.addButton("Продолжить", target: self, selector: #selector(WhichQuizeVC.perSeg))
+            _ = alert.showSuccess("Правила", subTitle: "У тебя есть три жизни(3 ролла) и 15 вопросов", closeButtonTitle: "Вернуться", colorStyle: 0xD33333, colorTextButton: 0xFFFFFF, circleIconImage:alertViewIcon, animationStyle: .topToBottom)
+        
+            //*изменить !
             self.player.nameGame = "Игра на роллы"
-            self.player.totalQuestion = 25
-            self.player.winnerScore   = 22
+            self.player.totalQuestion = 15
+            self.player.winnerScore   = 15
             self.player.looserScore   = 0
         }
         if sender == btnS {
+            
+            let alert = SCLAlertView()
+            let alertViewIcon = #imageLiteral(resourceName: "odiRoll")
+            _ = alert.addButton("Продолжить", target: self, selector: #selector(WhichQuizeVC.perSeg))
+            _ = alert.showSuccess("Правила", subTitle: "У тебя есть две жизни(2 ролла) и 35 вопросов", closeButtonTitle: "Вернуться", colorStyle: 0xD33333, colorTextButton: 0xFFFFFF, circleIconImage:alertViewIcon, animationStyle: .topToBottom)
+            
             self.player.nameGame = "Игра на суши"
-            self.player.totalQuestion = 50
-            self.player.winnerScore   = 46
+            self.player.totalQuestion = 35
+            self.player.winnerScore   = 35
             self.player.looserScore   = 0
         }
         if sender == btnU {
+            
+            let alert = SCLAlertView()
+            let alertViewIcon = #imageLiteral(resourceName: "odiRoll")
+            _ = alert.addButton("Продолжить", target: self, selector: #selector(WhichQuizeVC.perSeg))
+            _ = alert.showSuccess("Правила", subTitle: "У тебя есть право на одну ошибку и 55 вопросов! Если ты готов, то я пошел открывать устриц!", closeButtonTitle: "Вернуться", colorStyle: 0xD33333, colorTextButton: 0xFFFFFF, circleIconImage:alertViewIcon, animationStyle: .topToBottom)
+            
             self.player.nameGame = "Игра на устрицы с шампанским"
             self.player.totalQuestion = 70
             self.player.winnerScore   = 70
             self.player.looserScore   = 0
         }
+        //performSegue(withIdentifier: "showInstructions", sender: self)
+    }
+    
+    //MARK: performSEgue
+    func perSeg() {
         performSegue(withIdentifier: "showInstructions", sender: self)
     }
     

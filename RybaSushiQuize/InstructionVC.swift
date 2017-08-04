@@ -6,7 +6,6 @@
 //  Copyright © 2017 Polina. All rights reserved.
 //
 
-var TEXTINSTRUCT = " я смотрю ты не очень голоден....бла бла блабла бла блабла бла блабла бла блабла бла блабла бла блабла бла блабла бла блабла бла блабла бла блабла бла блабла бла блабла бла блабла бла бла бла блабла бла блабла бла блабла бла блаблабла бла блабла бла бла"
 
 import UIKit
 
@@ -22,6 +21,7 @@ class InstructionVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateUI()
+        checking()
         
     }
     
@@ -70,5 +70,8 @@ class InstructionVC: UIViewController {
         performSegue(withIdentifier: "showQuize", sender: self)
     }
     
+    func checking() {
+        print("WhichQuize@@@@@@@@@@@@@@@@@@@@@whichGame:\(player.wchiGame) @@@@@@@@@@@@@@name:\(player.playerName)@@@@@@@@@@@@@@@@@@@@\(player.playerScore) @@@@@@@@@@@@@name of Game: \(player.nameGame) ######### winnnersGame: \(player.winGame)")
+    }
     
 }

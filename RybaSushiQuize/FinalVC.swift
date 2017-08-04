@@ -42,12 +42,12 @@ class FinalVC: UIViewController {
             case 0...10:
               lblTxt.text = "Держи авакадку, читай букварь и не в чем себе не отказывай"
                 img.image = #imageLiteral(resourceName: "laobc-Avocado")
-            case 10...18:
+            case 10...14:
                 lblTxt.text = "Ты ответил на \(score) вопроса ,пора бы повторить школьную программу! Но Семен добрый он тебя угостит кусочком авакадо"
                 img.image = #imageLiteral(resourceName: "laobc-Avocado")
-            case 18...22:
-                lblTxt.text = "Ты молодец, ответил на \(score) вопросов! С тобой есть о чем поговорить! "
-                img.image = #imageLiteral(resourceName: "rolliVRyad")
+//            case 18...22:
+//                lblTxt.text = "Ты молодец, ответил на \(score) вопросов! С тобой есть о чем поговорить! "
+//                img.image = #imageLiteral(resourceName: "rolliVRyad")
             default:
                 lblTxt.text = "стоит переиграть"
             }
