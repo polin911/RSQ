@@ -59,5 +59,15 @@ class NameVC: UIViewController, UITextFieldDelegate  {
         vc?.player = self.player
     }
     
+    
+    @IBAction func instaBtnPressed(_ sender: Any) {
+        let instagram = URL(string: "https://www.instagram.com/ryba.sushi.oysters/")!
+        if UIApplication.shared.canOpenURL(instagram) {
+            UIApplication.shared.open(instagram, options: ["":""], completionHandler: nil)
+        } else {
+            print("insta not installed")
+        }
+    }
+    
 
 }

@@ -10,6 +10,8 @@ import UIKit
 import Spring
 
 class FinalVC: UIViewController {
+    
+    
 
     @IBOutlet var img: SpringImageView!
     var player = Player()
@@ -101,5 +103,16 @@ class FinalVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         sprAnimation()
     }
+    
+    @IBAction func instaButtonPressed(_ sender: Any) {
+        let instagram = URL(string: "https://www.instagram.com/ryba.sushi.oysters/")!
+        if UIApplication.shared.canOpenURL(instagram) {
+            UIApplication.shared.open(instagram, options: ["":""], completionHandler: nil)
+        } else {
+            print("insta not installed")
+        }
+        
+    }
+    
 
 }

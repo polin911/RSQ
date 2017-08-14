@@ -50,25 +50,29 @@ class WhichQuizeVC: UIViewController{
             let alert = SCLAlertView()
             let alertViewIcon = #imageLiteral(resourceName: "odiRoll")
             _ = alert.addButton("Продолжить", target: self, selector: #selector(WhichQuizeVC.perSeg))
-            _ = alert.showSuccess("Правила", subTitle: "У тебя есть три жизни(3 ролла) и 15 вопросов", closeButtonTitle: "Вернуться", colorStyle: 0xD33333, colorTextButton: 0xFFFFFF, circleIconImage:alertViewIcon, animationStyle: .topToBottom)
+            _ = alert.showSuccess("Правила", subTitle: "У тебя есть три жизни(3 ролла) и 15 общих вопросов", closeButtonTitle: "Вернуться", colorStyle: 0xD33333, colorTextButton: 0xFFFFFF, circleIconImage:alertViewIcon, animationStyle: .topToBottom)
         
             //*изменить !
             self.player.nameGame = "Игра на роллы"
-            self.player.totalQuestion = 15
+            self.player.totalQuestion = 18
             self.player.winnerScore   = 15
             self.player.looserScore   = 0
+            
+            self.player.scoreLife = 4
         }
         if sender == btnS {
             
             let alert = SCLAlertView()
             let alertViewIcon = #imageLiteral(resourceName: "odiRoll")
             _ = alert.addButton("Продолжить", target: self, selector: #selector(WhichQuizeVC.perSeg))
-            _ = alert.showSuccess("Правила", subTitle: "У тебя есть две жизни(2 ролла) и 35 вопросов", closeButtonTitle: "Вернуться", colorStyle: 0xD33333, colorTextButton: 0xFFFFFF, circleIconImage:alertViewIcon, animationStyle: .topToBottom)
+            _ = alert.showSuccess("Правила", subTitle: "У тебя есть две жизни(2 ролла) и 35 вопросов по истории и литературе", closeButtonTitle: "Вернуться", colorStyle: 0xD33333, colorTextButton: 0xFFFFFF, circleIconImage:alertViewIcon, animationStyle: .topToBottom)
             
             self.player.nameGame = "Игра на суши"
-            self.player.totalQuestion = 35
+            self.player.totalQuestion = 38
             self.player.winnerScore   = 35
             self.player.looserScore   = 0
+            
+            self.player.scoreLife = 3
         }
         if sender == btnU {
             
@@ -78,9 +82,11 @@ class WhichQuizeVC: UIViewController{
             _ = alert.showSuccess("Правила", subTitle: "У тебя есть право на одну ошибку и 55 вопросов! Если ты готов, то я пошел открывать устриц!", closeButtonTitle: "Вернуться", colorStyle: 0xD33333, colorTextButton: 0xFFFFFF, circleIconImage:alertViewIcon, animationStyle: .topToBottom)
             
             self.player.nameGame = "Игра на устрицы с шампанским"
-            self.player.totalQuestion = 70
+            self.player.totalQuestion = 71
             self.player.winnerScore   = 70
             self.player.looserScore   = 0
+            
+            self.player.scoreLife = 2
         }
         //performSegue(withIdentifier: "showInstructions", sender: self)
     }

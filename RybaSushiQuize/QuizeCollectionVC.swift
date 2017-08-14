@@ -100,6 +100,8 @@ class QuizeCollectionVC: UIViewController {
         
         self.title = result.quizeName
         self.questionList = result.questions
+        
+        self.rolliScore = player.scoreLife
     }
     
     private func updateView() {
@@ -210,7 +212,7 @@ extension QuizeCollectionVC : UICollectionViewDelegate {
                 print("don't go ")
                 self.player.playerScore = score
                 
-                if score >= player.winnerScore {
+                if score == player.winnerScore {
                     self.player.winGame = self.player.nameGame
                     performSegue(withIdentifier: "winnerVC", sender: self)
                 }
@@ -257,24 +259,35 @@ extension QuizeCollectionVC : UICollectionViewDelegate {
         }
         else if player.nameGame == player.wchiGame[2] {
             let selectedAnswer = currentQuestion?.answers[indexPath.row]
-            if currentQuestion?.answerIsCorrect(answer: selectedAnswer) ?? false {
+            if currentQuestion?.answerIsCorrect(answer: selectedAnswer) == true {
                 score += 1
-                currentQuestionIndex += 1
+                //
+                changeSizeFishImg()
+                //
+                tokenWorks()
             }
-            print("ячейка c индексом\(indexPath) выбрана, счет \(score)")
+            if currentQuestion?.answerIsCorrect(answer: selectedAnswer) == false {
+                wrongSpr()
+                //
+                rolliScore -= 1
+                rolliScoreLife()
+            }
             
+            print("ячейка c индексом\(indexPath) выбрана, счет \(score), score\(rolliScore)")
+            currentQuestionIndex += 1
             guard currentQuestionIndex < player.totalQuestion else {
                 print("don't go ")
+                self.player.playerScore = score
                 
                 if score >= player.winnerScore {
                     self.player.winGame = self.player.nameGame
                     performSegue(withIdentifier: "winnerVC", sender: self)
                 }
                 
+                
+                // performSegue(withIdentifier: "ShowResult", sender: score)
                 return
-            }
-            if currentQuestion?.answerIsCorrect(answer: selectedAnswer) == false {
-                performSegue(withIdentifier: "ShowResult", sender: score)
+
                 
             }
         }
@@ -358,7 +371,7 @@ extension QuizeCollectionVC: UICollectionViewDataSource {
         tokenActionBool = true
         if tokenActionBool {
             // let answerText = currentQuestion?.answers[currentQuestionIndex]
-            visibleScoreSpr.text = "\(score)"
+            visibleScoreSpr.text = "Score: \(score)"
             tokenImg.isHidden = false
             visibleFishSpr.isHidden = false
             visibleScoreSpr.isHidden = false
@@ -386,13 +399,15 @@ extension QuizeCollectionVC: UICollectionViewDataSource {
             rolliScoreImg.animate()
             
             switch rolliScore {
+            case 3:
+                rolliScoreImg.image = #imageLiteral(resourceName: "3RollaScore")
             case 2:
                 rolliScoreImg.image = #imageLiteral(resourceName: "2RollaScore")
             case 1:
                 rolliScoreImg.image = #imageLiteral(resourceName: "1RollScore")
             case 0 :
                 rolliScoreImg.image = #imageLiteral(resourceName: "0RollaScore")
-            //performSegue(withIdentifier: "ShowResult", sender: score)
+            
             default:
                 rolliScoreImg.image = #imageLiteral(resourceName: "3RollaScore")
                 

@@ -8,8 +8,12 @@
 
 
 import UIKit
+import Spring
 
 class InstructionVC: UIViewController {
+    
+    
+    @IBOutlet var instaGroupSprImage: SpringImageView!
     
     @IBOutlet var instructionTextLabel: UILabel!
     @IBOutlet var typeLbl: UILabel!
@@ -20,14 +24,20 @@ class InstructionVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         updateUI()
         checking()
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+         instaAni()
+    }
     //MARK: UpdateView
     
     func updateUI() {
+        
+       
         
         let addToMyMutatbleStr: [String: AnyObject]? = [NSFontAttributeName: UIFont(name: "Bradley Hand", size:18)!, NSForegroundColorAttributeName: UIColor.white]
         let instractTxt1 = "Роллы у нас на любой вкус! От редких до самых элементарных, твой выбор зависит от твоего IQ . Вкусно будет в любом случае."
@@ -72,6 +82,17 @@ class InstructionVC: UIViewController {
     
     func checking() {
         print("WhichQuize@@@@@@@@@@@@@@@@@@@@@whichGame:\(player.wchiGame) @@@@@@@@@@@@@@name:\(player.playerName)@@@@@@@@@@@@@@@@@@@@\(player.playerScore) @@@@@@@@@@@@@name of Game: \(player.nameGame) ######### winnnersGame: \(player.winGame)")
+    }
+    
+    func instaAni() {
+        instaGroupSprImage.animation = "slideDown"
+        instaGroupSprImage.duration = 5
+        instaGroupSprImage.animateNext {
+            self.instaGroupSprImage.animation = "fadeOut"
+            self.instaGroupSprImage.duration = 3
+            self.instaGroupSprImage.animate()
+        }
+        instaGroupSprImage.animate()
     }
     
 }

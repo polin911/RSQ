@@ -21,4 +21,6 @@ class Player {
     var winnerScore   = 0
     var soSoScore     = [0]
     var looserScore   = 0
+    
+    var scoreLife = 0
 }
