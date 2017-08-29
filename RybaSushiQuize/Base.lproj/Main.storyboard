@@ -373,6 +373,7 @@
                         <outlet property="btnU" destination="DzE-IN-gd4" id="sZ3-Gh-ANv"/>
                         <outlet property="nameLblTxt" destination="5Co-fd-tSH" id="Ppc-eF-7L9"/>
                         <segue destination="wxd-Er-D6x" kind="show" identifier="showInstructions" id="tnG-Vz-su3"/>
+                        <segue destination="jbn-8q-Dxq" kind="show" identifier="feliksGame" id="Pit-9w-LxB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Tu-e1-rPu" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -599,9 +600,20 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="НЕПРАВИЛЬНО" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5oR-Zm-JJ5">
+                                <rect key="frame" x="36" y="394" width="303" height="103"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="103" id="WnB-w7-kcK"/>
+                                    <constraint firstAttribute="width" constant="303" id="qpg-zN-Oia"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="32"/>
+                                <color key="textColor" red="0.82624783290000003" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="5oR-Zm-JJ5" firstAttribute="centerX" secondItem="fAD-au-ckd" secondAttribute="centerX" id="0Nm-fq-DXt"/>
                             <constraint firstItem="4OQ-qU-OZO" firstAttribute="top" secondItem="c1c-IP-ISw" secondAttribute="bottom" constant="17" id="3NO-ni-8Hl"/>
                             <constraint firstItem="YMU-7N-sDf" firstAttribute="centerY" secondItem="fAD-au-ckd" secondAttribute="centerY" id="6XW-ya-Izs"/>
                             <constraint firstItem="rQU-13-FG6" firstAttribute="top" secondItem="4OQ-qU-OZO" secondAttribute="bottom" constant="30" id="6lE-ky-nYY"/>
@@ -611,6 +623,7 @@
                             <constraint firstItem="lmw-yj-JCs" firstAttribute="top" secondItem="fAD-au-ckd" secondAttribute="top" id="F3z-ZW-dfy"/>
                             <constraint firstItem="YMU-7N-sDf" firstAttribute="centerX" secondItem="fAD-au-ckd" secondAttribute="centerX" id="Gf5-zz-yyh"/>
                             <constraint firstAttribute="trailing" secondItem="I9o-mE-xs3" secondAttribute="trailing" id="Nbe-I4-KJR"/>
+                            <constraint firstItem="5oR-Zm-JJ5" firstAttribute="top" secondItem="YMU-7N-sDf" secondAttribute="bottom" constant="19.5" id="Ubd-kb-Gcq"/>
                             <constraint firstItem="CrJ-pa-N33" firstAttribute="top" secondItem="un5-3V-AAe" secondAttribute="bottom" constant="8" id="Wvm-2E-ddN"/>
                             <constraint firstItem="bAd-I9-jhF" firstAttribute="centerY" secondItem="4OQ-qU-OZO" secondAttribute="centerY" id="aCJ-2Q-d81"/>
                             <constraint firstItem="CrJ-pa-N33" firstAttribute="leading" secondItem="fAD-au-ckd" secondAttribute="leadingMargin" id="eEs-Am-Wx4"/>
@@ -638,6 +651,7 @@
                     <connections>
                         <outlet property="appBackSpr" destination="I9o-mE-xs3" id="0HW-YU-clT"/>
                         <outlet property="collectionV" destination="CrJ-pa-N33" id="7du-WA-X7y"/>
+                        <outlet property="correctIncorectLBL" destination="5oR-Zm-JJ5" id="AQ3-4b-uuh"/>
                         <outlet property="questionLbl" destination="rQU-13-FG6" id="PBP-yE-SEB"/>
                         <outlet property="rolliScoreImg" destination="YMU-7N-sDf" id="Tnt-Ey-1Lp"/>
                         <outlet property="rybaScoreImgSpr" destination="4OQ-qU-OZO" id="gAa-hV-J75"/>
@@ -994,6 +1008,7 @@
                         <outlet property="lblSec" destination="IAe-67-a0F" id="v0v-CE-7K6"/>
                         <outlet property="scoreLbl" destination="Eur-Ed-qvc" id="FHO-yg-drJ"/>
                         <segue destination="2ev-Vb-LDs" kind="show" identifier="FelicsFinal" id="Hjo-tI-RMG"/>
+                        <segue destination="VlY-zi-cR0" kind="show" identifier="winnerVC" id="ev8-7L-n3T"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aT9-vt-e5i" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1135,9 +1150,11 @@
         <image name="rolliVRyad" width="356" height="43"/>
         <image name="rybaScore" width="125" height="52"/>
         <image name="semenGroup" width="364" height="590"/>
-        <image name="txtFirst" width="400" height="551"/>
+        <image name="txtFirst" width="411" height="605"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="rdd-Ab-rDd"/>
+        <segue reference="UTq-t2-AZH"/>
+        <segue reference="ev8-7L-n3T"/>
+        <segue reference="Pit-9w-LxB"/>
     </inferredMetricsTieBreakers>
 </document>

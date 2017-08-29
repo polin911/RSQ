@@ -69,6 +69,7 @@ class InstructionVC: UIViewController {
         if let vc2 = segue.destination as? QuizeCollectionVC {
             vc2.player = self.player
         }
+       
             }
     
     

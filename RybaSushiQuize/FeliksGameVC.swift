@@ -104,14 +104,19 @@ class FeliksGameVC: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let vc = segue.destination as! FelicsVC
+        if let vc = segue.destination as? FelicsVC {
         vc.player = self.player
+    }
+        if let winVC = segue.destination as?  WinnerVC {
+            winVC.player = self.player
+            
+        }
     }
 
     
     //MARK: Checking
     func checking() {
-        print("Feliks@@@@@@@@@@@@@@@@@@@@@ whichGame:\(player.wchiGame) @@@@@@@@@@@@@@name:\(player.playerName)@@@@@@@@@@@@@@@@@@@@ score \(player.playerScore) @@@@@@@@@@@@@name of Game: \(player.nameGame) with love")
+        print("Feliks@@@@@@@@@@@@@@@@@@@@@ whichGame:\(player.wchiGame) @@@@@@@@@@@@@@name:\(player.playerName)@@@@@@@@@@@@@@@@@@@@ score \(player.playerScore) @@@@@@@@@@@@@name of Game: \(player.nameGame) with love, score for win: \(player.winnerScore)")
     }
 
 }
@@ -125,11 +130,23 @@ extension FeliksGameVC: UICollectionViewDelegate {
         }
         
         currentQuestionIndex += 1
-        guard currentQuestionIndex < 10 else {
+        guard currentQuestionIndex < 20 else {
             self.player.playerScore = score
+            
+            
+//            if score == player.winnerScore {
+//                self.player.winGame = self.player.nameGame
+//                performSegue(withIdentifier: "winnerVC", sender: self)
+//            }
             performSegue(withIdentifier: "FelicsFinal", sender: score)
             return
         }
+        
+        if score == player.winnerScore {
+            self.player.winGame = self.player.nameGame
+            performSegue(withIdentifier: "winnerVC", sender: self)
+        }
+        
         let random = questionList?[Int(arc4random_uniform(UInt32((questionList?.count)!)))]
         currentQuestion = random
     }

@@ -21,6 +21,8 @@ class QuizeCollectionVC: UIViewController {
     var player = Player()
     
     //MARK: RolliScore
+    
+    @IBOutlet var correctIncorectLBL: UILabel!
     var scoreRolliActionBool = true
     var rolliScore = 3
     @IBOutlet var rolliScoreImg: SpringImageView!
@@ -43,6 +45,7 @@ class QuizeCollectionVC: UIViewController {
     //MARK: TokenAction
     
     @IBAction func tokenAction(_ sender: Any) {
+        correctIncorectLBL.isHidden = true
         tokenImg.isHidden = true
         visibleScoreSpr.isHidden = true
         visibleFishSpr.isHidden = true
@@ -393,20 +396,30 @@ extension QuizeCollectionVC: UICollectionViewDataSource {
             timerOn = false
             rolliScoreImg.isHidden = false
             tokenImg.isHidden = false
+            correctIncorectLBL.isHidden = false
             
-            rolliScoreImg.animation = "shake"
-            rolliScoreImg.duration  = 3
-            rolliScoreImg.animate()
             
             switch rolliScore {
             case 3:
                 rolliScoreImg.image = #imageLiteral(resourceName: "3RollaScore")
+                rolliScoreImg.animation = "shake"
+                rolliScoreImg.duration  = 3
+                rolliScoreImg.animate()
             case 2:
                 rolliScoreImg.image = #imageLiteral(resourceName: "2RollaScore")
+                rolliScoreImg.animation = "shake"
+                rolliScoreImg.duration  = 3
+                rolliScoreImg.animate()
             case 1:
                 rolliScoreImg.image = #imageLiteral(resourceName: "1RollScore")
+                rolliScoreImg.animation = "shake"
+                rolliScoreImg.duration  = 3
+                rolliScoreImg.animate()
             case 0 :
                 rolliScoreImg.image = #imageLiteral(resourceName: "0RollaScore")
+                rolliScoreImg.animation = "fall"
+                rolliScoreImg.duration  = 7
+                rolliScoreImg.animate()
             
             default:
                 rolliScoreImg.image = #imageLiteral(resourceName: "3RollaScore")

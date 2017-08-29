@@ -34,9 +34,14 @@ class WhichQuizeVC: UIViewController{
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let instructVC = segue.destination as? InstructionVC
-       
-        instructVC?.player = self.player
+        
+        if let instructVC = segue.destination as? InstructionVC {
+        instructVC.player = self.player
+        }
+        if let feliksInstruct = segue.destination as? FeliksInstructions {
+            feliksInstruct.player = self.player
+        }
+        
 }
     
     func checking() {
@@ -64,15 +69,16 @@ class WhichQuizeVC: UIViewController{
             
             let alert = SCLAlertView()
             let alertViewIcon = #imageLiteral(resourceName: "odiRoll")
-            _ = alert.addButton("Продолжить", target: self, selector: #selector(WhichQuizeVC.perSeg))
-            _ = alert.showSuccess("Правила", subTitle: "У тебя есть две жизни(2 ролла) и 35 вопросов по истории и литературе", closeButtonTitle: "Вернуться", colorStyle: 0xD33333, colorTextButton: 0xFFFFFF, circleIconImage:alertViewIcon, animationStyle: .topToBottom)
+            _ = alert.addButton("Продолжить", target: self, selector: #selector(WhichQuizeVC.perSegFeliksGame))
+            _ = alert.showSuccess("Правила", subTitle: "У тебя есть 55 секунд , отгадай 10 фильмов", closeButtonTitle: "Вернуться", colorStyle: 0xD33333, colorTextButton: 0xFFFFFF, circleIconImage:alertViewIcon, animationStyle: .topToBottom)
+            
             
             self.player.nameGame = "Игра на суши"
-            self.player.totalQuestion = 38
-            self.player.winnerScore   = 35
-            self.player.looserScore   = 0
-            
-            self.player.scoreLife = 3
+//            self.player.totalQuestion = 38
+            self.player.winnerScore     = 10
+//            self.player.looserScore   = 0
+//            
+//            self.player.scoreLife = 3
         }
         if sender == btnU {
             
@@ -94,6 +100,9 @@ class WhichQuizeVC: UIViewController{
     //MARK: performSEgue
     func perSeg() {
         performSegue(withIdentifier: "showInstructions", sender: self)
+    }
+    func perSegFeliksGame() {
+        performSegue(withIdentifier: "feliksGame", sender: self)
     }
     
     //MARK: UpdateView
