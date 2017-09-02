@@ -69,16 +69,21 @@ class InstructionVC: UIViewController {
         if let vc2 = segue.destination as? QuizeCollectionVC {
             vc2.player = self.player
         }
+        if let vcEmoji = segue.destination as? EmojiVC {
+            vcEmoji.player = self.player
+        }
        
             }
     
     
-    
-
-    
     @IBAction func playBtnPressed(_ sender: Any) {
-        
-        performSegue(withIdentifier: "showQuize", sender: self)
+        if player.nameGame == player.wchiGame[0] {
+        performSegue(withIdentifier: "quizeGame", sender: self)
+        }
+        if player.nameGame == player.wchiGame[2] {
+            print("hello")
+            performSegue(withIdentifier: "EmojiGame", sender: self)
+        }
     }
     
     func checking() {

@@ -7,9 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		362DF6801F5AD8DD00144163 /* CorrectEmojiCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362DF67F1F5AD8DD00144163 /* CorrectEmojiCollectionViewCell.swift */; };
 		363E42DD1F0BF0C1000F6C8F /* WinnerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363E42DC1F0BF0C1000F6C8F /* WinnerVC.swift */; };
 		364268921F346E1300B3782E /* Игра на суши.json in Resources */ = {isa = PBXBuildFile; fileRef = 364268911F346E1300B3782E /* Игра на суши.json */; };
 		364268941F346E5800B3782E /* Игра на устрицы с шампанским.json in Resources */ = {isa = PBXBuildFile; fileRef = 364268931F346E5800B3782E /* Игра на устрицы с шампанским.json */; };
+		3648561D1F5698510079BA65 /* EmojiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3648561C1F5698510079BA65 /* EmojiModel.swift */; };
+		3648561F1F56A45C0079BA65 /* DataLoaderEmoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3648561E1F56A45C0079BA65 /* DataLoaderEmoji.swift */; };
+		364856211F56A78A0079BA65 /* EmojiVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364856201F56A78A0079BA65 /* EmojiVC.swift */; };
+		364856231F56DC200079BA65 /* EmojiCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364856221F56DC200079BA65 /* EmojiCollectionViewCell.swift */; };
 		365872DF1EF908EA003823BA /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365872DE1EF908EA003823BA /* Player.swift */; };
 		365872E11EF96216003823BA /* QuizeCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365872E01EF96216003823BA /* QuizeCollectionVC.swift */; };
 		365872E31EF96266003823BA /* WhichQuizeCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365872E21EF96266003823BA /* WhichQuizeCollectionCell.swift */; };
@@ -42,9 +47,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		362DF67F1F5AD8DD00144163 /* CorrectEmojiCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CorrectEmojiCollectionViewCell.swift; sourceTree = "<group>"; };
 		363E42DC1F0BF0C1000F6C8F /* WinnerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WinnerVC.swift; sourceTree = "<group>"; };
 		364268911F346E1300B3782E /* Игра на суши.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Игра на суши.json"; sourceTree = "<group>"; };
 		364268931F346E5800B3782E /* Игра на устрицы с шампанским.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Игра на устрицы с шампанским.json"; sourceTree = "<group>"; };
+		3648561C1F5698510079BA65 /* EmojiModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmojiModel.swift; sourceTree = "<group>"; };
+		3648561E1F56A45C0079BA65 /* DataLoaderEmoji.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataLoaderEmoji.swift; sourceTree = "<group>"; };
+		364856201F56A78A0079BA65 /* EmojiVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmojiVC.swift; sourceTree = "<group>"; };
+		364856221F56DC200079BA65 /* EmojiCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmojiCollectionViewCell.swift; sourceTree = "<group>"; };
 		365872DE1EF908EA003823BA /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		365872E01EF96216003823BA /* QuizeCollectionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizeCollectionVC.swift; sourceTree = "<group>"; };
 		365872E21EF96266003823BA /* WhichQuizeCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhichQuizeCollectionCell.swift; sourceTree = "<group>"; };
@@ -143,6 +153,7 @@
 				36E29F9F1F0CD217000E8F95 /* FeliksInstructions.swift */,
 				366FCF0D1EFA86CD00B2F500 /* FeliksGameVC.swift */,
 				366FCF131EFAA68900B2F500 /* FelicsVC.swift */,
+				364856201F56A78A0079BA65 /* EmojiVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -154,6 +165,8 @@
 				36A94A0E1EF12B5E00FDA807 /* Questions.swift */,
 				36A94A151EF1797000FDA807 /* WhichQuizeModel.swift */,
 				365872DE1EF908EA003823BA /* Player.swift */,
+				3648561C1F5698510079BA65 /* EmojiModel.swift */,
+				3648561E1F56A45C0079BA65 /* DataLoaderEmoji.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -165,6 +178,8 @@
 				36A94A041EEFDE3300FDA807 /* AnswersCell.swift */,
 				365872E21EF96266003823BA /* WhichQuizeCollectionCell.swift */,
 				366FCF0F1EFA8AEC00B2F500 /* FelicsQuizeCollectionCell.swift */,
+				364856221F56DC200079BA65 /* EmojiCollectionViewCell.swift */,
+				362DF67F1F5AD8DD00144163 /* CorrectEmojiCollectionViewCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -333,13 +348,17 @@
 				366FCF141EFAA68900B2F500 /* FelicsVC.swift in Sources */,
 				36A94A031EEFDD3500FDA807 /* WhichQuizeCell.swift in Sources */,
 				36A949FF1EEFD84A00FDA807 /* FinalVC.swift in Sources */,
+				364856211F56A78A0079BA65 /* EmojiVC.swift in Sources */,
+				3648561D1F5698510079BA65 /* EmojiModel.swift in Sources */,
 				365872DF1EF908EA003823BA /* Player.swift in Sources */,
 				365872E11EF96216003823BA /* QuizeCollectionVC.swift in Sources */,
 				366FCF101EFA8AEC00B2F500 /* FelicsQuizeCollectionCell.swift in Sources */,
 				363E42DD1F0BF0C1000F6C8F /* WinnerVC.swift in Sources */,
 				365872E31EF96266003823BA /* WhichQuizeCollectionCell.swift in Sources */,
 				36E29FA01F0CD217000E8F95 /* FeliksInstructions.swift in Sources */,
+				364856231F56DC200079BA65 /* EmojiCollectionViewCell.swift in Sources */,
 				36A949E11EEFCF1C00FDA807 /* AppDelegate.swift in Sources */,
+				3648561F1F56A45C0079BA65 /* DataLoaderEmoji.swift in Sources */,
 				36A949F91EEFD76700FDA807 /* NameVC.swift in Sources */,
 				36BCC1AC1F06393E00D1C59C /* WelcomeVC.swift in Sources */,
 				36A949F71EEFD74000FDA807 /* MainVC.swift in Sources */,
@@ -349,6 +368,7 @@
 				36A94A0F1EF12B5E00FDA807 /* Questions.swift in Sources */,
 				36A949FB1EEFD79100FDA807 /* WhichQuizeVC.swift in Sources */,
 				366FCF0E1EFA86CD00B2F500 /* FeliksGameVC.swift in Sources */,
+				362DF6801F5AD8DD00144163 /* CorrectEmojiCollectionViewCell.swift in Sources */,
 				36A949FD1EEFD7BF00FDA807 /* QuizeVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

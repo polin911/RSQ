@@ -11,7 +11,8 @@ import Spring
 import SCLAlertView
 
 class WhichQuizeVC: UIViewController{
-
+    
+    
     var player = Player()
     
     @IBOutlet var nameLblTxt: UILabel!
@@ -31,6 +32,7 @@ class WhichQuizeVC: UIViewController{
         updateWinnerView()
         checking()
        
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -103,6 +105,9 @@ class WhichQuizeVC: UIViewController{
     }
     func perSegFeliksGame() {
         performSegue(withIdentifier: "feliksGame", sender: self)
+    }
+    func perSegEmojiGame() {
+        performSegue(withIdentifier: "emojiGame", sender: self)
     }
     
     //MARK: UpdateView
