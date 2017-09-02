@@ -87,7 +87,7 @@ class WhichQuizeVC: UIViewController{
             let alert = SCLAlertView()
             let alertViewIcon = #imageLiteral(resourceName: "odiRoll")
             _ = alert.addButton("Продолжить", target: self, selector: #selector(WhichQuizeVC.perSeg))
-            _ = alert.showSuccess("Правила", subTitle: "У тебя есть право на одну ошибку и 55 вопросов! Если ты готов, то я пошел открывать устриц!", closeButtonTitle: "Вернуться", colorStyle: 0xD33333, colorTextButton: 0xFFFFFF, circleIconImage:alertViewIcon, animationStyle: .topToBottom)
+            _ = alert.showSuccess("Правила", subTitle: "Угадай песню по Emoji", closeButtonTitle: "Вернуться", colorStyle: 0xD33333, colorTextButton: 0xFFFFFF, circleIconImage:alertViewIcon, animationStyle: .topToBottom)
             
             self.player.nameGame = "Игра на устрицы с шампанским"
             self.player.totalQuestion = 71
