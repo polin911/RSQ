@@ -21,6 +21,16 @@
      "correctWord":"позвони мне позвони",
      "kindOfGame" : "nota",
      "image":"pozvonimne"
+     },
+     {
+     "correctWord":"хочешь",
+     "kindOfGame" : "nota",
+     "image":"hochesh"
+     },
+     {
+     "correctWord":"осень",
+     "kindOfGame" : "nota",
+     "image":"osen"
      }
      
      ]

@@ -14,7 +14,15 @@ class EmojiVC: UIViewController {
     var player = Player()
     var correctAnswer = false
     var checkArray = false
-  
+    
+    //BubbleScore
+    @IBOutlet var bubleScoreImg: SpringImageView!
+    @IBOutlet var numberScoreBubleLbl: SpringLabel!
+    
+    //ScoreRolliLife
+    @IBOutlet var rolliScore: UIImageView!
+    var scoreLife = 3
+    
     
     @IBOutlet var showCorrectCollection: UICollectionView!
     @IBOutlet var collectionCountW: UICollectionView!
@@ -27,16 +35,15 @@ class EmojiVC: UIViewController {
     @IBOutlet var showCorrectBtn: UIButton!
     @IBAction func showCorrectBtnPressed(_ sender: Any) {
         
+        bubleScoreImg.isHidden         = true
+        numberScoreBubleLbl.isHidden   = true
+        
         showCorrectCollection.isHidden = true
-        showCorrectBtn.isHidden = true
+        showCorrectBtn.isHidden        = true
         
         //
         currentQuestionIndex += 1
-        let random = questionList?[Int(arc4random_uniform(UInt32((questionList?.count)!)))]
-        currentQuestion = random
-        
-        //
-        
+        currentQuestion = questionList?[currentQuestionIndex]
     }
     
     //
@@ -54,10 +61,10 @@ class EmojiVC: UIViewController {
     
     var questionList: [Emoji]? {
         didSet {
-            let random = questionList?[Int(arc4random_uniform(UInt32((questionList?.count)!)))]
+          //
             currentQuestionIndex = 0
             score = 0
-            currentQuestion = random
+            currentQuestion = questionList?.first
         }
     }
     
@@ -73,6 +80,11 @@ class EmojiVC: UIViewController {
     
     func loadData() {
         
+       
+        //TextField 
+        textFieldWord.autocorrectionType = .no
+        textFieldWord.autocapitalizationType = .none
+        
         showCorrectCollection.delegate   = self
         showCorrectCollection.dataSource = self
         
@@ -84,7 +96,7 @@ class EmojiVC: UIViewController {
         
         self.title = result.quizeName
         self.questionList = result.questions
-        //textField
+        //TextField
         textFieldWord.enablesReturnKeyAutomatically = true
         textFieldWord.delegate = self
     }
@@ -113,37 +125,59 @@ class EmojiVC: UIViewController {
             showCorrectCollectionBool = true
             correctAnswer = true
             score += 1
-            showCorrectBtn.isHidden = false
+            //BubleScore
+            numberScoreBubleLbl.text      = "\(score)"
+            numberScoreBubleLbl.animation = "pop"
+            numberScoreBubleLbl.duration  = 4
+            numberScoreBubleLbl.animate()
+            bubleScoreImg.animation       = "pop"
+            bubleScoreImg.duration        = 4
+            bubleScoreImg.animate()
+            showCorrectBtn.isHidden        = false
             showCorrectCollection.isHidden = false
+            
+            bubleScoreImg.isHidden         = false
+            numberScoreBubleLbl.isHidden   = false
             print("score:\(score)")
             
         } else {
-
             correctAnswer = false
             imageEmogi.animation = "shake"
             imageEmogi.duration = 2
             imageEmogi.animate()
+        
              print("dont go")
-            print("number:\(currentQuestionIndex)")
+            print("number:\(currentQuestionIndex)score: \(scoreLife)")
         }
         
     }
+    //ShowScore
 
+    func showScoreLife() {
+        switch scoreLife {
+        case 3:
+            rolliScore.image = #imageLiteral(resourceName: "3RollaScore")
+        case 2:
+            rolliScore.image = #imageLiteral(resourceName: "2RollaScore")
+        case 1:
+            rolliScore.image = #imageLiteral(resourceName: "1RollScore")
+        default:
+            rolliScore.image = #imageLiteral(resourceName: "0RollaScore")
+            
+        }
+    }
     
     @IBAction func buttonCheck(_ sender: Any) {
       
         checkArray = true
         checkCorrect()
-        
-        currentQuestionIndex += 1
-       
-            
-            self.player.playerScore = score
-        
-        let random = questionList?[Int(arc4random_uniform(UInt32((questionList?.count)!)))]
-        // to next question
-        //currentQuestion = random
-        
+
+        self.player.playerScore = score
+        if correctAnswer == false {
+            scoreLife -= 1
+            showScoreLife()
+        }
+
         if score == 5 {
             performSegue(withIdentifier: "EmojiWinner", sender: self)
             print("you are winner")
@@ -152,14 +186,15 @@ class EmojiVC: UIViewController {
             performSegue(withIdentifier: "EmojiFinal", sender: self)
             print("game over")
         }
+        if scoreLife == -1 {
+            performSegue(withIdentifier: "EmojiFinal", sender: self)
+            print("game over")
+        }
+    
         textFieldWord.text = ""
+        showCorrectCollection.reloadData()
             return
          
-       
-//        performSegue(withIdentifier: "EmojiFinal", sender: self)
-//        return
-        
-        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -183,7 +218,7 @@ class EmojiVC: UIViewController {
     }
     
     func cheking() {
-        print("!!!!!!!!!!!!!!!score:\(score) !!!!! correct : \(currentQuestion?.correctWord ?? nil), \(currentQuestion?.emojiArray) ")
+        print("!!!!!!!!!!!!!!!score:\(score) !!!!! correct : \(currentQuestion?.correctWord), \(currentQuestion?.emojiArray) scoreLifeRolli : \(scoreLife) ")
     }
     
     

@@ -49,7 +49,7 @@ class InstructionVC: UIViewController {
         let itog1 = NSMutableAttributedString(string: itogTxt1, attributes: addToMyMutatbleStr)
         myMutableString1.append(itog1)
         
-        typeLbl.text = player.nameGame
+        //typeLbl.text = player.nameGame
         if player.nameGame == player.wchiGame[0] {
             instructionTextLabel.attributedText = myMutableString1
         }
@@ -64,15 +64,17 @@ class InstructionVC: UIViewController {
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let vc = segue.destination as? QuizeVC {
-            vc.player = self.player }
+//        if let vc = segue.destination as? QuizeVC {
+//            vc.player = self.player }
         if let vc2 = segue.destination as? QuizeCollectionVC {
             vc2.player = self.player
         }
         if let vcEmoji = segue.destination as? EmojiVC {
             vcEmoji.player = self.player
         }
-       
+        if let vcFeliks = segue.destination as? FeliksGameVC {
+            vcFeliks.player = self.player
+        }
             }
     
     
@@ -80,10 +82,14 @@ class InstructionVC: UIViewController {
         if player.nameGame == player.wchiGame[0] {
         performSegue(withIdentifier: "quizeGame", sender: self)
         }
+        if player.nameGame == player.wchiGame[1] {
+            performSegue(withIdentifier: "FeliksGame", sender: self)
+        }
         if player.nameGame == player.wchiGame[2] {
             print("hello")
             performSegue(withIdentifier: "EmojiGame", sender: self)
         }
+        
     }
     
     func checking() {

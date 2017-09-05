@@ -71,7 +71,7 @@ class WhichQuizeVC: UIViewController{
             
             let alert = SCLAlertView()
             let alertViewIcon = #imageLiteral(resourceName: "odiRoll")
-            _ = alert.addButton("Продолжить", target: self, selector: #selector(WhichQuizeVC.perSegFeliksGame))
+            _ = alert.addButton("Продолжить", target: self, selector: #selector(WhichQuizeVC.perSeg))
             _ = alert.showSuccess("Правила", subTitle: "У тебя есть 55 секунд , отгадай 10 фильмов", closeButtonTitle: "Вернуться", colorStyle: 0xD33333, colorTextButton: 0xFFFFFF, circleIconImage:alertViewIcon, animationStyle: .topToBottom)
             
             
@@ -103,12 +103,12 @@ class WhichQuizeVC: UIViewController{
     func perSeg() {
         performSegue(withIdentifier: "showInstructions", sender: self)
     }
-    func perSegFeliksGame() {
-        performSegue(withIdentifier: "feliksGame", sender: self)
-    }
-    func perSegEmojiGame() {
-        performSegue(withIdentifier: "emojiGame", sender: self)
-    }
+//    func perSegFeliksGame() {
+//        performSegue(withIdentifier: "feliksGame", sender: self)
+//    }
+//    func perSegEmojiGame() {
+//        performSegue(withIdentifier: "emojiGame", sender: self)
+//    }
     
     //MARK: UpdateView
     
